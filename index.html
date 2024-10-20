@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理系统</title>
+    <!-- 引入 LayUI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/css/layui.css"
+    />
+    <style>
+      /* 自定义主题色 */
+      .layui-btn {
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .layui-layout-admin {
+        top: 0 !important; /* 覆盖默认的 top: 60px */
+      }
+      .layui-btn:hover {
+        background-color: #1457cc;
+      }
+      .layui-layer-title {
+        background-color: #1677ff !important;
+        color: white !important;
+      }
+      .layui-table th {
+        background-color: #f2f2f2;
+      }
+      .layui-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .layui-panel {
+        box-shadow: none !important;
+        margin-bottom: 20px;
+      }
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+        .layui-form {
+          flex-direction: column;
+        }
+        .layui-form-item {
+          width: 100%;
+        }
+      }
+      /* 模态框动画 */
+      .layui-layer {
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 引入 LayUI JS -->
+    <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
