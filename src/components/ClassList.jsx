@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const initialClasses = [
-  { id: 1, className: '一年级', teacher: '张老师', studentCount: 30 },
-  { id: 2, className: '二年级', teacher: '李老师', studentCount: 25 },
-  { id: 3, className: '三年级', teacher: '王老师', studentCount: 28 },
+  { id: 1, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 2, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 3, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 4, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 5, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 6, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 7, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 8, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 9, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 10, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 12, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 13, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 14, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 21, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 31, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 41, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 51, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 61, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 71, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 81, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 91, className: "三年级", teacher: "王老师", studentCount: 28 },
+  { id: 110, className: "一年级", teacher: "张老师", studentCount: 30 },
+  { id: 121, className: "二年级", teacher: "李老师", studentCount: 25 },
+  { id: 131, className: "三年级", teacher: "王老师", studentCount: 28 },
 ];
 
 const ClassList = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [classes, setClasses] = useState(initialClasses);
 
   const filteredClasses = classes.filter(
@@ -16,7 +37,7 @@ const ClassList = () => {
   );
 
   const handleShowModal = (cls, editMode) => {
-    const isEdit = editMode ? '' : 'readonly';
+    const isEdit = editMode ? "" : "readonly";
     const modalContent = `  
       <form class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
@@ -48,7 +69,7 @@ const ClassList = () => {
           ${
             editMode
               ? '<button class="layui-btn" type="submit" id="modalOk">确定</button>'
-              : ''
+              : ""
           }  
         </div>  
       </form>  
@@ -56,13 +77,13 @@ const ClassList = () => {
 
     layui.layer.open({
       type: 1,
-      title: editMode ? '编辑班级' : '查看班级',
-      area: ['500px', '350px'],
+      title: editMode ? "编辑班级" : "查看班级",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         if (editMode) {
-          layero.find('form').on('submit', function (e) {
+          layero.find("form").on("submit", function (e) {
             e.preventDefault();
             const updatedClass = {
               ...cls,
@@ -113,12 +134,12 @@ const ClassList = () => {
 
     layui.layer.open({
       type: 1,
-      title: '确认删除',
-      area: ['500px', '350px'],
+      title: "确认删除",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
-        layero.find('#modalOk').on('click', () => {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
           setClasses(classes.filter((c) => c.id !== cls.id));
           layui.layer.close(index);
         });
@@ -129,9 +150,9 @@ const ClassList = () => {
   const handleAddClass = () => {
     const newClass = {
       id: classes.length + 1,
-      className: '',
-      teacher: '',
-      studentCount: '',
+      className: "",
+      teacher: "",
+      studentCount: "",
     };
     const modalContent = `  
       <form class="layui-form" style="padding: 20px;">  
@@ -162,12 +183,12 @@ const ClassList = () => {
 
     layui.layer.open({
       type: 1,
-      title: '新增班级',
-      area: ['500px', '350px'],
+      title: "新增班级",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
-        layero.find('form').on('submit', function (e) {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("form").on("submit", function (e) {
           e.preventDefault();
           const className = layero.find('input[name="className"]').val();
           const teacher = layero.find('input[name="teacher"]').val();
@@ -184,7 +205,7 @@ const ClassList = () => {
             ]);
             layui.layer.close(index);
           } else {
-            layui.layer.msg('请填写完整信息', { icon: 5 });
+            layui.layer.msg("请填写完整信息", { icon: 5 });
           }
         });
       },
@@ -192,23 +213,23 @@ const ClassList = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: "20px" }}>
       <div className="layui-panel">
         <div
           className="layui-form"
-          style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+          style={{ display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <div className="layui-form-item" style={{ flex: '1' }}>
+          <div className="layui-form-item" style={{ flex: "1" }}>
             <input
               type="text"
               placeholder="输入班级名称或班主任名"
               className="layui-input"
-              style={{ boxShadow: 'none', borderRadius: '0', border: 'none' }}
+              style={{ boxShadow: "none", borderRadius: "0", border: "none" }}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="layui-btn" onClick={() => setSearchTerm('')}>
+          <button className="layui-btn" onClick={() => setSearchTerm("")}>
             重置
           </button>
           <button
@@ -222,7 +243,8 @@ const ClassList = () => {
 
       <table
         className="layui-table"
-        style={{ border: 'none', backgroundColor: 'transparent' }}
+        lay-filter="test"
+        style={{ border: "none", backgroundColor: "transparent" }}
       >
         <thead>
           <tr>

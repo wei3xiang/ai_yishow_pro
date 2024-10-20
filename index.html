@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>管理系统</title>
+    <title>AI YiShow</title>
     <!-- 引入 LayUI CSS -->
-    <link
+    <link href="//unpkg.com/layui@2.9.18/dist/css/layui.css" rel="stylesheet">
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/css/layui.css"
-    />
+    /> -->
     <style>
       /* 自定义主题色 */
       .layui-btn {
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
-      .layui-layout-admin {
-        top: 0 !important; /* 覆盖默认的 top: 60px */
+      .layui-nav .layui-this {  
+        background-color: #1E9FFF !important; /* 自定义颜色 */  
       }
       .layui-btn:hover {
         background-color: #1457cc;
@@ -53,7 +54,8 @@
   <body>
     <div id="root"></div>
     <!-- 引入 LayUI JS -->
-    <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <script src="//unpkg.com/layui@2.9.18/dist/layui.js"></script>
+    <!-- <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"></script> -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

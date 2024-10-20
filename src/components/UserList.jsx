@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const initialUsers = [
-  { id: 1, username: 'user1', email: 'user1@example.com', role: 'admin' },
-  { id: 2, username: 'user2', email: 'user2@example.com', role: 'user' },
-  { id: 3, username: 'user3', email: 'user3@example.com', role: 'user' },
+  { id: 1, username: "user1", email: "user1@example.com", role: "admin" },
+  { id: 2, username: "user2", email: "user2@example.com", role: "user" },
+  { id: 3, username: "user3", email: "user3@example.com", role: "user" },
 ];
 
 const UserList = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState(initialUsers);
 
   const filteredUsers = users.filter(
@@ -16,7 +16,7 @@ const UserList = () => {
   );
 
   const handleShowModal = (user, editMode) => {
-    const isEdit = editMode ? '' : 'readonly';
+    const isEdit = editMode ? "" : "readonly";
     const modalContent = `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
@@ -44,23 +44,23 @@ const UserList = () => {
           </div>  
         </div>  
       </div>  
-      <div style="text-align: right; margin: 30px 0 10px;">  
+      <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  
         ${
-          editMode ? '<button class="layui-btn" id="modalOk">确定</button>' : ''
+          editMode ? '<button class="layui-btn" id="modalOk">确定</button>' : ""
         }  
       </div>  
     `;
 
     layui.layer.open({
       type: 1,
-      title: editMode ? '编辑用户' : '查看用户',
-      area: ['500px', '350px'],
+      title: editMode ? "编辑用户" : "查看用户",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         if (editMode) {
-          layero.find('#modalOk').on('click', () => {
+          layero.find("#modalOk").on("click", () => {
             const updatedUser = {
               ...user,
               username: layero.find('input[name="username"]').val(),
@@ -107,12 +107,12 @@ const UserList = () => {
 
     layui.layer.open({
       type: 1,
-      title: '确认删除',
-      area: ['500px', '350px'],
+      title: "确认删除",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
-        layero.find('#modalOk').on('click', () => {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
           setUsers(users.filter((u) => u.id !== user.id));
           layui.layer.close(index);
         });
@@ -121,7 +121,7 @@ const UserList = () => {
   };
 
   const handleAddUser = () => {
-    const newUser = { id: users.length + 1, username: '', email: '', role: '' };
+    const newUser = { id: users.length + 1, username: "", email: "", role: "" };
     const modalContent = `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
@@ -151,12 +151,12 @@ const UserList = () => {
 
     layui.layer.open({
       type: 1,
-      title: '新增用户',
-      area: ['500px', '350px'],
+      title: "新增用户",
+      area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
-        layero.find('#modalCancel').on('click', () => layui.layer.close(index));
-        layero.find('#modalOk').on('click', () => {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
           const username = layero.find('input[name="username"]').val();
           const email = layero.find('input[name="email"]').val();
           const role = layero.find('input[name="role"]').val();
@@ -164,7 +164,7 @@ const UserList = () => {
             setUsers([...users, { ...newUser, username, email, role }]);
             layui.layer.close(index);
           } else {
-            layui.layer.msg('请填写完整信息', { icon: 5 });
+            layui.layer.msg("请填写完整信息", { icon: 5 });
           }
         });
       },
@@ -172,37 +172,37 @@ const UserList = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: "20px" }}>
       <div className="layui-panel">
         <div
           className="layui-form"
-          style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+          style={{ display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <div className="layui-form-item" style={{ flex: '1' }}>
+          <div className="layui-form-item" style={{ flex: "1" }}>
             <input
               type="text"
               placeholder="输入用户名或电子邮箱"
               className="layui-input"
-              style={{ boxShadow: 'none', borderRadius: '0', border: 'none' }}
+              style={{ boxShadow: "none", borderRadius: "0", border: "none" }}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="layui-btn" onClick={() => setSearchTerm('')}>
+          <button className="layui-btn" onClick={() => setSearchTerm("")}>
             重置
           </button>
           <button
             className="layui-btn layui-btn-normal"
             onClick={handleAddUser}
           >
-            新增用户
+            新增
           </button>
         </div>
       </div>
 
       <table
         className="layui-table"
-        style={{ border: 'none', backgroundColor: 'transparent' }}
+        style={{ border: "none", backgroundColor: "transparent" }}
       >
         <thead>
           <tr>

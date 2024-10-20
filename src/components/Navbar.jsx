@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Navbar = ({ activePage, setActivePage }) => {
   return (
@@ -7,19 +7,19 @@ const Navbar = ({ activePage, setActivePage }) => {
         <ul className="layui-nav layui-nav-tree" lay-filter="test">
           <li
             className={`layui-nav-item ${
-              activePage === 'users' ? 'layui-this' : ''
+              activePage === "users" ? "layui-this" : ""
             }`}
           >
-            <a href="#" onClick={() => setActivePage('users')}>
+            <a href="#" onClick={() => setActivePage("users")}>
               用户
             </a>
           </li>
           <li
             className={`layui-nav-item ${
-              activePage === 'classes' ? 'layui-this' : ''
+              activePage === "classes" ? "layui-this" : ""
             }`}
           >
-            <a href="#" onClick={() => setActivePage('classes')}>
+            <a href="#" onClick={() => setActivePage("classes")}>
               班级
             </a>
           </li>

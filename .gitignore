@@ -1,24 +1,68 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+**/*---
+# dependencies
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc
+/public/actual/config.json
 node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# production
+/dist
+/.vscode
+v8-compile-cache-0
+*-WEB
+# misc
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+npm-debug.log*
+yarn-error.log
+
+/coverage
+.idea
+#yarn.lock
+pnpm-lock.yaml
+*bak
+.vscode
+
+# visual studio code
+.history
+*.log
+functions/*
+.temp/**
+*-WEB/**
+# umi
+.umi
+.umi-production
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+# api-index
+
+build
+
+
+
+.gitmodules
+/.gitmodules
+
+/src/pages/goal/
+/src/pages/mid/
+# /packageLockBak/
+
+___stage
+/public/luckySheet/dist/index.html
+
+**/*---
+/public/iconfont.js
+/public/iconfontLess.js
+/public/iconfontdisabled.js
+/public/theme/iconfont.js
+/public/theme/iconfontLess.js
+/public/theme
+/public/goalPublic
+/src/dynamic/slot.js
+!/src/pages/mid/midSetting.js
+/src/pages/mid/midSetting.js
+/public/iconfontdisabled.js
