@@ -22,7 +22,6 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiOrder,
-              uuid: layero.find('input[name="uuid"]').val(), 
               customer: layero.find('input[name="customer"]').val(), 
               flower: layero.find('input[name="flower"]').val(), 
               quantity: layero.find('input[name="quantity"]').val(), 
@@ -90,7 +89,7 @@ const Index = () => {
 
            quantity
            ) {
-            setList([...list, { ...newItem, customer,
+            setList([...list, { ...newItem, uuid: Date.now(), customer,
           flower,
           quantity,
            }]);
@@ -106,6 +105,7 @@ const Index = () => {
   return (
     <div style={{ padding: "20px" }}>
       <List
+        data = {list}
         onClickCreate={() => handleCreate()}
         onClickRemove={(user) => handleRemove(user)}
         onClickDetail={(user) => handleDetail(user)}

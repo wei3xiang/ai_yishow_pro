@@ -14,7 +14,7 @@ const CreateForm = () => {
             </div>  
             </div>  
       </div>  
-      <div style="text-align: right; margin: 30px 0 10px;">  
+      <div style="text-align: right; margin: 30px 0 10px;padding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  
         <button class="layui-btn" id="modalOk">确定</button>  
       </div>  

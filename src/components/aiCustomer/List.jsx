@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
-import data from "../data/ai_customer.json";
 
 const Index = ({
+  data,
   onClickCreate,
   onClickRemove,
   onClickUpdate,
@@ -12,10 +12,10 @@ const Index = ({
   const filteredList = useMemo(() => {
     return data.filter(
       (aiCustomer) =>
-        aiCustomer.uuid.includes(searchTerm)  ||
-        aiCustomer.name.includes(searchTerm)  ||
-        aiCustomer.phone.includes(searchTerm)  ||
-        aiCustomer.address.includes(searchTerm) 
+
+       `${aiCustomer.name}`.includes(searchTerm) ||
+       `${aiCustomer.phone}`.includes(searchTerm) ||
+       `${aiCustomer.address}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
