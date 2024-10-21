@@ -2,12 +2,6 @@ const DisableForm = ({ aiCustomer }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">物理主键</label>  
-            <div class="layui-input-block">  
-              <input type="text" name="uuid" value="${aiCustomer.uuid}" class="layui-input readonly">  
-            </div>  
-          </div>  
-          <div class="layui-form-item">  
             <label class="layui-form-label">客户名</label>  
             <div class="layui-input-block">  
               <input type="text" name="name" value="${aiCustomer.name}" class="layui-input readonly">  

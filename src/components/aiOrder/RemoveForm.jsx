@@ -4,21 +4,25 @@ const RemoveForm = ({ aiOrder }) => {
         <div class="layui-form-item">  
           <label class="layui-form-label">客户</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.客户}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrder.customer}" class="layui-input readonly">  
           </div>  
         </div>
         <div class="layui-form-item">  
           <label class="layui-form-label">花名</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.花名}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrder.flower}" class="layui-input readonly">  
           </div>  
         </div>
         <div class="layui-form-item">  
           <label class="layui-form-label">数量</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.数量}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrder.quantity}" class="layui-input readonly">  
           </div>  
         </div>
+        </div>
+      <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
+        <button class="layui-btn layui-btn-primary" id="modalCancel">完成</button>   
+      </div>  
     `;
 };
 export default RemoveForm;

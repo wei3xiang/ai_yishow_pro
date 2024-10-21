@@ -54,7 +54,6 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>物理主键</th>
               <th>客户</th>
               <th>花名</th>
               <th>数量</th>
@@ -64,7 +63,6 @@ const Index = ({
         <tbody>
           {filteredList.map((aiOrder) => (
             <tr key={aiOrder.uuid}>
-              <td>{aiOrder.uuid}</td>
               <td>{aiOrder.customer}</td>
               <td>{aiOrder.flower}</td>
               <td>{aiOrder.quantity}</td>

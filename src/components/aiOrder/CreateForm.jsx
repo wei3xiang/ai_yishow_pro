@@ -2,12 +2,6 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">物理主键</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="uuid" placeholder="请输入物理主键"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
             <label class="layui-form-label">客户</label>  
             <div class="layui-input-block">  
                 <input type="text" name="customer" placeholder="请输入客户"  class="layui-input">  
