@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import UserList from "./components/UserList";
-import ClassList from "./components/ClassList";
+import UserList from "./components/user";
+import ClassList from "./components/class";
 
 const App = () => {
   const [activePage, setActivePage] = useState("users");

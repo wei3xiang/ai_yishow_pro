@@ -1,35 +1,9 @@
 import React, { useState } from "react";
-
-const initialClasses = [
-  { id: 1, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 2, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 3, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 4, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 5, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 6, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 7, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 8, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 9, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 10, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 12, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 13, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 14, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 21, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 31, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 41, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 51, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 61, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 71, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 81, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 91, className: "三年级", teacher: "王老师", studentCount: 28 },
-  { id: 110, className: "一年级", teacher: "张老师", studentCount: 30 },
-  { id: 121, className: "二年级", teacher: "李老师", studentCount: 25 },
-  { id: 131, className: "三年级", teacher: "王老师", studentCount: 28 },
-];
+import data from "./data.json";
 
 const ClassList = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [classes, setClasses] = useState(initialClasses);
+  const [classes, setClasses] = useState(data);
 
   const filteredClasses = classes.filter(
     (cls) =>

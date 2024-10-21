@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-
-const initialUsers = [
-  { id: 1, username: "user1", email: "user1@example.com", role: "admin" },
-  { id: 2, username: "user2", email: "user2@example.com", role: "user" },
-  { id: 3, username: "user3", email: "user3@example.com", role: "user" },
-];
+import data from "./data.json";
 
 const UserList = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [users, setUsers] = useState(initialUsers);
+  const [users, setUsers] = useState(data);
 
   const filteredUsers = users.filter(
     (user) =>

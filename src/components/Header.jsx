@@ -13,7 +13,7 @@ const Header = () => {
           alt="logo"
           className="header-logo"
         />
-        AI YiShow
+        Bank AI
       </div>
     </div>
   );
