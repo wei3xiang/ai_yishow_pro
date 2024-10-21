@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import data from "./data.json";
+import data from "../data/ai_customer.json";
 
 const Index = ({
   onClickCreate,
@@ -9,10 +9,13 @@ const Index = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredUsers = useMemo(() => {
+  const filteredList = useMemo(() => {
     return data.filter(
-      (user) =>
-        user.username.includes(searchTerm) || user.email.includes(searchTerm)
+      (aiCustomer) =>
+        aiCustomer.uuid.includes(searchTerm)  ||
+        aiCustomer.name.includes(searchTerm)  ||
+        aiCustomer.phone.includes(searchTerm)  ||
+        aiCustomer.address.includes(searchTerm) 
     );
   }, [data, searchTerm]);
 
@@ -26,7 +29,7 @@ const Index = ({
           <div className="layui-form-item" style={{ flex: "1" }}>
             <input
               type="text"
-              placeholder="输入用户名或电子邮箱"
+              placeholder="模糊查询"
               className="layui-input"
               style={{ boxShadow: "none", borderRadius: "0", border: "none" }}
               value={searchTerm}
@@ -51,34 +54,36 @@ const Index = ({
       >
         <thead>
           <tr>
-            <th>用户名</th>
-            <th>电子邮箱</th>
-            <th>角色</th>
+              <th>物理主键</th>
+              <th>客户名</th>
+              <th>电话</th>
+              <th>地址</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredUsers.map((user) => (
-            <tr key={user.id}>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
+          {filteredList.map((aiCustomer) => (
+            <tr key={aiCustomer.uuid}>
+              <td>{aiCustomer.uuid}</td>
+              <td>{aiCustomer.name}</td>
+              <td>{aiCustomer.phone}</td>
+              <td>{aiCustomer.address}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(user)}
+                  onClick={() => onClickDetail(aiCustomer)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(user)}
+                  onClick={() => onClickUpdate(aiCustomer)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(user)}
+                  onClick={() => onClickRemove(aiCustomer)}
                 >
                   删除
                 </button>

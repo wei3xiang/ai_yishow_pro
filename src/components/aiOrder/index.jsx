@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "./data.json";
+import data from "../data/ai_order.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -7,27 +7,28 @@ import DisableForm from "./DisableForm";
 import RemoveForm from "./RemoveForm";
 import CreateForm from "./CreateForm";
 
-const UserList = () => {
-  const [users, setUsers] = useState(data);
+const Index = () => {
+  const [list, setList] = useState(data);
 
-  const handleEdit = (user) => {
-    const modalContent = `${UpdateForm({ user: user })}`;
+  const handleEdit = (aiOrder) => {
+    const modalContent = `${UpdateForm({ aiOrder: aiOrder })}`;
     layui.layer.open({
       type: 1,
-      title: "编辑用户",
+      title: "编辑",
       area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          const updatedUser = {
-            ...user,
-            username: layero.find('input[name="username"]').val(),
-            email: layero.find('input[name="email"]').val(),
-            role: layero.find('input[name="role"]').val(),
+          const updatedItem = {
+            ...aiOrder,
+              uuid: layero.find('input[name="uuid"]').val(), 
+              customer: layero.find('input[name="customer"]').val(), 
+              flower: layero.find('input[name="flower"]').val(), 
+              quantity: layero.find('input[name="quantity"]').val(), 
           };
-          setUsers(
-            users.map((u) => (u.id === updatedUser.id ? updatedUser : u))
+          setList(
+            list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
           );
           layui.layer.close(index);
         });
@@ -35,11 +36,11 @@ const UserList = () => {
     });
   };
 
-  const handleDetail = (user) => {
-    const modalContent = `${DisableForm({ user: user })}`;
+  const handleDetail = (aiOrder) => {
+    const modalContent = `${DisableForm({ aiOrder: aiOrder })}`;
     layui.layer.open({
       type: 1,
-      title: "查看用户",
+      title: "查看",
       area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
@@ -48,8 +49,8 @@ const UserList = () => {
     });
   };
 
-  const handleRemove = (user) => {
-    const modalContent = `${RemoveForm({ user: user })}`;
+  const handleRemove = (aiOrder) => {
+    const modalContent = `${RemoveForm({ aiOrder: aiOrder })}`;
 
     layui.layer.open({
       type: 1,
@@ -59,7 +60,7 @@ const UserList = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setUsers(users.filter((u) => u.id !== user.id));
+          setList(list.filter((u) => u.uuid !== aiOrder.uuid));
           layui.layer.close(index);
         });
       },
@@ -67,22 +68,32 @@ const UserList = () => {
   };
 
   const handleCreate = () => {
-    const newUser = { id: users.length + 1, username: "", email: "", role: "" };
+    const newItem = { uuid: "",  customer: "",  flower: "",  quantity: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
       type: 1,
-      title: "新增用户",
+      title: "新增",
       area: ["500px", "350px"],
       content: modalContent,
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          const username = layero.find('input[name="username"]').val();
-          const email = layero.find('input[name="email"]').val();
-          const role = layero.find('input[name="role"]').val();
-          if (username && email && role) {
-            setUsers([...users, { ...newUser, username, email, role }]);
+
+          const customer = layero.find('input[name="customer"]').val();
+          const flower = layero.find('input[name="flower"]').val();
+          const quantity = layero.find('input[name="quantity"]').val();
+           if (
+           customer &&
+
+           flower &&
+
+           quantity
+           ) {
+            setList([...list, { ...newItem, customer,
+          flower,
+          quantity,
+           }]);
             layui.layer.close(index);
           } else {
             layui.layer.msg("请填写完整信息", { icon: 5 });
@@ -104,4 +115,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default Index;
