@@ -22,10 +22,11 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiUser,
-              aiFirstname: layero.find('input[name="aiFirstname"]').val(), 
-              aiLastname: layero.find('input[name="aiLastname"]').val(), 
+              aiUsername: layero.find('input[name="aiUsername"]').val(), 
+              aiPassword: layero.find('input[name="aiPassword"]').val(), 
               aiEmail: layero.find('input[name="aiEmail"]').val(), 
               aiPhone: layero.find('input[name="aiPhone"]').val(), 
+              aiAddress: layero.find('input[name="aiAddress"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +69,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiFirstname: "",  aiLastname: "",  aiEmail: "",  aiPhone: "", };
+    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -80,23 +81,27 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiFirstname = layero.find('input[name="aiFirstname"]').val();
-          const aiLastname = layero.find('input[name="aiLastname"]').val();
+          const aiUsername = layero.find('input[name="aiUsername"]').val();
+          const aiPassword = layero.find('input[name="aiPassword"]').val();
           const aiEmail = layero.find('input[name="aiEmail"]').val();
           const aiPhone = layero.find('input[name="aiPhone"]').val();
+          const aiAddress = layero.find('input[name="aiAddress"]').val();
            if (
-           aiFirstname &&
+           aiUsername &&
 
-           aiLastname &&
+           aiPassword &&
 
            aiEmail &&
 
-           aiPhone
+           aiPhone &&
+
+           aiAddress
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiFirstname,
-          aiLastname,
+            setList([...list, { ...newItem, uuid: Date.now(), aiUsername,
+          aiPassword,
           aiEmail,
           aiPhone,
+          aiAddress,
            }]);
             layui.layer.close(index);
           } else {

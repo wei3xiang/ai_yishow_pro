@@ -2,9 +2,9 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品编号</label>  
+            <label class="layui-form-label">产品ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductId" placeholder="请输入产品编号"  class="layui-input">  
+                <input type="text" name="aiProductId" placeholder="请输入产品ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -20,15 +20,15 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">供应商</label>  
+            <label class="layui-form-label">单位</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiSupplier" placeholder="请输入供应商"  class="layui-input">  
+                <input type="text" name="aiUnit" placeholder="请输入单位"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">存储位置</label>  
+            <label class="layui-form-label">价格</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiStorageLocation" placeholder="请输入存储位置"  class="layui-input">  
+                <input type="text" name="aiPrice" placeholder="请输入价格"  class="layui-input">  
             </div>  
             </div>  
       </div>  

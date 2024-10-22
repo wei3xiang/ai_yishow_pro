@@ -16,8 +16,8 @@ const Index = ({
        `${aiInventory.aiProductId}`.includes(searchTerm) ||
        `${aiInventory.aiProductName}`.includes(searchTerm) ||
        `${aiInventory.aiQuantity}`.includes(searchTerm) ||
-       `${aiInventory.aiSupplier}`.includes(searchTerm) ||
-       `${aiInventory.aiStorageLocation}`.includes(searchTerm)
+       `${aiInventory.aiUnit}`.includes(searchTerm) ||
+       `${aiInventory.aiPrice}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,11 +56,11 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品编号</th>
+              <th>产品ID</th>
               <th>产品名称</th>
               <th>数量</th>
-              <th>供应商</th>
-              <th>存储位置</th>
+              <th>单位</th>
+              <th>价格</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -70,8 +70,8 @@ const Index = ({
               <td>{aiInventory.aiProductId}</td>
               <td>{aiInventory.aiProductName}</td>
               <td>{aiInventory.aiQuantity}</td>
-              <td>{aiInventory.aiSupplier}</td>
-              <td>{aiInventory.aiStorageLocation}</td>
+              <td>{aiInventory.aiUnit}</td>
+              <td>{aiInventory.aiPrice}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

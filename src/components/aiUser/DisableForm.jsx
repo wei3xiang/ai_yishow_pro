@@ -2,27 +2,33 @@ const DisableForm = ({ aiUser }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">名字</label>  
+            <label class="layui-form-label">用户名</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiFirstname" value="${aiUser.aiFirstname}" class="layui-input" readonly>  
+              <input type="text" name="aiUsername" value="${aiUser.aiUsername}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">姓氏</label>  
+            <label class="layui-form-label">密码</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiLastname" value="${aiUser.aiLastname}" class="layui-input" readonly>  
+              <input type="text" name="aiPassword" value="${aiUser.aiPassword}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">电子邮件</label>  
+            <label class="layui-form-label">邮箱</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiEmail" value="${aiUser.aiEmail}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">电话号码</label>  
+            <label class="layui-form-label">电话</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiPhone" value="${aiUser.aiPhone}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">地址</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiAddress" value="${aiUser.aiAddress}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

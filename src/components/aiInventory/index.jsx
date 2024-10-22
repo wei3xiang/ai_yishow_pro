@@ -25,8 +25,8 @@ const Index = () => {
               aiProductId: layero.find('input[name="aiProductId"]').val(), 
               aiProductName: layero.find('input[name="aiProductName"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiSupplier: layero.find('input[name="aiSupplier"]').val(), 
-              aiStorageLocation: layero.find('input[name="aiStorageLocation"]').val(), 
+              aiUnit: layero.find('input[name="aiUnit"]').val(), 
+              aiPrice: layero.find('input[name="aiPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -69,7 +69,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiProductId: "",  aiProductName: "",  aiQuantity: "",  aiSupplier: "",  aiStorageLocation: "", };
+    const newItem = { uuid: "",  aiProductId: "",  aiProductName: "",  aiQuantity: "",  aiUnit: "",  aiPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -84,8 +84,8 @@ const Index = () => {
           const aiProductId = layero.find('input[name="aiProductId"]').val();
           const aiProductName = layero.find('input[name="aiProductName"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiSupplier = layero.find('input[name="aiSupplier"]').val();
-          const aiStorageLocation = layero.find('input[name="aiStorageLocation"]').val();
+          const aiUnit = layero.find('input[name="aiUnit"]').val();
+          const aiPrice = layero.find('input[name="aiPrice"]').val();
            if (
            aiProductId &&
 
@@ -93,15 +93,15 @@ const Index = () => {
 
            aiQuantity &&
 
-           aiSupplier &&
+           aiUnit &&
 
-           aiStorageLocation
+           aiPrice
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiProductId,
           aiProductName,
           aiQuantity,
-          aiSupplier,
-          aiStorageLocation,
+          aiUnit,
+          aiPrice,
            }]);
             layui.layer.close(index);
           } else {

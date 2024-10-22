@@ -13,10 +13,11 @@ const Index = ({
     return data.filter(
       (aiUser) =>
 
-       `${aiUser.aiFirstname}`.includes(searchTerm) ||
-       `${aiUser.aiLastname}`.includes(searchTerm) ||
+       `${aiUser.aiUsername}`.includes(searchTerm) ||
+       `${aiUser.aiPassword}`.includes(searchTerm) ||
        `${aiUser.aiEmail}`.includes(searchTerm) ||
-       `${aiUser.aiPhone}`.includes(searchTerm)
+       `${aiUser.aiPhone}`.includes(searchTerm) ||
+       `${aiUser.aiAddress}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,20 +56,22 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>名字</th>
-              <th>姓氏</th>
-              <th>电子邮件</th>
-              <th>电话号码</th>
+              <th>用户名</th>
+              <th>密码</th>
+              <th>邮箱</th>
+              <th>电话</th>
+              <th>地址</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiUser) => (
             <tr key={aiUser.uuid}>
-              <td>{aiUser.aiFirstname}</td>
-              <td>{aiUser.aiLastname}</td>
+              <td>{aiUser.aiUsername}</td>
+              <td>{aiUser.aiPassword}</td>
               <td>{aiUser.aiEmail}</td>
               <td>{aiUser.aiPhone}</td>
+              <td>{aiUser.aiAddress}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
