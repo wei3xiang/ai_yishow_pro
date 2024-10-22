@@ -11,11 +11,11 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiFlowerShop) =>
 
-       `${aiOrder.customer}`.includes(searchTerm) ||
-       `${aiOrder.flower}`.includes(searchTerm) ||
-       `${aiOrder.quantity}`.includes(searchTerm)
+       `${aiFlowerShop.name}`.includes(searchTerm) ||
+       `${aiFlowerShop.address}`.includes(searchTerm) ||
+       `${aiFlowerShop.phone}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,34 +54,34 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户</th>
-              <th>花名</th>
-              <th>数量</th>
+              <th>店名</th>
+              <th>地址</th>
+              <th>电话</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.customer}</td>
-              <td>{aiOrder.flower}</td>
-              <td>{aiOrder.quantity}</td>
+          {filteredList.map((aiFlowerShop) => (
+            <tr key={aiFlowerShop.uuid}>
+              <td>{aiFlowerShop.name}</td>
+              <td>{aiFlowerShop.address}</td>
+              <td>{aiFlowerShop.phone}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiFlowerShop)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiFlowerShop)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiFlowerShop)}
                 >
                   删除
                 </button>

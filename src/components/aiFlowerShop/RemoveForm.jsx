@@ -1,22 +1,22 @@
-const RemoveForm = ({ aiOrder }) => {
+const RemoveForm = ({ aiFlowerShop }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">客户</label>  
+          <label class="layui-form-label">店名</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.customer}" class="layui-input" readonly>  
+            <input type="text" value="${aiFlowerShop.name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">花名</label>  
+          <label class="layui-form-label">地址</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.flower}" class="layui-input" readonly>  
+            <input type="text" value="${aiFlowerShop.address}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">数量</label>  
+          <label class="layui-form-label">电话</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.quantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiFlowerShop.phone}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

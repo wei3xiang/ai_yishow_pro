@@ -1,21 +1,21 @@
-const UpdateForm = ({ aiOrder }) => {
+const UpdateForm = ({ aiCustomer }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">客户</label>  
+      <label class="layui-form-label">客户名</label>  
       <div class="layui-input-block">  
-        <input type="text" name="customer" value="${aiOrder.customer}" class="layui-input">  
+        <input type="text" name="name" value="${aiCustomer.name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">花名</label>  
+      <label class="layui-form-label">电话</label>  
       <div class="layui-input-block">  
-        <input type="text" name="flower" value="${aiOrder.flower}" class="layui-input">  
+        <input type="text" name="phone" value="${aiCustomer.phone}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">数量</label>  
+      <label class="layui-form-label">地址</label>  
       <div class="layui-input-block">  
-        <input type="text" name="quantity" value="${aiOrder.quantity}" class="layui-input">  
+        <input type="text" name="address" value="${aiCustomer.address}" class="layui-input">  
       </div>  
     </div>  
   </div>  

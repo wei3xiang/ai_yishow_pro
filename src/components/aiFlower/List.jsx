@@ -11,11 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiFlower) =>
 
-       `${aiOrder.customer}`.includes(searchTerm) ||
-       `${aiOrder.flower}`.includes(searchTerm) ||
-       `${aiOrder.quantity}`.includes(searchTerm)
+       `${aiFlower.name}`.includes(searchTerm) ||
+       `${aiFlower.price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,34 +53,32 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户</th>
               <th>花名</th>
-              <th>数量</th>
+              <th>花价</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.customer}</td>
-              <td>{aiOrder.flower}</td>
-              <td>{aiOrder.quantity}</td>
+          {filteredList.map((aiFlower) => (
+            <tr key={aiFlower.uuid}>
+              <td>{aiFlower.name}</td>
+              <td>{aiFlower.price}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiFlower)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiFlower)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiFlower)}
                 >
                   删除
                 </button>
