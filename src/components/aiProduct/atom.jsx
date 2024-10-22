@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 
-export const aiWineStateAtom = atom({
-key: `aiWineStateAtom`,
+export const aiProductStateAtom = atom({
+key: `aiProductStateAtom`,
 default: {
     list: [],
     createModel: null,

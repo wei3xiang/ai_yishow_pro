@@ -8,15 +8,21 @@ const RemoveForm = ({ aiOrder }) => {
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单日期</label>  
+          <label class="layui-form-label">订单状态</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrder.aiOrderStatus}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单总金额</label>  
+          <label class="layui-form-label">订单总价</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiTotalAmount}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrder.aiTotalPrice}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">订单日期</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

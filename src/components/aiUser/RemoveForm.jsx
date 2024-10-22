@@ -8,9 +8,9 @@ const RemoveForm = ({ aiUser }) => {
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">密码（哈希值）</label>  
+          <label class="layui-form-label">密码</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiPasswordHash}" class="layui-input" readonly>  
+            <input type="text" value="${aiUser.aiPassword}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  

@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiWine }) => {
+const UpdateForm = ({ aiProduct }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">酒品编码</label>  
+      <label class="layui-form-label">产品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiWineCode" value="${aiWine.aiWineCode}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiProduct.aiProductName}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">分类UUID</label>  
+      <label class="layui-form-label">产品描述</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCategoryUuid" value="${aiWine.aiCategoryUuid}" class="layui-input">  
+        <input type="text" name="aiProductDescription" value="${aiProduct.aiProductDescription}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">酒品名称</label>  
+      <label class="layui-form-label">产品价格</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiWineName" value="${aiWine.aiWineName}" class="layui-input">  
+        <input type="text" name="aiProductPrice" value="${aiProduct.aiProductPrice}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">酒品描述</label>  
+      <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiDescription" value="${aiWine.aiDescription}" class="layui-input">  
+        <input type="text" name="aiStockQuantity" value="${aiProduct.aiStockQuantity}" class="layui-input">  
       </div>  
     </div>  
   </div>  

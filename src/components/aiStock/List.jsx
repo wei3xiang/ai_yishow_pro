@@ -11,12 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiStock) =>
 
-       `${aiInventory.aiProductCode}`.includes(searchTerm) ||
-       `${aiInventory.aiProductName}`.includes(searchTerm) ||
-       `${aiInventory.aiQuantity}`.includes(searchTerm) ||
-       `${aiInventory.aiUnit}`.includes(searchTerm)
+       `${aiStock.aiProductUuid}`.includes(searchTerm) ||
+       `${aiStock.aiCurrentQuantity}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,36 +53,32 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品编码</th>
-              <th>产品名称</th>
-              <th>库存数量</th>
-              <th>库存单位</th>
+              <th>产品UUID</th>
+              <th>当前库存数量</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.aiProductCode}</td>
-              <td>{aiInventory.aiProductName}</td>
-              <td>{aiInventory.aiQuantity}</td>
-              <td>{aiInventory.aiUnit}</td>
+          {filteredList.map((aiStock) => (
+            <tr key={aiStock.uuid}>
+              <td>{aiStock.aiProductUuid}</td>
+              <td>{aiStock.aiCurrentQuantity}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiStock)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiStock)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiStock)}
                 >
                   删除
                 </button>

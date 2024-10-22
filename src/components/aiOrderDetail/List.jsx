@@ -14,9 +14,9 @@ const Index = ({
       (aiOrderDetail) =>
 
        `${aiOrderDetail.aiOrderUuid}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiProductCode}`.includes(searchTerm) ||
+       `${aiOrderDetail.aiProductUuid}`.includes(searchTerm) ||
        `${aiOrderDetail.aiQuantity}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiUnitPrice}`.includes(searchTerm)
+       `${aiOrderDetail.aiSubTotal}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,9 +56,9 @@ const Index = ({
         <thead>
           <tr>
               <th>订单UUID</th>
-              <th>产品编码</th>
-              <th>订购数量</th>
-              <th>单价</th>
+              <th>产品UUID</th>
+              <th>购买数量</th>
+              <th>小计</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -66,9 +66,9 @@ const Index = ({
           {filteredList.map((aiOrderDetail) => (
             <tr key={aiOrderDetail.uuid}>
               <td>{aiOrderDetail.aiOrderUuid}</td>
-              <td>{aiOrderDetail.aiProductCode}</td>
+              <td>{aiOrderDetail.aiProductUuid}</td>
               <td>{aiOrderDetail.aiQuantity}</td>
-              <td>{aiOrderDetail.aiUnitPrice}</td>
+              <td>{aiOrderDetail.aiSubTotal}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

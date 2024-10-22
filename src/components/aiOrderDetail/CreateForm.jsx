@@ -8,21 +8,21 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品编码</label>  
+            <label class="layui-form-label">产品UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductCode" placeholder="请输入产品编码"  class="layui-input">  
+                <input type="text" name="aiProductUuid" placeholder="请输入产品UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订购数量</label>  
+            <label class="layui-form-label">购买数量</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiQuantity" placeholder="请输入订购数量"  class="layui-input">  
+                <input type="text" name="aiQuantity" placeholder="请输入购买数量"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">小计</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiUnitPrice" placeholder="请输入单价"  class="layui-input">  
+                <input type="text" name="aiSubTotal" placeholder="请输入小计"  class="layui-input">  
             </div>  
             </div>  
       </div>  

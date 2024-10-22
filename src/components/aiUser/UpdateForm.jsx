@@ -7,9 +7,9 @@ const UpdateForm = ({ aiUser }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">密码（哈希值）</label>  
+      <label class="layui-form-label">密码</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPasswordHash" value="${aiUser.aiPasswordHash}" class="layui-input">  
+        <input type="text" name="aiPassword" value="${aiUser.aiPassword}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  

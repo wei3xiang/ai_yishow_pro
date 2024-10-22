@@ -11,12 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiWine) =>
+      (aiProduct) =>
 
-       `${aiWine.aiWineCode}`.includes(searchTerm) ||
-       `${aiWine.aiCategoryUuid}`.includes(searchTerm) ||
-       `${aiWine.aiWineName}`.includes(searchTerm) ||
-       `${aiWine.aiDescription}`.includes(searchTerm)
+       `${aiProduct.aiProductName}`.includes(searchTerm) ||
+       `${aiProduct.aiProductDescription}`.includes(searchTerm) ||
+       `${aiProduct.aiProductPrice}`.includes(searchTerm) ||
+       `${aiProduct.aiStockQuantity}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,36 +55,36 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>酒品编码</th>
-              <th>分类UUID</th>
-              <th>酒品名称</th>
-              <th>酒品描述</th>
+              <th>产品名称</th>
+              <th>产品描述</th>
+              <th>产品价格</th>
+              <th>库存数量</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiWine) => (
-            <tr key={aiWine.uuid}>
-              <td>{aiWine.aiWineCode}</td>
-              <td>{aiWine.aiCategoryUuid}</td>
-              <td>{aiWine.aiWineName}</td>
-              <td>{aiWine.aiDescription}</td>
+          {filteredList.map((aiProduct) => (
+            <tr key={aiProduct.uuid}>
+              <td>{aiProduct.aiProductName}</td>
+              <td>{aiProduct.aiProductDescription}</td>
+              <td>{aiProduct.aiProductPrice}</td>
+              <td>{aiProduct.aiStockQuantity}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiWine)}
+                  onClick={() => onClickDetail(aiProduct)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiWine)}
+                  onClick={() => onClickUpdate(aiProduct)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiWine)}
+                  onClick={() => onClickRemove(aiProduct)}
                 >
                   删除
                 </button>

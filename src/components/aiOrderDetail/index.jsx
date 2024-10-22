@@ -23,9 +23,9 @@ const Index = () => {
           const updatedItem = {
             ...aiOrderDetail,
               aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
-              aiProductCode: layero.find('input[name="aiProductCode"]').val(), 
+              aiProductUuid: layero.find('input[name="aiProductUuid"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiUnitPrice: layero.find('input[name="aiUnitPrice"]').val(), 
+              aiSubTotal: layero.find('input[name="aiSubTotal"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductCode: "",  aiQuantity: "",  aiUnitPrice: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductUuid: "",  aiQuantity: "",  aiSubTotal: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,22 +81,22 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
-          const aiProductCode = layero.find('input[name="aiProductCode"]').val();
+          const aiProductUuid = layero.find('input[name="aiProductUuid"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiUnitPrice = layero.find('input[name="aiUnitPrice"]').val();
+          const aiSubTotal = layero.find('input[name="aiSubTotal"]').val();
            if (
            aiOrderUuid &&
 
-           aiProductCode &&
+           aiProductUuid &&
 
            aiQuantity &&
 
-           aiUnitPrice
+           aiSubTotal
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
-          aiProductCode,
+          aiProductUuid,
           aiQuantity,
-          aiUnitPrice,
+          aiSubTotal,
            }]);
             layui.layer.close(index);
           } else {
