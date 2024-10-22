@@ -2,21 +2,21 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品ID</label>  
+            <label class="layui-form-label">类型ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductId" placeholder="请输入产品ID"  class="layui-input">  
+                <input type="text" name="aiTypeId" placeholder="请输入类型ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">酒品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductName" placeholder="请输入产品名称"  class="layui-input">  
+                <input type="text" name="aiName" placeholder="请输入酒品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品描述</label>  
+            <label class="layui-form-label">描述</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiDescription" placeholder="请输入产品描述"  class="layui-input">  
+                <input type="text" name="aiDescription" placeholder="请输入描述"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  

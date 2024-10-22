@@ -2,21 +2,21 @@ const DisableForm = ({ aiOrder }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">客户ID</label>  
+            <label class="layui-form-label">用户ID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiCustomerId" value="${aiOrder.aiCustomerId}" class="layui-input" readonly>  
+              <input type="text" name="aiUserId" value="${aiOrder.aiUserId}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单日期</label>  
+            <label class="layui-form-label">下单日期</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiOrderDate" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单状态（未完成&#x2F;已完成）</label>  
+            <label class="layui-form-label">总金额</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStatus" value="${aiOrder.aiStatus}" class="layui-input" readonly>  
+              <input type="text" name="aiTotalAmount" value="${aiOrder.aiTotalAmount}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

@@ -13,8 +13,8 @@ const Index = ({
     return data.filter(
       (aiProduct) =>
 
-       `${aiProduct.aiProductId}`.includes(searchTerm) ||
-       `${aiProduct.aiProductName}`.includes(searchTerm) ||
+       `${aiProduct.aiTypeId}`.includes(searchTerm) ||
+       `${aiProduct.aiName}`.includes(searchTerm) ||
        `${aiProduct.aiDescription}`.includes(searchTerm) ||
        `${aiProduct.aiPrice}`.includes(searchTerm)
     );
@@ -55,9 +55,9 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品ID</th>
-              <th>产品名称</th>
-              <th>产品描述</th>
+              <th>类型ID</th>
+              <th>酒品名称</th>
+              <th>描述</th>
               <th>价格</th>
             <th>操作</th>
           </tr>
@@ -65,8 +65,8 @@ const Index = ({
         <tbody>
           {filteredList.map((aiProduct) => (
             <tr key={aiProduct.uuid}>
-              <td>{aiProduct.aiProductId}</td>
-              <td>{aiProduct.aiProductName}</td>
+              <td>{aiProduct.aiTypeId}</td>
+              <td>{aiProduct.aiName}</td>
               <td>{aiProduct.aiDescription}</td>
               <td>{aiProduct.aiPrice}</td>
               <td>

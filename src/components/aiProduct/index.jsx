@@ -22,8 +22,8 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiProduct,
-              aiProductId: layero.find('input[name="aiProductId"]').val(), 
-              aiProductName: layero.find('input[name="aiProductName"]').val(), 
+              aiTypeId: layero.find('input[name="aiTypeId"]').val(), 
+              aiName: layero.find('input[name="aiName"]').val(), 
               aiDescription: layero.find('input[name="aiDescription"]').val(), 
               aiPrice: layero.find('input[name="aiPrice"]').val(), 
           };
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiProductId: "",  aiProductName: "",  aiDescription: "",  aiPrice: "", };
+    const newItem = { uuid: "",  aiTypeId: "",  aiName: "",  aiDescription: "",  aiPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -80,21 +80,21 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiProductId = layero.find('input[name="aiProductId"]').val();
-          const aiProductName = layero.find('input[name="aiProductName"]').val();
+          const aiTypeId = layero.find('input[name="aiTypeId"]').val();
+          const aiName = layero.find('input[name="aiName"]').val();
           const aiDescription = layero.find('input[name="aiDescription"]').val();
           const aiPrice = layero.find('input[name="aiPrice"]').val();
            if (
-           aiProductId &&
+           aiTypeId &&
 
-           aiProductName &&
+           aiName &&
 
            aiDescription &&
 
            aiPrice
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiProductId,
-          aiProductName,
+            setList([...list, { ...newItem, uuid: Date.now(), aiTypeId,
+          aiName,
           aiDescription,
           aiPrice,
            }]);

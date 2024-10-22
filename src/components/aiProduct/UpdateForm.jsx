@@ -1,19 +1,19 @@
 const UpdateForm = ({ aiProduct }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品ID</label>  
+      <label class="layui-form-label">类型ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductId" value="${aiProduct.aiProductId}" class="layui-input">  
+        <input type="text" name="aiTypeId" value="${aiProduct.aiTypeId}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
+      <label class="layui-form-label">酒品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiProduct.aiProductName}" class="layui-input">  
+        <input type="text" name="aiName" value="${aiProduct.aiName}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品描述</label>  
+      <label class="layui-form-label">描述</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiDescription" value="${aiProduct.aiDescription}" class="layui-input">  
       </div>  

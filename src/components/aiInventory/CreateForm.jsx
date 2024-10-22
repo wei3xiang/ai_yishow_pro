@@ -14,15 +14,15 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">库存</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiQuantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="aiStock" placeholder="请输入库存"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">类别</label>  
+            <label class="layui-form-label">重订货级别</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiCategory" placeholder="请输入类别"  class="layui-input">  
+                <input type="text" name="aiReorderLevel" placeholder="请输入重订货级别"  class="layui-input">  
             </div>  
             </div>  
       </div>  
