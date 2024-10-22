@@ -2,33 +2,33 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">商品SKU</label>  
+            <label class="layui-form-label">类别ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductSku" placeholder="请输入商品SKU"  class="layui-input">  
+                <input type="text" name="aiCategoryId" placeholder="请输入类别ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">商品名称</label>  
+            <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductName" placeholder="请输入商品名称"  class="layui-input">  
+                <input type="text" name="aiProductName" placeholder="请输入产品名称"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">产品描述</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="aiDescription" placeholder="请输入产品描述"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">价格</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="aiPrice" placeholder="请输入价格"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
             <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiQuantity" placeholder="请输入库存数量"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">商品类别</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="aiCategory" placeholder="请输入商品类别"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">创建时间</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="aiCreationTime" placeholder="请输入创建时间"  class="layui-input">  
+                <input type="text" name="aiStockQuantity" placeholder="请输入库存数量"  class="layui-input">  
             </div>  
             </div>  
       </div>  

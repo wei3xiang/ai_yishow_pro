@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiOrder }) => {
+const UpdateForm = ({ aiInstock }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">客户ID</label>  
+      <label class="layui-form-label">产品ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCustomerId" value="${aiOrder.aiCustomerId}" class="layui-input">  
+        <input type="text" name="aiProductId" value="${aiInstock.aiProductId}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单日期</label>  
+      <label class="layui-form-label">产品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderDate" value="${aiOrder.aiOrderDate}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiInstock.aiProductName}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单金额</label>  
+      <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiTotalAmount" value="${aiOrder.aiTotalAmount}" class="layui-input">  
+        <input type="text" name="aiStockQuantity" value="${aiInstock.aiStockQuantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单状态</label>  
+      <label class="layui-form-label">最后更新时间</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStatus" value="${aiOrder.aiStatus}" class="layui-input">  
+        <input type="text" name="aiLastUpdate" value="${aiInstock.aiLastUpdate}" class="layui-input">  
       </div>  
     </div>  
   </div>  

@@ -11,13 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiStock) =>
+      (aiInstock) =>
 
-       `${aiStock.aiProductSku}`.includes(searchTerm) ||
-       `${aiStock.aiProductName}`.includes(searchTerm) ||
-       `${aiStock.aiQuantity}`.includes(searchTerm) ||
-       `${aiStock.aiCategory}`.includes(searchTerm) ||
-       `${aiStock.aiCreationTime}`.includes(searchTerm)
+       `${aiInstock.aiProductId}`.includes(searchTerm) ||
+       `${aiInstock.aiProductName}`.includes(searchTerm) ||
+       `${aiInstock.aiStockQuantity}`.includes(searchTerm) ||
+       `${aiInstock.aiLastUpdate}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,38 +55,36 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>商品SKU</th>
-              <th>商品名称</th>
+              <th>产品ID</th>
+              <th>产品名称</th>
               <th>库存数量</th>
-              <th>商品类别</th>
-              <th>创建时间</th>
+              <th>最后更新时间</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiStock) => (
-            <tr key={aiStock.uuid}>
-              <td>{aiStock.aiProductSku}</td>
-              <td>{aiStock.aiProductName}</td>
-              <td>{aiStock.aiQuantity}</td>
-              <td>{aiStock.aiCategory}</td>
-              <td>{aiStock.aiCreationTime}</td>
+          {filteredList.map((aiInstock) => (
+            <tr key={aiInstock.uuid}>
+              <td>{aiInstock.aiProductId}</td>
+              <td>{aiInstock.aiProductName}</td>
+              <td>{aiInstock.aiStockQuantity}</td>
+              <td>{aiInstock.aiLastUpdate}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiStock)}
+                  onClick={() => onClickDetail(aiInstock)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiStock)}
+                  onClick={() => onClickUpdate(aiInstock)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiStock)}
+                  onClick={() => onClickRemove(aiInstock)}
                 >
                   删除
                 </button>

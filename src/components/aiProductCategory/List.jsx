@@ -11,12 +11,9 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiProductCategory) =>
 
-       `${aiOrder.aiCustomerId}`.includes(searchTerm) ||
-       `${aiOrder.aiOrderDate}`.includes(searchTerm) ||
-       `${aiOrder.aiTotalAmount}`.includes(searchTerm) ||
-       `${aiOrder.aiStatus}`.includes(searchTerm)
+       `${aiProductCategory.aiCategoryName}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,36 +52,30 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户ID</th>
-              <th>订单日期</th>
-              <th>订单金额</th>
-              <th>订单状态</th>
+              <th>类别名称</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.aiCustomerId}</td>
-              <td>{aiOrder.aiOrderDate}</td>
-              <td>{aiOrder.aiTotalAmount}</td>
-              <td>{aiOrder.aiStatus}</td>
+          {filteredList.map((aiProductCategory) => (
+            <tr key={aiProductCategory.uuid}>
+              <td>{aiProductCategory.aiCategoryName}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiProductCategory)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiProductCategory)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiProductCategory)}
                 >
                   删除
                 </button>

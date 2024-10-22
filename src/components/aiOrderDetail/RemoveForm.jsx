@@ -1,28 +1,28 @@
-const RemoveForm = ({ aiOrder }) => {
+const RemoveForm = ({ aiOrderDetail }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">客户ID</label>  
+          <label class="layui-form-label">订单ID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiCustomerId}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.aiOrderId}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单日期</label>  
+          <label class="layui-form-label">产品ID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.aiProductId}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单金额</label>  
+          <label class="layui-form-label">数量</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiTotalAmount}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.aiQuantity}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单状态</label>  
+          <label class="layui-form-label">单价</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiStatus}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.aiUnitPrice}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>
