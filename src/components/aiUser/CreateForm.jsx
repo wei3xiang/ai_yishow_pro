@@ -8,9 +8,9 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">密码</label>  
+            <label class="layui-form-label">密码（哈希值）</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPassword" placeholder="请输入密码"  class="layui-input">  
+                <input type="text" name="aiPasswordHash" placeholder="请输入密码（哈希值）"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  

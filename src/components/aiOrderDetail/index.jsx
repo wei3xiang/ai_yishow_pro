@@ -23,9 +23,9 @@ const Index = () => {
           const updatedItem = {
             ...aiOrderDetail,
               aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
-              aiProductUuid: layero.find('input[name="aiProductUuid"]').val(), 
+              aiProductCode: layero.find('input[name="aiProductCode"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiPrice: layero.find('input[name="aiPrice"]').val(), 
+              aiUnitPrice: layero.find('input[name="aiUnitPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductUuid: "",  aiQuantity: "",  aiPrice: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductCode: "",  aiQuantity: "",  aiUnitPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,22 +81,22 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
-          const aiProductUuid = layero.find('input[name="aiProductUuid"]').val();
+          const aiProductCode = layero.find('input[name="aiProductCode"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiPrice = layero.find('input[name="aiPrice"]').val();
+          const aiUnitPrice = layero.find('input[name="aiUnitPrice"]').val();
            if (
            aiOrderUuid &&
 
-           aiProductUuid &&
+           aiProductCode &&
 
            aiQuantity &&
 
-           aiPrice
+           aiUnitPrice
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
-          aiProductUuid,
+          aiProductCode,
           aiQuantity,
-          aiPrice,
+          aiUnitPrice,
            }]);
             layui.layer.close(index);
           } else {

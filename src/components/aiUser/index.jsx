@@ -23,7 +23,7 @@ const Index = () => {
           const updatedItem = {
             ...aiUser,
               aiUsername: layero.find('input[name="aiUsername"]').val(), 
-              aiPassword: layero.find('input[name="aiPassword"]').val(), 
+              aiPasswordHash: layero.find('input[name="aiPasswordHash"]').val(), 
               aiEmail: layero.find('input[name="aiEmail"]').val(), 
               aiPhone: layero.find('input[name="aiPhone"]').val(), 
               aiAddress: layero.find('input[name="aiAddress"]').val(), 
@@ -69,7 +69,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
+    const newItem = { uuid: "",  aiUsername: "",  aiPasswordHash: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,14 +82,14 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiUsername = layero.find('input[name="aiUsername"]').val();
-          const aiPassword = layero.find('input[name="aiPassword"]').val();
+          const aiPasswordHash = layero.find('input[name="aiPasswordHash"]').val();
           const aiEmail = layero.find('input[name="aiEmail"]').val();
           const aiPhone = layero.find('input[name="aiPhone"]').val();
           const aiAddress = layero.find('input[name="aiAddress"]').val();
            if (
            aiUsername &&
 
-           aiPassword &&
+           aiPasswordHash &&
 
            aiEmail &&
 
@@ -98,7 +98,7 @@ const Index = () => {
            aiAddress
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiUsername,
-          aiPassword,
+          aiPasswordHash,
           aiEmail,
           aiPhone,
           aiAddress,

@@ -2,27 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">商品名称</label>  
+            <label class="layui-form-label">酒品编码</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiName" placeholder="请输入商品名称"  class="layui-input">  
+                <input type="text" name="aiWineCode" placeholder="请输入酒品编码"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">分类UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPrice" placeholder="请输入单价"  class="layui-input">  
+                <input type="text" name="aiCategoryUuid" placeholder="请输入分类UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">酒品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiQuantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="aiWineName" placeholder="请输入酒品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">商品描述</label>  
+            <label class="layui-form-label">酒品描述</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiDescription" placeholder="请输入商品描述"  class="layui-input">  
+                <input type="text" name="aiDescription" placeholder="请输入酒品描述"  class="layui-input">  
             </div>  
             </div>  
       </div>  

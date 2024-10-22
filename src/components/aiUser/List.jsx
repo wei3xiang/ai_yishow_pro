@@ -14,7 +14,7 @@ const Index = ({
       (aiUser) =>
 
        `${aiUser.aiUsername}`.includes(searchTerm) ||
-       `${aiUser.aiPassword}`.includes(searchTerm) ||
+       `${aiUser.aiPasswordHash}`.includes(searchTerm) ||
        `${aiUser.aiEmail}`.includes(searchTerm) ||
        `${aiUser.aiPhone}`.includes(searchTerm) ||
        `${aiUser.aiAddress}`.includes(searchTerm)
@@ -57,7 +57,7 @@ const Index = ({
         <thead>
           <tr>
               <th>用户名</th>
-              <th>密码</th>
+              <th>密码（哈希值）</th>
               <th>邮箱</th>
               <th>电话</th>
               <th>地址</th>
@@ -68,7 +68,7 @@ const Index = ({
           {filteredList.map((aiUser) => (
             <tr key={aiUser.uuid}>
               <td>{aiUser.aiUsername}</td>
-              <td>{aiUser.aiPassword}</td>
+              <td>{aiUser.aiPasswordHash}</td>
               <td>{aiUser.aiEmail}</td>
               <td>{aiUser.aiPhone}</td>
               <td>{aiUser.aiAddress}</td>

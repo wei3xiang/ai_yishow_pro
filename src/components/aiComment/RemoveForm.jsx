@@ -1,22 +1,28 @@
-const RemoveForm = ({ aiOrder }) => {
+const RemoveForm = ({ aiComment }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
           <label class="layui-form-label">用户UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiUserUuid}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiUserUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单日期</label>  
+          <label class="layui-form-label">产品编码</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiProductCode}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单总金额</label>  
+          <label class="layui-form-label">评论内容</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiTotalAmount}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiCommentContent}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">评分</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiComment.aiRating}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

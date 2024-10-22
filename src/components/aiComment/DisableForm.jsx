@@ -1,28 +1,28 @@
-const DisableForm = ({ aiOrderDetail }) => {
+const DisableForm = ({ aiComment }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单UUID</label>  
+            <label class="layui-form-label">用户UUID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiOrderUuid" value="${aiOrderDetail.aiOrderUuid}" class="layui-input" readonly>  
+              <input type="text" name="aiUserUuid" value="${aiComment.aiUserUuid}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">产品编码</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductCode" value="${aiOrderDetail.aiProductCode}" class="layui-input" readonly>  
+              <input type="text" name="aiProductCode" value="${aiComment.aiProductCode}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订购数量</label>  
+            <label class="layui-form-label">评论内容</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiQuantity" value="${aiOrderDetail.aiQuantity}" class="layui-input" readonly>  
+              <input type="text" name="aiCommentContent" value="${aiComment.aiCommentContent}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">评分</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiUnitPrice" value="${aiOrderDetail.aiUnitPrice}" class="layui-input" readonly>  
+              <input type="text" name="aiRating" value="${aiComment.aiRating}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

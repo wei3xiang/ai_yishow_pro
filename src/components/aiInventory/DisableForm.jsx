@@ -1,28 +1,28 @@
-const DisableForm = ({ aiOrderDetail }) => {
+const DisableForm = ({ aiInventory }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单UUID</label>  
-            <div class="layui-input-block">  
-              <input type="text" name="aiOrderUuid" value="${aiOrderDetail.aiOrderUuid}" class="layui-input" readonly>  
-            </div>  
-          </div>  
-          <div class="layui-form-item">  
             <label class="layui-form-label">产品编码</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductCode" value="${aiOrderDetail.aiProductCode}" class="layui-input" readonly>  
+              <input type="text" name="aiProductCode" value="${aiInventory.aiProductCode}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订购数量</label>  
+            <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiQuantity" value="${aiOrderDetail.aiQuantity}" class="layui-input" readonly>  
+              <input type="text" name="aiProductName" value="${aiInventory.aiProductName}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiUnitPrice" value="${aiOrderDetail.aiUnitPrice}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiInventory.aiQuantity}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">库存单位</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiUnit" value="${aiInventory.aiUnit}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

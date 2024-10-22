@@ -1,28 +1,34 @@
 import React, { useState } from "react";
 
+import AiComment from './aiComment';
+import AiInventory from './aiInventory';
 import AiOrder from './aiOrder';
 import AiOrderDetail from './aiOrderDetail';
-import AiProduct from './aiProduct';
-import AiStock from './aiStock';
 import AiUser from './aiUser';
+import AiWine from './aiWine';
+import AiWineCategory from './aiWineCategory';
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiOrder");
+  const [activePage, setActivePage] = useState("aiComment");
 
   const renderPage = () => {
     switch (activePage) {
+        case "aiComment":
+            return <AiComment />;
+        case "aiInventory":
+            return <AiInventory />;
         case "aiOrder":
             return <AiOrder />;
         case "aiOrderDetail":
             return <AiOrderDetail />;
-        case "aiProduct":
-            return <AiProduct />;
-        case "aiStock":
-            return <AiStock />;
         case "aiUser":
             return <AiUser />;
+        case "aiWine":
+            return <AiWine />;
+        case "aiWineCategory":
+            return <AiWineCategory />;
         default:
-            return <AiOrder />;
+            return <AiComment />;
     }
   };
 
@@ -31,6 +37,24 @@ const Navbar = () => {
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
           <ul className="layui-nav layui-nav-tree" lay-filter="test">
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiComment" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiComment")}>
+                    评论表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiInventory" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiInventory")}>
+                    库存表
+                </a>
+                </li>
                 <li
                 className={`layui-nav-item ${
                     activePage === "aiOrder" ? "layui-this" : ""
@@ -51,29 +75,29 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiProduct" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProduct")}>
-                    商品表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiStock" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiStock")}>
-                    库存表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
                     activePage === "aiUser" ? "layui-this" : ""
                 }`}
                 >
                 <a href="#" onClick={() => setActivePage("aiUser")}>
                     用户表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiWine" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiWine")}>
+                    酒品表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiWineCategory" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiWineCategory")}>
+                    酒品分类表
                 </a>
                 </li>
           </ul>
