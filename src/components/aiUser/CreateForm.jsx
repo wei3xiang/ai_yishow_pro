@@ -31,12 +31,6 @@ const CreateForm = () => {
                 <input type="text" name="aiAddress" placeholder="请输入地址"  class="layui-input">  
             </div>  
             </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">用户角色</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="aiRole" placeholder="请输入用户角色"  class="layui-input">  
-            </div>  
-            </div>  
       </div>  
       <div style="text-align: right; margin: 30px 0 10px; spadding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  

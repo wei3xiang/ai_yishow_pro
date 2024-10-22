@@ -1,33 +1,33 @@
-const UpdateForm = ({ aiComment }) => {
+const UpdateForm = ({ aiStock }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品UUID</label>  
+      <label class="layui-form-label">商品SKU</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductUuid" value="${aiComment.aiProductUuid}" class="layui-input">  
+        <input type="text" name="aiProductSku" value="${aiStock.aiProductSku}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">用户UUID</label>  
+      <label class="layui-form-label">商品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUserUuid" value="${aiComment.aiUserUuid}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiStock.aiProductName}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">评论内容</label>  
+      <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiContent" value="${aiComment.aiContent}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiStock.aiQuantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">评分</label>  
+      <label class="layui-form-label">商品类别</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiRating" value="${aiComment.aiRating}" class="layui-input">  
+        <input type="text" name="aiCategory" value="${aiStock.aiCategory}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">创建日期</label>  
+      <label class="layui-form-label">创建时间</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCreateDate" value="${aiComment.aiCreateDate}" class="layui-input">  
+        <input type="text" name="aiCreationTime" value="${aiStock.aiCreationTime}" class="layui-input">  
       </div>  
     </div>  
   </div>  

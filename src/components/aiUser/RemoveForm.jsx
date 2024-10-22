@@ -31,12 +31,6 @@ const RemoveForm = ({ aiUser }) => {
             <input type="text" value="${aiUser.aiAddress}" class="layui-input" readonly>  
           </div>  
         </div>
-        <div class="layui-form-item">  
-          <label class="layui-form-label">用户角色</label>  
-          <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiRole}" class="layui-input" readonly>  
-          </div>  
-        </div>
         </div>
       <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  

@@ -1,34 +1,34 @@
-const DisableForm = ({ aiInventory }) => {
+const DisableForm = ({ aiStock }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">产品ID</label>  
+            <label class="layui-form-label">商品SKU</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductId" value="${aiInventory.aiProductId}" class="layui-input" readonly>  
+              <input type="text" name="aiProductSku" value="${aiStock.aiProductSku}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">商品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductName" value="${aiInventory.aiProductName}" class="layui-input" readonly>  
+              <input type="text" name="aiProductName" value="${aiStock.aiProductName}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiQuantity" value="${aiInventory.aiQuantity}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiStock.aiQuantity}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">重订货水平</label>  
+            <label class="layui-form-label">商品类别</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiReorderLevel" value="${aiInventory.aiReorderLevel}" class="layui-input" readonly>  
+              <input type="text" name="aiCategory" value="${aiStock.aiCategory}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">重订货数量</label>  
+            <label class="layui-form-label">创建时间</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiReorderQuantity" value="${aiInventory.aiReorderQuantity}" class="layui-input" readonly>  
+              <input type="text" name="aiCreationTime" value="${aiStock.aiCreationTime}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

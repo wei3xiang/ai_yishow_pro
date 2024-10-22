@@ -2,9 +2,15 @@ const DisableForm = ({ aiOrder }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">客户UUID</label>  
+            <label class="layui-form-label">用户uuid</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiCustomerUuid" value="${aiOrder.aiCustomerUuid}" class="layui-input" readonly>  
+              <input type="text" name="aiUserUuid" value="${aiOrder.aiUserUuid}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">库存uuid</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiInventoryUuid" value="${aiOrder.aiInventoryUuid}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
@@ -14,15 +20,15 @@ const DisableForm = ({ aiOrder }) => {
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">总金额</label>  
+            <label class="layui-form-label">订单数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiTotalAmount" value="${aiOrder.aiTotalAmount}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiOrder.aiQuantity}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单状态</label>  
+            <label class="layui-form-label">总价</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStatus" value="${aiOrder.aiStatus}" class="layui-input" readonly>  
+              <input type="text" name="aiTotalPrice" value="${aiOrder.aiTotalPrice}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  
