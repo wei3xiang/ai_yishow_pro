@@ -23,8 +23,8 @@ const Index = () => {
           const updatedItem = {
             ...aiCustomer,
               aiName: layero.find('input[name="aiName"]').val(), 
-              aiPhone: layero.find('input[name="aiPhone"]').val(), 
               aiEmail: layero.find('input[name="aiEmail"]').val(), 
+              aiPhone: layero.find('input[name="aiPhone"]').val(), 
               aiAddress: layero.find('input[name="aiAddress"]').val(), 
           };
           setList(
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiName: "",  aiPhone: "",  aiEmail: "",  aiAddress: "", };
+    const newItem = { uuid: "",  aiName: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,21 +81,21 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiName = layero.find('input[name="aiName"]').val();
-          const aiPhone = layero.find('input[name="aiPhone"]').val();
           const aiEmail = layero.find('input[name="aiEmail"]').val();
+          const aiPhone = layero.find('input[name="aiPhone"]').val();
           const aiAddress = layero.find('input[name="aiAddress"]').val();
            if (
            aiName &&
 
-           aiPhone &&
-
            aiEmail &&
+
+           aiPhone &&
 
            aiAddress
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiName,
-          aiPhone,
           aiEmail,
+          aiPhone,
           aiAddress,
            }]);
             layui.layer.close(index);

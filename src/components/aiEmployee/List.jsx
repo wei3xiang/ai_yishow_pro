@@ -14,9 +14,9 @@ const Index = ({
       (aiEmployee) =>
 
        `${aiEmployee.ai_name}`.includes(searchTerm) ||
-       `${aiEmployee.ai_gender}`.includes(searchTerm) ||
-       `${aiEmployee.ai_phone}`.includes(searchTerm) ||
-       `${aiEmployee.ai_email}`.includes(searchTerm)
+       `${aiEmployee.ai_position}`.includes(searchTerm) ||
+       `${aiEmployee.ai_salary}`.includes(searchTerm) ||
+       `${aiEmployee.ai_hire_date}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,9 +56,9 @@ const Index = ({
         <thead>
           <tr>
               <th>员工姓名</th>
-              <th>性别</th>
-              <th>联系电话</th>
-              <th>电子邮件</th>
+              <th>职位</th>
+              <th>薪资</th>
+              <th>入职日期</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -66,9 +66,9 @@ const Index = ({
           {filteredList.map((aiEmployee) => (
             <tr key={aiEmployee.uuid}>
               <td>{aiEmployee.ai_name}</td>
-              <td>{aiEmployee.ai_gender}</td>
-              <td>{aiEmployee.ai_phone}</td>
-              <td>{aiEmployee.ai_email}</td>
+              <td>{aiEmployee.ai_position}</td>
+              <td>{aiEmployee.ai_salary}</td>
+              <td>{aiEmployee.ai_hire_date}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

@@ -13,7 +13,7 @@ const UpdateForm = ({ aiProduct }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品价格</label>  
+      <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiPrice" value="${aiProduct.ai_price}" class="layui-input">  
       </div>  
@@ -22,6 +22,12 @@ const UpdateForm = ({ aiProduct }) => {
       <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiStock" value="${aiProduct.ai_stock}" class="layui-input">  
+      </div>  
+    </div>  
+      <div class="layui-form-item">  
+      <label class="layui-form-label">商品类别</label>  
+      <div class="layui-input-block">  
+        <input type="text" name="aiCategory" value="${aiProduct.ai_category}" class="layui-input">  
       </div>  
     </div>  
   </div>  

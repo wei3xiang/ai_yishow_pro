@@ -16,7 +16,8 @@ const Index = ({
        `${aiProduct.ai_name}`.includes(searchTerm) ||
        `${aiProduct.ai_description}`.includes(searchTerm) ||
        `${aiProduct.ai_price}`.includes(searchTerm) ||
-       `${aiProduct.ai_stock}`.includes(searchTerm)
+       `${aiProduct.ai_stock}`.includes(searchTerm) ||
+       `${aiProduct.ai_category}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -57,8 +58,9 @@ const Index = ({
           <tr>
               <th>商品名称</th>
               <th>商品描述</th>
-              <th>商品价格</th>
+              <th>单价</th>
               <th>库存数量</th>
+              <th>商品类别</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -69,6 +71,7 @@ const Index = ({
               <td>{aiProduct.ai_description}</td>
               <td>{aiProduct.ai_price}</td>
               <td>{aiProduct.ai_stock}</td>
+              <td>{aiProduct.ai_category}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

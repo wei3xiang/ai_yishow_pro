@@ -2,27 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">客户姓名</label>  
+            <label class="layui-form-label">客户名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_name" placeholder="请输入客户姓名"  class="layui-input">  
+                <input type="text" name="ai_name" placeholder="请输入客户名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">联系电话</label>  
+            <label class="layui-form-label">邮箱</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_phone" placeholder="请输入联系电话"  class="layui-input">  
+                <input type="text" name="ai_email" placeholder="请输入邮箱"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">电子邮件</label>  
+            <label class="layui-form-label">电话</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_email" placeholder="请输入电子邮件"  class="layui-input">  
+                <input type="text" name="ai_phone" placeholder="请输入电话"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">收货地址</label>  
+            <label class="layui-form-label">地址</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_address" placeholder="请输入收货地址"  class="layui-input">  
+                <input type="text" name="ai_address" placeholder="请输入地址"  class="layui-input">  
             </div>  
             </div>  
       </div>  

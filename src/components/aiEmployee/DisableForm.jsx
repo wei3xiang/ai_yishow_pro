@@ -8,21 +8,21 @@ const DisableForm = ({ aiEmployee }) => {
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">性别</label>  
+            <label class="layui-form-label">职位</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiGender" value="${aiEmployee.ai_gender}" class="layui-input" readonly>  
+              <input type="text" name="aiPosition" value="${aiEmployee.ai_position}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">联系电话</label>  
+            <label class="layui-form-label">薪资</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiPhone" value="${aiEmployee.ai_phone}" class="layui-input" readonly>  
+              <input type="text" name="aiSalary" value="${aiEmployee.ai_salary}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">电子邮件</label>  
+            <label class="layui-form-label">入职日期</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiEmail" value="${aiEmployee.ai_email}" class="layui-input" readonly>  
+              <input type="text" name="aiHireDate" value="${aiEmployee.ai_hire_date}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

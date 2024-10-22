@@ -23,9 +23,9 @@ const Index = () => {
           const updatedItem = {
             ...aiEmployee,
               aiName: layero.find('input[name="aiName"]').val(), 
-              aiGender: layero.find('input[name="aiGender"]').val(), 
-              aiPhone: layero.find('input[name="aiPhone"]').val(), 
-              aiEmail: layero.find('input[name="aiEmail"]').val(), 
+              aiPosition: layero.find('input[name="aiPosition"]').val(), 
+              aiSalary: layero.find('input[name="aiSalary"]').val(), 
+              aiHireDate: layero.find('input[name="aiHireDate"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiName: "",  aiGender: "",  aiPhone: "",  aiEmail: "", };
+    const newItem = { uuid: "",  aiName: "",  aiPosition: "",  aiSalary: "",  aiHireDate: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,22 +81,22 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiName = layero.find('input[name="aiName"]').val();
-          const aiGender = layero.find('input[name="aiGender"]').val();
-          const aiPhone = layero.find('input[name="aiPhone"]').val();
-          const aiEmail = layero.find('input[name="aiEmail"]').val();
+          const aiPosition = layero.find('input[name="aiPosition"]').val();
+          const aiSalary = layero.find('input[name="aiSalary"]').val();
+          const aiHireDate = layero.find('input[name="aiHireDate"]').val();
            if (
            aiName &&
 
-           aiGender &&
+           aiPosition &&
 
-           aiPhone &&
+           aiSalary &&
 
-           aiEmail
+           aiHireDate
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiName,
-          aiGender,
-          aiPhone,
-          aiEmail,
+          aiPosition,
+          aiSalary,
+          aiHireDate,
            }]);
             layui.layer.close(index);
           } else {
