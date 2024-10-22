@@ -2,15 +2,21 @@ const DisableForm = ({ aiOrderDetail }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单ID</label>  
+            <label class="layui-form-label">订单UUID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiOrderId" value="${aiOrderDetail.aiOrderId}" class="layui-input" readonly>  
+              <input type="text" name="aiOrderUuid" value="${aiOrderDetail.aiOrderUuid}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">产品ID</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiProductId" value="${aiOrderDetail.aiProductId}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">产品名称</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiProductName" value="${aiOrderDetail.aiProductName}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
@@ -22,7 +28,7 @@ const DisableForm = ({ aiOrderDetail }) => {
           <div class="layui-form-item">  
             <label class="layui-form-label">单价</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiUnitPrice" value="${aiOrderDetail.aiUnitPrice}" class="layui-input" readonly>  
+              <input type="text" name="aiPrice" value="${aiOrderDetail.aiPrice}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

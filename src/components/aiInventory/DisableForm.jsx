@@ -1,28 +1,28 @@
-const DisableForm = ({ aiInstock }) => {
+const DisableForm = ({ aiInventory }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
             <label class="layui-form-label">产品ID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductId" value="${aiInstock.aiProductId}" class="layui-input" readonly>  
+              <input type="text" name="aiProductId" value="${aiInventory.aiProductId}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductName" value="${aiInstock.aiProductName}" class="layui-input" readonly>  
+              <input type="text" name="aiProductName" value="${aiInventory.aiProductName}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStockQuantity" value="${aiInstock.aiStockQuantity}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiInventory.aiQuantity}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">最后更新时间</label>  
+            <label class="layui-form-label">再订货水平</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiLastUpdate" value="${aiInstock.aiLastUpdate}" class="layui-input" readonly>  
+              <input type="text" name="aiReorderLevel" value="${aiInventory.aiReorderLevel}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

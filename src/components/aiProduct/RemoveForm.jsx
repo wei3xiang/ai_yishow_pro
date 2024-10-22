@@ -2,9 +2,9 @@ const RemoveForm = ({ aiProduct }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">类别ID</label>  
+          <label class="layui-form-label">产品ID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiProduct.aiCategoryId}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.aiProductId}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
@@ -14,21 +14,21 @@ const RemoveForm = ({ aiProduct }) => {
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品描述</label>  
-          <div class="layui-input-block">  
-            <input type="text" value="${aiProduct.aiDescription}" class="layui-input" readonly>  
-          </div>  
-        </div>
-        <div class="layui-form-item">  
           <label class="layui-form-label">价格</label>  
           <div class="layui-input-block">  
             <input type="text" value="${aiProduct.aiPrice}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">库存数量</label>  
+          <label class="layui-form-label">库存ID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiProduct.aiStockQuantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.aiStock}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">供应商</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiProduct.aiSupplier}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

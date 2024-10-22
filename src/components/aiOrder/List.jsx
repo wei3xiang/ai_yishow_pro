@@ -13,10 +13,10 @@ const Index = ({
     return data.filter(
       (aiOrder) =>
 
-       `${aiOrder.aiCustomerId}`.includes(searchTerm) ||
+       `${aiOrder.aiOrderId}`.includes(searchTerm) ||
+       `${aiOrder.aiUserUuid}`.includes(searchTerm) ||
        `${aiOrder.aiOrderDate}`.includes(searchTerm) ||
-       `${aiOrder.aiTotalAmount}`.includes(searchTerm) ||
-       `${aiOrder.aiStatus}`.includes(searchTerm)
+       `${aiOrder.aiOrderTotal}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,20 +55,20 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户ID</th>
+              <th>订单ID</th>
+              <th>用户UUID</th>
               <th>订单日期</th>
-              <th>订单金额</th>
-              <th>订单状态</th>
+              <th>总金额</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiOrder) => (
             <tr key={aiOrder.uuid}>
-              <td>{aiOrder.aiCustomerId}</td>
+              <td>{aiOrder.aiOrderId}</td>
+              <td>{aiOrder.aiUserUuid}</td>
               <td>{aiOrder.aiOrderDate}</td>
-              <td>{aiOrder.aiTotalAmount}</td>
-              <td>{aiOrder.aiStatus}</td>
+              <td>{aiOrder.aiOrderTotal}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

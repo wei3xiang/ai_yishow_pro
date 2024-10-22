@@ -1,31 +1,28 @@
 import React, { useState } from "react";
 
-import AiInstock from './aiInstock';
+import AiInventory from './aiInventory';
 import AiOrder from './aiOrder';
 import AiOrderDetail from './aiOrderDetail';
 import AiProduct from './aiProduct';
-import AiProductCategory from './aiProductCategory';
 import AiUser from './aiUser';
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiInstock");
+  const [activePage, setActivePage] = useState("aiInventory");
 
   const renderPage = () => {
     switch (activePage) {
-        case "aiInstock":
-            return <AiInstock />;
+        case "aiInventory":
+            return <AiInventory />;
         case "aiOrder":
             return <AiOrder />;
         case "aiOrderDetail":
             return <AiOrderDetail />;
         case "aiProduct":
             return <AiProduct />;
-        case "aiProductCategory":
-            return <AiProductCategory />;
         case "aiUser":
             return <AiUser />;
         default:
-            return <AiInstock />;
+            return <AiInventory />;
     }
   };
 
@@ -36,10 +33,10 @@ const Navbar = () => {
           <ul className="layui-nav layui-nav-tree" lay-filter="test">
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiInstock" ? "layui-this" : ""
+                    activePage === "aiInventory" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiInstock")}>
+                <a href="#" onClick={() => setActivePage("aiInventory")}>
                     库存表
                 </a>
                 </li>
@@ -68,15 +65,6 @@ const Navbar = () => {
                 >
                 <a href="#" onClick={() => setActivePage("aiProduct")}>
                     产品表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiProductCategory" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProductCategory")}>
-                    产品类别表
                 </a>
                 </li>
                 <li
