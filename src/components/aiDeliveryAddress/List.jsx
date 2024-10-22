@@ -11,10 +11,13 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiStock) =>
+      (aiDeliveryAddress) =>
 
-       `${aiStock.aiProductUuid}`.includes(searchTerm) ||
-       `${aiStock.aiCurrentQuantity}`.includes(searchTerm)
+       `${aiDeliveryAddress.aiCustomerUuid}`.includes(searchTerm) ||
+       `${aiDeliveryAddress.aiAddressType}`.includes(searchTerm) ||
+       `${aiDeliveryAddress.aiName}`.includes(searchTerm) ||
+       `${aiDeliveryAddress.aiPhone}`.includes(searchTerm) ||
+       `${aiDeliveryAddress.aiAddress}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -53,32 +56,38 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品UUID</th>
-              <th>当前库存数量</th>
+              <th>客户UUID</th>
+              <th>地址类型 (如：收货地址, 发货地址)</th>
+              <th>收件人姓名</th>
+              <th>电话</th>
+              <th>详细地址</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiStock) => (
-            <tr key={aiStock.uuid}>
-              <td>{aiStock.aiProductUuid}</td>
-              <td>{aiStock.aiCurrentQuantity}</td>
+          {filteredList.map((aiDeliveryAddress) => (
+            <tr key={aiDeliveryAddress.uuid}>
+              <td>{aiDeliveryAddress.aiCustomerUuid}</td>
+              <td>{aiDeliveryAddress.aiAddressType}</td>
+              <td>{aiDeliveryAddress.aiName}</td>
+              <td>{aiDeliveryAddress.aiPhone}</td>
+              <td>{aiDeliveryAddress.aiAddress}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiStock)}
+                  onClick={() => onClickDetail(aiDeliveryAddress)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiStock)}
+                  onClick={() => onClickUpdate(aiDeliveryAddress)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiStock)}
+                  onClick={() => onClickRemove(aiDeliveryAddress)}
                 >
                   删除
                 </button>

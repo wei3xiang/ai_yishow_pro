@@ -23,9 +23,10 @@ const Index = () => {
           const updatedItem = {
             ...aiOrderDetail,
               aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
-              aiProductUuid: layero.find('input[name="aiProductUuid"]').val(), 
+              aiProductId: layero.find('input[name="aiProductId"]').val(), 
+              aiProductName: layero.find('input[name="aiProductName"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiSubTotal: layero.find('input[name="aiSubTotal"]').val(), 
+              aiUnitPrice: layero.find('input[name="aiUnitPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +69,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductUuid: "",  aiQuantity: "",  aiSubTotal: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductId: "",  aiProductName: "",  aiQuantity: "",  aiUnitPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,22 +82,26 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
-          const aiProductUuid = layero.find('input[name="aiProductUuid"]').val();
+          const aiProductId = layero.find('input[name="aiProductId"]').val();
+          const aiProductName = layero.find('input[name="aiProductName"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiSubTotal = layero.find('input[name="aiSubTotal"]').val();
+          const aiUnitPrice = layero.find('input[name="aiUnitPrice"]').val();
            if (
            aiOrderUuid &&
 
-           aiProductUuid &&
+           aiProductId &&
+
+           aiProductName &&
 
            aiQuantity &&
 
-           aiSubTotal
+           aiUnitPrice
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
-          aiProductUuid,
+          aiProductId,
+          aiProductName,
           aiQuantity,
-          aiSubTotal,
+          aiUnitPrice,
            }]);
             layui.layer.close(index);
           } else {

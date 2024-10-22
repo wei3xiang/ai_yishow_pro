@@ -1,40 +1,34 @@
-const RemoveForm = ({ aiUser }) => {
+const RemoveForm = ({ aiDeliveryAddress }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">用户名</label>  
+          <label class="layui-form-label">客户UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiUsername}" class="layui-input" readonly>  
+            <input type="text" value="${aiDeliveryAddress.aiCustomerUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">密码</label>  
+          <label class="layui-form-label">地址类型 (如：收货地址, 发货地址)</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiPassword}" class="layui-input" readonly>  
+            <input type="text" value="${aiDeliveryAddress.aiAddressType}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">邮箱</label>  
+          <label class="layui-form-label">收件人姓名</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiEmail}" class="layui-input" readonly>  
+            <input type="text" value="${aiDeliveryAddress.aiName}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
           <label class="layui-form-label">电话</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiPhone}" class="layui-input" readonly>  
+            <input type="text" value="${aiDeliveryAddress.aiPhone}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">地址</label>  
+          <label class="layui-form-label">详细地址</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiAddress}" class="layui-input" readonly>  
-          </div>  
-        </div>
-        <div class="layui-form-item">  
-          <label class="layui-form-label">用户角色</label>  
-          <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiRole}" class="layui-input" readonly>  
+            <input type="text" value="${aiDeliveryAddress.aiAddress}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

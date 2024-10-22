@@ -11,13 +11,13 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrderDetail) =>
+      (aiInventory) =>
 
-       `${aiOrderDetail.aiOrderUuid}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiProductId}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiProductName}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiQuantity}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiUnitPrice}`.includes(searchTerm)
+       `${aiInventory.aiProductId}`.includes(searchTerm) ||
+       `${aiInventory.aiProductName}`.includes(searchTerm) ||
+       `${aiInventory.aiQuantity}`.includes(searchTerm) ||
+       `${aiInventory.aiReorderLevel}`.includes(searchTerm) ||
+       `${aiInventory.aiReorderQuantity}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,38 +56,38 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>订单UUID</th>
               <th>产品ID</th>
               <th>产品名称</th>
-              <th>数量</th>
-              <th>单价</th>
+              <th>库存数量</th>
+              <th>重订货水平</th>
+              <th>重订货数量</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrderDetail) => (
-            <tr key={aiOrderDetail.uuid}>
-              <td>{aiOrderDetail.aiOrderUuid}</td>
-              <td>{aiOrderDetail.aiProductId}</td>
-              <td>{aiOrderDetail.aiProductName}</td>
-              <td>{aiOrderDetail.aiQuantity}</td>
-              <td>{aiOrderDetail.aiUnitPrice}</td>
+          {filteredList.map((aiInventory) => (
+            <tr key={aiInventory.uuid}>
+              <td>{aiInventory.aiProductId}</td>
+              <td>{aiInventory.aiProductName}</td>
+              <td>{aiInventory.aiQuantity}</td>
+              <td>{aiInventory.aiReorderLevel}</td>
+              <td>{aiInventory.aiReorderQuantity}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrderDetail)}
+                  onClick={() => onClickDetail(aiInventory)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrderDetail)}
+                  onClick={() => onClickUpdate(aiInventory)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrderDetail)}
+                  onClick={() => onClickRemove(aiInventory)}
                 >
                   删除
                 </button>

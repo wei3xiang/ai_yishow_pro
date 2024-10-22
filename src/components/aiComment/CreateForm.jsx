@@ -2,33 +2,33 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单UUID</label>  
+            <label class="layui-form-label">产品UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiOrderUuid" placeholder="请输入订单UUID"  class="layui-input">  
+                <input type="text" name="aiProductUuid" placeholder="请输入产品UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品ID</label>  
+            <label class="layui-form-label">用户UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductId" placeholder="请输入产品ID"  class="layui-input">  
+                <input type="text" name="aiUserUuid" placeholder="请输入用户UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">评论内容</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductName" placeholder="请输入产品名称"  class="layui-input">  
+                <input type="text" name="aiContent" placeholder="请输入评论内容"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">数量</label>  
+            <label class="layui-form-label">评分</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiQuantity" placeholder="请输入数量"  class="layui-input">  
+                <input type="text" name="aiRating" placeholder="请输入评分"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">创建日期</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiUnitPrice" placeholder="请输入单价"  class="layui-input">  
+                <input type="text" name="aiCreateDate" placeholder="请输入创建日期"  class="layui-input">  
             </div>  
             </div>  
       </div>  

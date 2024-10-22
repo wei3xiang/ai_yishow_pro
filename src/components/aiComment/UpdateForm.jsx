@@ -1,33 +1,33 @@
-const UpdateForm = ({ aiOrderDetail }) => {
+const UpdateForm = ({ aiComment }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单UUID</label>  
+      <label class="layui-form-label">产品UUID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderUuid" value="${aiOrderDetail.aiOrderUuid}" class="layui-input">  
+        <input type="text" name="aiProductUuid" value="${aiComment.aiProductUuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品ID</label>  
+      <label class="layui-form-label">用户UUID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductId" value="${aiOrderDetail.aiProductId}" class="layui-input">  
+        <input type="text" name="aiUserUuid" value="${aiComment.aiUserUuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
+      <label class="layui-form-label">评论内容</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiOrderDetail.aiProductName}" class="layui-input">  
+        <input type="text" name="aiContent" value="${aiComment.aiContent}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">数量</label>  
+      <label class="layui-form-label">评分</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiOrderDetail.aiQuantity}" class="layui-input">  
+        <input type="text" name="aiRating" value="${aiComment.aiRating}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">单价</label>  
+      <label class="layui-form-label">创建日期</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUnitPrice" value="${aiOrderDetail.aiUnitPrice}" class="layui-input">  
+        <input type="text" name="aiCreateDate" value="${aiComment.aiCreateDate}" class="layui-input">  
       </div>  
     </div>  
   </div>  

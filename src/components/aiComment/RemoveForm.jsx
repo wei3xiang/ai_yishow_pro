@@ -1,34 +1,34 @@
-const RemoveForm = ({ aiOrderDetail }) => {
+const RemoveForm = ({ aiComment }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单UUID</label>  
+          <label class="layui-form-label">产品UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrderDetail.aiOrderUuid}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiProductUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品ID</label>  
+          <label class="layui-form-label">用户UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrderDetail.aiProductId}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiUserUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品名称</label>  
+          <label class="layui-form-label">评论内容</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrderDetail.aiProductName}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiContent}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">数量</label>  
+          <label class="layui-form-label">评分</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrderDetail.aiQuantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiRating}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">单价</label>  
+          <label class="layui-form-label">创建日期</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrderDetail.aiUnitPrice}" class="layui-input" readonly>  
+            <input type="text" value="${aiComment.aiCreateDate}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

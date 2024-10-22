@@ -2,21 +2,21 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户名</label>  
+            <label class="layui-form-label">客户UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiUsername" placeholder="请输入用户名"  class="layui-input">  
+                <input type="text" name="aiCustomerUuid" placeholder="请输入客户UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">密码</label>  
+            <label class="layui-form-label">地址类型 (如：收货地址, 发货地址)</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPassword" placeholder="请输入密码"  class="layui-input">  
+                <input type="text" name="aiAddressType" placeholder="请输入地址类型 (如：收货地址, 发货地址)"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">邮箱</label>  
+            <label class="layui-form-label">收件人姓名</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiEmail" placeholder="请输入邮箱"  class="layui-input">  
+                <input type="text" name="aiName" placeholder="请输入收件人姓名"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -26,15 +26,9 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">地址</label>  
+            <label class="layui-form-label">详细地址</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiAddress" placeholder="请输入地址"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">用户角色</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="aiRole" placeholder="请输入用户角色"  class="layui-input">  
+                <input type="text" name="aiAddress" placeholder="请输入详细地址"  class="layui-input">  
             </div>  
             </div>  
       </div>  
