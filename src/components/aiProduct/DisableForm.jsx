@@ -1,34 +1,28 @@
-const DisableForm = ({ aiInventory }) => {
+const DisableForm = ({ aiProduct }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
             <label class="layui-form-label">商品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductName" value="${aiInventory.aiProductName}" class="layui-input" readonly>  
+              <input type="text" name="aiName" value="${aiProduct.aiName}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品ID</label>  
+            <label class="layui-form-label">单价</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductId" value="${aiInventory.aiProductId}" class="layui-input" readonly>  
+              <input type="text" name="aiPrice" value="${aiProduct.aiPrice}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiQuantity" value="${aiInventory.aiQuantity}" class="layui-input" readonly>  
-            </div>  
-          </div>  
-          <div class="layui-form-item">  
-            <label class="layui-form-label">商品价格</label>  
-            <div class="layui-input-block">  
-              <input type="text" name="aiPrice" value="${aiInventory.aiPrice}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiProduct.aiQuantity}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
             <label class="layui-form-label">商品描述</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiDescription" value="${aiInventory.aiDescription}" class="layui-input" readonly>  
+              <input type="text" name="aiDescription" value="${aiProduct.aiDescription}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

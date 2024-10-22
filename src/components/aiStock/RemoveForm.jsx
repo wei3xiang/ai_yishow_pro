@@ -1,22 +1,22 @@
-const RemoveForm = ({ aiOrder }) => {
+const RemoveForm = ({ aiStock }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">下单日期</label>  
+          <label class="layui-form-label">商品位置</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiOrderDate}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.aiLocation}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">用户UUID</label>  
+          <label class="layui-form-label">商品UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiUserUuid}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.aiProductUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">总金额</label>  
+          <label class="layui-form-label">库存数量</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.aiTotalPrice}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.aiQuantity}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

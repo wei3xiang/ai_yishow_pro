@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_inventory.json";
+import data from "../data/ai_stock.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiInventory) => {
-    const modalContent = `${UpdateForm({ aiInventory: aiInventory })}`;
+  const handleEdit = (aiStock) => {
+    const modalContent = `${UpdateForm({ aiStock: aiStock })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,12 +21,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiInventory,
-              aiProductName: layero.find('input[name="aiProductName"]').val(), 
-              aiProductId: layero.find('input[name="aiProductId"]').val(), 
+            ...aiStock,
+              aiLocation: layero.find('input[name="aiLocation"]').val(), 
+              aiProductUuid: layero.find('input[name="aiProductUuid"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiPrice: layero.find('input[name="aiPrice"]').val(), 
-              aiDescription: layero.find('input[name="aiDescription"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -37,8 +35,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiInventory) => {
-    const modalContent = `${DisableForm({ aiInventory: aiInventory })}`;
+  const handleDetail = (aiStock) => {
+    const modalContent = `${DisableForm({ aiStock: aiStock })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -50,8 +48,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiInventory) => {
-    const modalContent = `${RemoveForm({ aiInventory: aiInventory })}`;
+  const handleRemove = (aiStock) => {
+    const modalContent = `${RemoveForm({ aiStock: aiStock })}`;
 
     layui.layer.open({
       type: 1,
@@ -61,7 +59,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiInventory.uuid));
+          setList(list.filter((u) => u.uuid !== aiStock.uuid));
           layui.layer.close(index);
         });
       },
@@ -69,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiProductName: "",  aiProductId: "",  aiQuantity: "",  aiPrice: "",  aiDescription: "", };
+    const newItem = { uuid: "",  aiLocation: "",  aiProductUuid: "",  aiQuantity: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,27 +79,19 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiProductName = layero.find('input[name="aiProductName"]').val();
-          const aiProductId = layero.find('input[name="aiProductId"]').val();
+          const aiLocation = layero.find('input[name="aiLocation"]').val();
+          const aiProductUuid = layero.find('input[name="aiProductUuid"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiPrice = layero.find('input[name="aiPrice"]').val();
-          const aiDescription = layero.find('input[name="aiDescription"]').val();
            if (
-           aiProductName &&
+           aiLocation &&
 
-           aiProductId &&
+           aiProductUuid &&
 
-           aiQuantity &&
-
-           aiPrice &&
-
-           
+           aiQuantity
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiProductName,
-          aiProductId,
+            setList([...list, { ...newItem, uuid: Date.now(), aiLocation,
+          aiProductUuid,
           aiQuantity,
-          aiPrice,
-          aiDescription,
            }]);
             layui.layer.close(index);
           } else {
