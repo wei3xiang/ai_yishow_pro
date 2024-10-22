@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 
 import AiInventory from './aiInventory';
-import AiOrder from './aiOrder';
-import AiOrderDetails from './aiOrderDetails';
-import AiOrderStatus from './aiOrderStatus';
-import AiProductCategories from './aiProductCategories';
-import AiProductCategoriesAssociation from './aiProductCategoriesAssociation';
-import AiRecentlyVisited from './aiRecentlyVisited';
+import AiOrders from './aiOrders';
 import AiUser from './aiUser';
 
 const Navbar = () => {
@@ -16,18 +11,8 @@ const Navbar = () => {
     switch (activePage) {
         case "aiInventory":
             return <AiInventory />;
-        case "aiOrder":
-            return <AiOrder />;
-        case "aiOrderDetails":
-            return <AiOrderDetails />;
-        case "aiOrderStatus":
-            return <AiOrderStatus />;
-        case "aiProductCategories":
-            return <AiProductCategories />;
-        case "aiProductCategoriesAssociation":
-            return <AiProductCategoriesAssociation />;
-        case "aiRecentlyVisited":
-            return <AiRecentlyVisited />;
+        case "aiOrders":
+            return <AiOrders />;
         case "aiUser":
             return <AiUser />;
         default:
@@ -51,56 +36,11 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiOrder" ? "layui-this" : ""
+                    activePage === "aiOrders" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiOrder")}>
+                <a href="#" onClick={() => setActivePage("aiOrders")}>
                     订单表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrderDetails" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrderDetails")}>
-                    订单详情表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrderStatus" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrderStatus")}>
-                    订单状态表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiProductCategories" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProductCategories")}>
-                    产品类别表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiProductCategoriesAssociation" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProductCategoriesAssociation")}>
-                    产品与类别关联表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiRecentlyVisited" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiRecentlyVisited")}>
-                    最近访问表
                 </a>
                 </li>
                 <li

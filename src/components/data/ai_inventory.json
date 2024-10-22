@@ -1,1 +1,1 @@
-[{"ai_price":"250.00","ai_product_id":"0001","ai_product_name":"青岛啤酒","ai_quantity":100,"ai_unit":"箱","uuid":"9e734d5f-56cb-4a8e-b8d8-3f75c06a2b2c"}]
+[{"ai_beer_name":"纯生啤酒","ai_brewery":"青岛啤酒","ai_last_update":"2023-10-01 10:00:00","ai_quantity":150,"uuid":"d4f2c3a0-562f-49be-b733-9a7d7b87e0c1"},{"ai_beer_name":"清爽啤酒","ai_brewery":"雪花啤酒","ai_last_update":"2023-10-02 11:00:00","ai_quantity":200,"uuid":"e47f1b89-2d8f-4b9c-a93d-ef21a0c423cd"}]

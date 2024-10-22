@@ -1,40 +1,40 @@
-const RemoveForm = ({ aiUser }) => {
+const RemoveForm = ({ aiOrders }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">用户名</label>  
+          <label class="layui-form-label">订单号</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiUsername}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiOrderId}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">密码</label>  
+          <label class="layui-form-label">用户ID（关联ai_user表中的uuid）</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiPassword}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiUserUuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">邮箱</label>  
+          <label class="layui-form-label">订单状态</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiEmail}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiOrderStatus}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">电话</label>  
+          <label class="layui-form-label">订单金额</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiPhone}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiTotalAmount}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">地址</label>  
+          <label class="layui-form-label">订单创建时间</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiAddress}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiOrderCreateTime}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">注册时间</label>  
+          <label class="layui-form-label">最后更新时间</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.aiRegisteredAt}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrders.aiLastUpdate}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

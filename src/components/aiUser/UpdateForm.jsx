@@ -30,6 +30,12 @@ const UpdateForm = ({ aiUser }) => {
         <input type="text" name="aiAddress" value="${aiUser.aiAddress}" class="layui-input">  
       </div>  
     </div>  
+      <div class="layui-form-item">  
+      <label class="layui-form-label">注册时间</label>  
+      <div class="layui-input-block">  
+        <input type="text" name="aiRegisteredAt" value="${aiUser.aiRegisteredAt}" class="layui-input">  
+      </div>  
+    </div>  
   </div>  
   <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
     <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  

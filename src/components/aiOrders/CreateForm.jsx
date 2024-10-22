@@ -2,39 +2,39 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户名</label>  
+            <label class="layui-form-label">订单号</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiUsername" placeholder="请输入用户名"  class="layui-input">  
+                <input type="text" name="aiOrderId" placeholder="请输入订单号"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">密码</label>  
+            <label class="layui-form-label">用户ID（关联ai_user表中的uuid）</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPassword" placeholder="请输入密码"  class="layui-input">  
+                <input type="text" name="aiUserUuid" placeholder="请输入用户ID（关联ai_user表中的uuid）"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">邮箱</label>  
+            <label class="layui-form-label">订单状态</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiEmail" placeholder="请输入邮箱"  class="layui-input">  
+                <input type="text" name="aiOrderStatus" placeholder="请输入订单状态"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">电话</label>  
+            <label class="layui-form-label">订单金额</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPhone" placeholder="请输入电话"  class="layui-input">  
+                <input type="text" name="aiTotalAmount" placeholder="请输入订单金额"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">地址</label>  
+            <label class="layui-form-label">订单创建时间</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiAddress" placeholder="请输入地址"  class="layui-input">  
+                <input type="text" name="aiOrderCreateTime" placeholder="请输入订单创建时间"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">注册时间</label>  
+            <label class="layui-form-label">最后更新时间</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiRegisteredAt" placeholder="请输入注册时间"  class="layui-input">  
+                <input type="text" name="aiLastUpdate" placeholder="请输入最后更新时间"  class="layui-input">  
             </div>  
             </div>  
       </div>  

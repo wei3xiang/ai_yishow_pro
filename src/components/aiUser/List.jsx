@@ -17,7 +17,8 @@ const Index = ({
        `${aiUser.aiPassword}`.includes(searchTerm) ||
        `${aiUser.aiEmail}`.includes(searchTerm) ||
        `${aiUser.aiPhone}`.includes(searchTerm) ||
-       `${aiUser.aiAddress}`.includes(searchTerm)
+       `${aiUser.aiAddress}`.includes(searchTerm) ||
+       `${aiUser.aiRegisteredAt}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -61,6 +62,7 @@ const Index = ({
               <th>邮箱</th>
               <th>电话</th>
               <th>地址</th>
+              <th>注册时间</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -72,6 +74,7 @@ const Index = ({
               <td>{aiUser.aiEmail}</td>
               <td>{aiUser.aiPhone}</td>
               <td>{aiUser.aiAddress}</td>
+              <td>{aiUser.aiRegisteredAt}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
