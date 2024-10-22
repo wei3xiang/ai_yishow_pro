@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_meal_record.json";
+import data from "../data/ai_user_role.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiMealRecord) => {
-    const modalContent = `${UpdateForm({ aiMealRecord: aiMealRecord })}`;
+  const handleEdit = (aiUserRole) => {
+    const modalContent = `${UpdateForm({ aiUserRole: aiUserRole })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,13 +21,9 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiMealRecord,
+            ...aiUserRole,
               aiUserId: layero.find('input[name="aiUserId"]').val(), 
-              aiOrderId: layero.find('input[name="aiOrderId"]').val(), 
-              aiMealDate: layero.find('input[name="aiMealDate"]').val(), 
-              aiMealTime: layero.find('input[name="aiMealTime"]').val(), 
-              aiProductId: layero.find('input[name="aiProductId"]').val(), 
-              aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
+              aiRole: layero.find('input[name="aiRole"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -38,8 +34,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiMealRecord) => {
-    const modalContent = `${DisableForm({ aiMealRecord: aiMealRecord })}`;
+  const handleDetail = (aiUserRole) => {
+    const modalContent = `${DisableForm({ aiUserRole: aiUserRole })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -51,8 +47,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiMealRecord) => {
-    const modalContent = `${RemoveForm({ aiMealRecord: aiMealRecord })}`;
+  const handleRemove = (aiUserRole) => {
+    const modalContent = `${RemoveForm({ aiUserRole: aiUserRole })}`;
 
     layui.layer.open({
       type: 1,
@@ -62,7 +58,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiMealRecord.uuid));
+          setList(list.filter((u) => u.uuid !== aiUserRole.uuid));
           layui.layer.close(index);
         });
       },
@@ -70,7 +66,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUserId: "",  aiOrderId: "",  aiMealDate: "",  aiMealTime: "",  aiProductId: "",  aiQuantity: "", };
+    const newItem = { uuid: "",  aiUserId: "",  aiRole: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -83,30 +79,14 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiUserId = layero.find('input[name="aiUserId"]').val();
-          const aiOrderId = layero.find('input[name="aiOrderId"]').val();
-          const aiMealDate = layero.find('input[name="aiMealDate"]').val();
-          const aiMealTime = layero.find('input[name="aiMealTime"]').val();
-          const aiProductId = layero.find('input[name="aiProductId"]').val();
-          const aiQuantity = layero.find('input[name="aiQuantity"]').val();
+          const aiRole = layero.find('input[name="aiRole"]').val();
            if (
            aiUserId &&
 
-           aiOrderId &&
-
-           aiMealDate &&
-
-           aiMealTime &&
-
-           aiProductId &&
-
-           aiQuantity
+           aiRole
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
-          aiOrderId,
-          aiMealDate,
-          aiMealTime,
-          aiProductId,
-          aiQuantity,
+          aiRole,
            }]);
             layui.layer.close(index);
           } else {

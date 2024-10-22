@@ -13,11 +13,10 @@ const Index = ({
     return data.filter(
       (aiProduct) =>
 
-       `${aiProduct.aiName}`.includes(searchTerm) ||
-       `${aiProduct.aiCategory}`.includes(searchTerm) ||
-       `${aiProduct.aiPrice}`.includes(searchTerm) ||
-       `${aiProduct.aiOrigin}`.includes(searchTerm) ||
-       `${aiProduct.aiDescription}`.includes(searchTerm)
+       `${aiProduct.aiProductId}`.includes(searchTerm) ||
+       `${aiProduct.aiProductName}`.includes(searchTerm) ||
+       `${aiProduct.aiDescription}`.includes(searchTerm) ||
+       `${aiProduct.aiPrice}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,22 +55,20 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>商品名称</th>
-              <th>商品类别</th>
+              <th>产品ID</th>
+              <th>产品名称</th>
+              <th>产品描述</th>
               <th>价格</th>
-              <th>产地</th>
-              <th>商品描述</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiProduct) => (
             <tr key={aiProduct.uuid}>
-              <td>{aiProduct.aiName}</td>
-              <td>{aiProduct.aiCategory}</td>
-              <td>{aiProduct.aiPrice}</td>
-              <td>{aiProduct.aiOrigin}</td>
+              <td>{aiProduct.aiProductId}</td>
+              <td>{aiProduct.aiProductName}</td>
               <td>{aiProduct.aiDescription}</td>
+              <td>{aiProduct.aiPrice}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

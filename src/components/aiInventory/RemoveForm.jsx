@@ -2,9 +2,15 @@ const RemoveForm = ({ aiInventory }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">商品ID</label>  
+          <label class="layui-form-label">产品ID</label>  
           <div class="layui-input-block">  
             <input type="text" value="${aiInventory.aiProductId}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">产品名称</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiInventory.aiProductName}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
@@ -14,9 +20,9 @@ const RemoveForm = ({ aiInventory }) => {
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">最后更新时间</label>  
+          <label class="layui-form-label">类别</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.aiLastUpdateTime}" class="layui-input" readonly>  
+            <input type="text" value="${aiInventory.aiCategory}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

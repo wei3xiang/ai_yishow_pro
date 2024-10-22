@@ -11,12 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiDish) =>
+      (aiRestaurant) =>
 
-       `${aiDish.aiName}`.includes(searchTerm) ||
-       `${aiDish.aiCategory}`.includes(searchTerm) ||
-       `${aiDish.aiPrice}`.includes(searchTerm) ||
-       `${aiDish.aiDescription}`.includes(searchTerm)
+       `${aiRestaurant.aiName}`.includes(searchTerm) ||
+       `${aiRestaurant.aiAddress}`.includes(searchTerm) ||
+       `${aiRestaurant.aiPhone}`.includes(searchTerm) ||
+       `${aiRestaurant.aiEmail}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,36 +55,36 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>菜品名称</th>
-              <th>类别</th>
-              <th>价格</th>
-              <th>描述</th>
+              <th>商家名称</th>
+              <th>商家地址</th>
+              <th>商家电话</th>
+              <th>商家邮箱</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiDish) => (
-            <tr key={aiDish.uuid}>
-              <td>{aiDish.aiName}</td>
-              <td>{aiDish.aiCategory}</td>
-              <td>{aiDish.aiPrice}</td>
-              <td>{aiDish.aiDescription}</td>
+          {filteredList.map((aiRestaurant) => (
+            <tr key={aiRestaurant.uuid}>
+              <td>{aiRestaurant.aiName}</td>
+              <td>{aiRestaurant.aiAddress}</td>
+              <td>{aiRestaurant.aiPhone}</td>
+              <td>{aiRestaurant.aiEmail}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiDish)}
+                  onClick={() => onClickDetail(aiRestaurant)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiDish)}
+                  onClick={() => onClickUpdate(aiRestaurant)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiDish)}
+                  onClick={() => onClickRemove(aiRestaurant)}
                 >
                   删除
                 </button>

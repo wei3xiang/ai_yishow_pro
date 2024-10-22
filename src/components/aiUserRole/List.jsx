@@ -11,14 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiMealRecord) =>
+      (aiUserRole) =>
 
-       `${aiMealRecord.aiUserId}`.includes(searchTerm) ||
-       `${aiMealRecord.aiOrderId}`.includes(searchTerm) ||
-       `${aiMealRecord.aiMealDate}`.includes(searchTerm) ||
-       `${aiMealRecord.aiMealTime}`.includes(searchTerm) ||
-       `${aiMealRecord.aiProductId}`.includes(searchTerm) ||
-       `${aiMealRecord.aiQuantity}`.includes(searchTerm)
+       `${aiUserRole.aiUserId}`.includes(searchTerm) ||
+       `${aiUserRole.aiRole}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -58,39 +54,31 @@ const Index = ({
         <thead>
           <tr>
               <th>用户ID</th>
-              <th>订单ID</th>
-              <th>用餐日期</th>
-              <th>用餐时间</th>
-              <th>商品ID</th>
-              <th>数量</th>
+              <th>角色名称</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiMealRecord) => (
-            <tr key={aiMealRecord.uuid}>
-              <td>{aiMealRecord.aiUserId}</td>
-              <td>{aiMealRecord.aiOrderId}</td>
-              <td>{aiMealRecord.aiMealDate}</td>
-              <td>{aiMealRecord.aiMealTime}</td>
-              <td>{aiMealRecord.aiProductId}</td>
-              <td>{aiMealRecord.aiQuantity}</td>
+          {filteredList.map((aiUserRole) => (
+            <tr key={aiUserRole.uuid}>
+              <td>{aiUserRole.aiUserId}</td>
+              <td>{aiUserRole.aiRole}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiMealRecord)}
+                  onClick={() => onClickDetail(aiUserRole)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiMealRecord)}
+                  onClick={() => onClickUpdate(aiUserRole)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiMealRecord)}
+                  onClick={() => onClickRemove(aiUserRole)}
                 >
                   删除
                 </button>
