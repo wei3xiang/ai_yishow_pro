@@ -11,10 +11,13 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrderDetail) =>
+      (aiOrderItem) =>
 
-       `${aiOrderDetail.aiOrderUuid}`.includes(searchTerm) ||
-       `${aiOrderDetail.aiInventoryUuid}`.includes(searchTerm)
+       `${aiOrderItem.aiOrderUuid}`.includes(searchTerm) ||
+       `${aiOrderItem.aiProductName}`.includes(searchTerm) ||
+       `${aiOrderItem.aiProductId}`.includes(searchTerm) ||
+       `${aiOrderItem.aiQuantity}`.includes(searchTerm) ||
+       `${aiOrderItem.aiUnitPrice}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -53,32 +56,38 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>订单uuid</th>
-              <th>库存uuid</th>
+              <th>订单UUID</th>
+              <th>商品名称</th>
+              <th>商品ID</th>
+              <th>商品数量</th>
+              <th>商品单价</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrderDetail) => (
-            <tr key={aiOrderDetail.uuid}>
-              <td>{aiOrderDetail.aiOrderUuid}</td>
-              <td>{aiOrderDetail.aiInventoryUuid}</td>
+          {filteredList.map((aiOrderItem) => (
+            <tr key={aiOrderItem.uuid}>
+              <td>{aiOrderItem.aiOrderUuid}</td>
+              <td>{aiOrderItem.aiProductName}</td>
+              <td>{aiOrderItem.aiProductId}</td>
+              <td>{aiOrderItem.aiQuantity}</td>
+              <td>{aiOrderItem.aiUnitPrice}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrderDetail)}
+                  onClick={() => onClickDetail(aiOrderItem)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrderDetail)}
+                  onClick={() => onClickUpdate(aiOrderItem)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrderDetail)}
+                  onClick={() => onClickRemove(aiOrderItem)}
                 >
                   删除
                 </button>

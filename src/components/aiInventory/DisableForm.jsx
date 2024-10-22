@@ -8,9 +8,9 @@ const DisableForm = ({ aiInventory }) => {
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品类别</label>  
+            <label class="layui-form-label">商品ID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiCategory" value="${aiInventory.aiCategory}" class="layui-input" readonly>  
+              <input type="text" name="aiProductId" value="${aiInventory.aiProductId}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
@@ -23,6 +23,12 @@ const DisableForm = ({ aiInventory }) => {
             <label class="layui-form-label">商品价格</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiPrice" value="${aiInventory.aiPrice}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">商品描述</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiDescription" value="${aiInventory.aiDescription}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  
