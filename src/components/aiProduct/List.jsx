@@ -14,7 +14,7 @@ const Index = ({
       (aiProduct) =>
 
        `${aiProduct.ai_name}`.includes(searchTerm) ||
-       `${aiProduct.ai_type}`.includes(searchTerm) ||
+       `${aiProduct.ai_description}`.includes(searchTerm) ||
        `${aiProduct.ai_price}`.includes(searchTerm) ||
        `${aiProduct.ai_stock}`.includes(searchTerm)
     );
@@ -56,9 +56,9 @@ const Index = ({
         <thead>
           <tr>
               <th>商品名称</th>
-              <th>商品类型</th>
-              <th>价格</th>
-              <th>库存</th>
+              <th>商品描述</th>
+              <th>商品价格</th>
+              <th>库存数量</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -66,7 +66,7 @@ const Index = ({
           {filteredList.map((aiProduct) => (
             <tr key={aiProduct.uuid}>
               <td>{aiProduct.ai_name}</td>
-              <td>{aiProduct.ai_type}</td>
+              <td>{aiProduct.ai_description}</td>
               <td>{aiProduct.ai_price}</td>
               <td>{aiProduct.ai_stock}</td>
               <td>

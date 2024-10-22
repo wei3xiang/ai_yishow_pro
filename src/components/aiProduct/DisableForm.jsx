@@ -8,19 +8,19 @@ const DisableForm = ({ aiProduct }) => {
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品类型</label>  
+            <label class="layui-form-label">商品描述</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiType" value="${aiProduct.ai_type}" class="layui-input" readonly>  
+              <input type="text" name="aiDescription" value="${aiProduct.ai_description}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">价格</label>  
+            <label class="layui-form-label">商品价格</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiPrice" value="${aiProduct.ai_price}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">库存</label>  
+            <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
               <input type="text" name="aiStock" value="${aiProduct.ai_stock}" class="layui-input" readonly>  
             </div>  

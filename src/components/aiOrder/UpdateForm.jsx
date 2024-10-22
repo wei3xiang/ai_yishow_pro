@@ -1,33 +1,33 @@
 const UpdateForm = ({ aiOrder }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">用户ID（关联用户表的uuid字段）</label>  
+      <label class="layui-form-label">客户uuid</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUserUuid" value="${aiOrder.ai_user_uuid}" class="layui-input">  
+        <input type="text" name="aiCustomerUuid" value="${aiOrder.ai_customer_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品ID（关联商品表的uuid字段）</label>  
+      <label class="layui-form-label">员工uuid</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductUuid" value="${aiOrder.ai_product_uuid}" class="layui-input">  
+        <input type="text" name="aiEmployeeUuid" value="${aiOrder.ai_employee_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品数量</label>  
+      <label class="layui-form-label">订单总价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiOrder.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiTotalPrice" value="${aiOrder.ai_total_price}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">总价</label>  
+      <label class="layui-form-label">订单日期</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPrice" value="${aiOrder.ai_price}" class="layui-input">  
+        <input type="text" name="aiOrderDate" value="${aiOrder.ai_order_date}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">创建时间</label>  
+      <label class="layui-form-label">支付状态</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCreateTime" value="${aiOrder.ai_create_time}" class="layui-input">  
+        <input type="text" name="aiPaymentStatus" value="${aiOrder.ai_payment_status}" class="layui-input">  
       </div>  
     </div>  
   </div>  

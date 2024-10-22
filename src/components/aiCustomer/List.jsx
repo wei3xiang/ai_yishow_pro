@@ -56,9 +56,9 @@ const Index = ({
         <thead>
           <tr>
               <th>客户姓名</th>
-              <th>电话</th>
-              <th>邮箱</th>
-              <th>地址</th>
+              <th>联系电话</th>
+              <th>电子邮件</th>
+              <th>收货地址</th>
             <th>操作</th>
           </tr>
         </thead>
