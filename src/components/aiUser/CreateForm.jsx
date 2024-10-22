@@ -2,33 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户名</label>  
+            <label class="layui-form-label">名字</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiUsername" placeholder="请输入用户名"  class="layui-input">  
+                <input type="text" name="aiFirstname" placeholder="请输入名字"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">密码</label>  
+            <label class="layui-form-label">姓氏</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPassword" placeholder="请输入密码"  class="layui-input">  
+                <input type="text" name="aiLastname" placeholder="请输入姓氏"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">邮箱</label>  
+            <label class="layui-form-label">电子邮件</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiEmail" placeholder="请输入邮箱"  class="layui-input">  
+                <input type="text" name="aiEmail" placeholder="请输入电子邮件"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">电话</label>  
+            <label class="layui-form-label">电话号码</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiPhone" placeholder="请输入电话"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">地址</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="aiAddress" placeholder="请输入地址"  class="layui-input">  
+                <input type="text" name="aiPhone" placeholder="请输入电话号码"  class="layui-input">  
             </div>  
             </div>  
       </div>  
