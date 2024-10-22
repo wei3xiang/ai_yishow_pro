@@ -14,9 +14,9 @@ const Index = ({
       (aiCustomer) =>
 
        `${aiCustomer.ai_name}`.includes(searchTerm) ||
-       `${aiCustomer.ai_email}`.includes(searchTerm) ||
-       `${aiCustomer.ai_phone}`.includes(searchTerm) ||
-       `${aiCustomer.ai_address}`.includes(searchTerm)
+       `${aiCustomer.ai_contact}`.includes(searchTerm) ||
+       `${aiCustomer.ai_address}`.includes(searchTerm) ||
+       `${aiCustomer.ai_email}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,9 +56,9 @@ const Index = ({
         <thead>
           <tr>
               <th>客户名称</th>
-              <th>邮箱</th>
-              <th>电话</th>
-              <th>地址</th>
+              <th>客户联系方式</th>
+              <th>客户地址</th>
+              <th>客户邮箱</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -66,9 +66,9 @@ const Index = ({
           {filteredList.map((aiCustomer) => (
             <tr key={aiCustomer.uuid}>
               <td>{aiCustomer.ai_name}</td>
-              <td>{aiCustomer.ai_email}</td>
-              <td>{aiCustomer.ai_phone}</td>
+              <td>{aiCustomer.ai_contact}</td>
               <td>{aiCustomer.ai_address}</td>
+              <td>{aiCustomer.ai_email}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

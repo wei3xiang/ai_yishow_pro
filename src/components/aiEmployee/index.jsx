@@ -24,8 +24,8 @@ const Index = () => {
             ...aiEmployee,
               aiName: layero.find('input[name="aiName"]').val(), 
               aiPosition: layero.find('input[name="aiPosition"]').val(), 
-              aiSalary: layero.find('input[name="aiSalary"]').val(), 
-              aiHireDate: layero.find('input[name="aiHireDate"]').val(), 
+              aiPhone: layero.find('input[name="aiPhone"]').val(), 
+              aiAddress: layero.find('input[name="aiAddress"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiName: "",  aiPosition: "",  aiSalary: "",  aiHireDate: "", };
+    const newItem = { uuid: "",  aiName: "",  aiPosition: "",  aiPhone: "",  aiAddress: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,21 +82,21 @@ const Index = () => {
 
           const aiName = layero.find('input[name="aiName"]').val();
           const aiPosition = layero.find('input[name="aiPosition"]').val();
-          const aiSalary = layero.find('input[name="aiSalary"]').val();
-          const aiHireDate = layero.find('input[name="aiHireDate"]').val();
+          const aiPhone = layero.find('input[name="aiPhone"]').val();
+          const aiAddress = layero.find('input[name="aiAddress"]').val();
            if (
            aiName &&
 
            aiPosition &&
 
-           aiSalary &&
+           aiPhone &&
 
-           aiHireDate
+           aiAddress
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiName,
           aiPosition,
-          aiSalary,
-          aiHireDate,
+          aiPhone,
+          aiAddress,
            }]);
             layui.layer.close(index);
           } else {

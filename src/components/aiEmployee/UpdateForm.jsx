@@ -7,21 +7,21 @@ const UpdateForm = ({ aiEmployee }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">职位</label>  
+      <label class="layui-form-label">员工职位</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiPosition" value="${aiEmployee.ai_position}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">薪资</label>  
+      <label class="layui-form-label">员工电话</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiSalary" value="${aiEmployee.ai_salary}" class="layui-input">  
+        <input type="text" name="aiPhone" value="${aiEmployee.ai_phone}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">入职日期</label>  
+      <label class="layui-form-label">员工地址</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiHireDate" value="${aiEmployee.ai_hire_date}" class="layui-input">  
+        <input type="text" name="aiAddress" value="${aiEmployee.ai_address}" class="layui-input">  
       </div>  
     </div>  
   </div>  

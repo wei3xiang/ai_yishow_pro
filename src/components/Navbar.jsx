@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import AiCustomer from './aiCustomer';
 import AiEmployee from './aiEmployee';
-import AiOrder from './aiOrder';
 import AiProduct from './aiProduct';
+import AiUser from './aiUser';
 
 const Navbar = () => {
   const [activePage, setActivePage] = useState("aiCustomer");
@@ -14,10 +14,10 @@ const Navbar = () => {
             return <AiCustomer />;
         case "aiEmployee":
             return <AiEmployee />;
-        case "aiOrder":
-            return <AiOrder />;
         case "aiProduct":
             return <AiProduct />;
+        case "aiUser":
+            return <AiUser />;
         default:
             return <AiCustomer />;
     }
@@ -48,20 +48,20 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiOrder" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrder")}>
-                    订单表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
                     activePage === "aiProduct" ? "layui-this" : ""
                 }`}
                 >
                 <a href="#" onClick={() => setActivePage("aiProduct")}>
                     商品表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiUser" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiUser")}>
+                    用户表
                 </a>
                 </li>
           </ul>

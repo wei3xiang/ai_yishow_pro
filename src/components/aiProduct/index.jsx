@@ -23,10 +23,10 @@ const Index = () => {
           const updatedItem = {
             ...aiProduct,
               aiName: layero.find('input[name="aiName"]').val(), 
-              aiDescription: layero.find('input[name="aiDescription"]').val(), 
+              aiCategory: layero.find('input[name="aiCategory"]').val(), 
+              aiProvider: layero.find('input[name="aiProvider"]').val(), 
               aiPrice: layero.find('input[name="aiPrice"]').val(), 
               aiStock: layero.find('input[name="aiStock"]').val(), 
-              aiCategory: layero.find('input[name="aiCategory"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -69,7 +69,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiName: "",  aiDescription: "",  aiPrice: "",  aiStock: "",  aiCategory: "", };
+    const newItem = { uuid: "",  aiName: "",  aiCategory: "",  aiProvider: "",  aiPrice: "",  aiStock: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,26 +82,26 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiName = layero.find('input[name="aiName"]').val();
-          const aiDescription = layero.find('input[name="aiDescription"]').val();
+          const aiCategory = layero.find('input[name="aiCategory"]').val();
+          const aiProvider = layero.find('input[name="aiProvider"]').val();
           const aiPrice = layero.find('input[name="aiPrice"]').val();
           const aiStock = layero.find('input[name="aiStock"]').val();
-          const aiCategory = layero.find('input[name="aiCategory"]').val();
            if (
            aiName &&
 
-           
+           aiCategory &&
+
+           aiProvider &&
 
            aiPrice &&
 
-           aiStock &&
-
-           aiCategory
+           aiStock
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiName,
-          aiDescription,
+          aiCategory,
+          aiProvider,
           aiPrice,
           aiStock,
-          aiCategory,
            }]);
             layui.layer.close(index);
           } else {

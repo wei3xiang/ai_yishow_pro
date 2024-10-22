@@ -8,21 +8,21 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">邮箱</label>  
+            <label class="layui-form-label">客户联系方式</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_email" placeholder="请输入邮箱"  class="layui-input">  
+                <input type="text" name="ai_contact" placeholder="请输入客户联系方式"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">电话</label>  
+            <label class="layui-form-label">客户地址</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_phone" placeholder="请输入电话"  class="layui-input">  
+                <input type="text" name="ai_address" placeholder="请输入客户地址"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">地址</label>  
+            <label class="layui-form-label">客户邮箱</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_address" placeholder="请输入地址"  class="layui-input">  
+                <input type="text" name="ai_email" placeholder="请输入客户邮箱"  class="layui-input">  
             </div>  
             </div>  
       </div>  

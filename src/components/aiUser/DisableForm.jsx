@@ -1,34 +1,34 @@
-const DisableForm = ({ aiProduct }) => {
+const DisableForm = ({ aiUser }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品名称</label>  
+            <label class="layui-form-label">用户名</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiName" value="${aiProduct.ai_name}" class="layui-input" readonly>  
+              <input type="text" name="aiUsername" value="${aiUser.ai_username}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品类别</label>  
+            <label class="layui-form-label">密码</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiCategory" value="${aiProduct.ai_category}" class="layui-input" readonly>  
+              <input type="text" name="aiPassword" value="${aiUser.ai_password}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品供应商</label>  
+            <label class="layui-form-label">邮箱</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProvider" value="${aiProduct.ai_provider}" class="layui-input" readonly>  
+              <input type="text" name="aiEmail" value="${aiUser.ai_email}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品价格</label>  
+            <label class="layui-form-label">电话</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiPrice" value="${aiProduct.ai_price}" class="layui-input" readonly>  
+              <input type="text" name="aiPhone" value="${aiUser.ai_phone}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">地址</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStock" value="${aiProduct.ai_stock}" class="layui-input" readonly>  
+              <input type="text" name="aiAddress" value="${aiUser.ai_address}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  
