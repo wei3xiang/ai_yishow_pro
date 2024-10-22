@@ -2,15 +2,15 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品ID</label>  
+            <label class="layui-form-label">商品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductId" placeholder="请输入产品ID"  class="layui-input">  
+                <input type="text" name="aiName" placeholder="请输入商品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">商品类别</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiProductName" placeholder="请输入产品名称"  class="layui-input">  
+                <input type="text" name="aiCategory" placeholder="请输入商品类别"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -20,15 +20,15 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存ID</label>  
+            <label class="layui-form-label">产地</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiStock" placeholder="请输入库存ID"  class="layui-input">  
+                <input type="text" name="aiOrigin" placeholder="请输入产地"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">供应商</label>  
+            <label class="layui-form-label">商品描述</label>  
             <div class="layui-input-block">  
-                <input type="text" name="aiSupplier" placeholder="请输入供应商"  class="layui-input">  
+                <input type="text" name="aiDescription" placeholder="请输入商品描述"  class="layui-input">  
             </div>  
             </div>  
       </div>  

@@ -1,15 +1,15 @@
 const UpdateForm = ({ aiProduct }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品ID</label>  
+      <label class="layui-form-label">商品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductId" value="${aiProduct.aiProductId}" class="layui-input">  
+        <input type="text" name="aiName" value="${aiProduct.aiName}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
+      <label class="layui-form-label">商品类别</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiProduct.aiProductName}" class="layui-input">  
+        <input type="text" name="aiCategory" value="${aiProduct.aiCategory}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
@@ -19,15 +19,15 @@ const UpdateForm = ({ aiProduct }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存ID</label>  
+      <label class="layui-form-label">产地</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStock" value="${aiProduct.aiStock}" class="layui-input">  
+        <input type="text" name="aiOrigin" value="${aiProduct.aiOrigin}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">供应商</label>  
+      <label class="layui-form-label">商品描述</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiSupplier" value="${aiProduct.aiSupplier}" class="layui-input">  
+        <input type="text" name="aiDescription" value="${aiProduct.aiDescription}" class="layui-input">  
       </div>  
     </div>  
   </div>  

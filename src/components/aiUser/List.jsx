@@ -17,7 +17,13 @@ const Index = ({
        `${aiUser.aiPassword}`.includes(searchTerm) ||
        `${aiUser.aiEmail}`.includes(searchTerm) ||
        `${aiUser.aiPhone}`.includes(searchTerm) ||
-       `${aiUser.aiAddress}`.includes(searchTerm)
+       `${aiUser.aiAddress}`.includes(searchTerm) ||
+       `${aiUser.aiGender}`.includes(searchTerm) ||
+       `${aiUser.aiDateOfBirth}`.includes(searchTerm) ||
+       `${aiUser.aiBalance}`.includes(searchTerm) ||
+       `${aiUser.aiRegIp}`.includes(searchTerm) ||
+       `${aiUser.aiLastLoginIp}`.includes(searchTerm) ||
+       `${aiUser.aiLastLoginTime}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -61,6 +67,12 @@ const Index = ({
               <th>邮箱</th>
               <th>电话</th>
               <th>地址</th>
+              <th>性别</th>
+              <th>出生日期</th>
+              <th>余额</th>
+              <th>注册IP</th>
+              <th>最后一次登录IP</th>
+              <th>最后一次登录时间</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -72,6 +84,12 @@ const Index = ({
               <td>{aiUser.aiEmail}</td>
               <td>{aiUser.aiPhone}</td>
               <td>{aiUser.aiAddress}</td>
+              <td>{aiUser.aiGender}</td>
+              <td>{aiUser.aiDateOfBirth}</td>
+              <td>{aiUser.aiBalance}</td>
+              <td>{aiUser.aiRegIp}</td>
+              <td>{aiUser.aiLastLoginIp}</td>
+              <td>{aiUser.aiLastLoginTime}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

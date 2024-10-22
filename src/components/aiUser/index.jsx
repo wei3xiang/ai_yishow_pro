@@ -27,6 +27,12 @@ const Index = () => {
               aiEmail: layero.find('input[name="aiEmail"]').val(), 
               aiPhone: layero.find('input[name="aiPhone"]').val(), 
               aiAddress: layero.find('input[name="aiAddress"]').val(), 
+              aiGender: layero.find('input[name="aiGender"]').val(), 
+              aiDateOfBirth: layero.find('input[name="aiDateOfBirth"]').val(), 
+              aiBalance: layero.find('input[name="aiBalance"]').val(), 
+              aiRegIp: layero.find('input[name="aiRegIp"]').val(), 
+              aiLastLoginIp: layero.find('input[name="aiLastLoginIp"]').val(), 
+              aiLastLoginTime: layero.find('input[name="aiLastLoginTime"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -69,7 +75,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
+    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "",  aiGender: "",  aiDateOfBirth: "",  aiBalance: "",  aiRegIp: "",  aiLastLoginIp: "",  aiLastLoginTime: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -86,6 +92,12 @@ const Index = () => {
           const aiEmail = layero.find('input[name="aiEmail"]').val();
           const aiPhone = layero.find('input[name="aiPhone"]').val();
           const aiAddress = layero.find('input[name="aiAddress"]').val();
+          const aiGender = layero.find('input[name="aiGender"]').val();
+          const aiDateOfBirth = layero.find('input[name="aiDateOfBirth"]').val();
+          const aiBalance = layero.find('input[name="aiBalance"]').val();
+          const aiRegIp = layero.find('input[name="aiRegIp"]').val();
+          const aiLastLoginIp = layero.find('input[name="aiLastLoginIp"]').val();
+          const aiLastLoginTime = layero.find('input[name="aiLastLoginTime"]').val();
            if (
            aiUsername &&
 
@@ -95,13 +107,31 @@ const Index = () => {
 
            aiPhone &&
 
-           aiAddress
+           aiAddress &&
+
+           aiGender &&
+
+           aiDateOfBirth &&
+
+           aiBalance &&
+
+           aiRegIp &&
+
+           aiLastLoginIp &&
+
+           aiLastLoginTime
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiUsername,
           aiPassword,
           aiEmail,
           aiPhone,
           aiAddress,
+          aiGender,
+          aiDateOfBirth,
+          aiBalance,
+          aiRegIp,
+          aiLastLoginIp,
+          aiLastLoginTime,
            }]);
             layui.layer.close(index);
           } else {
