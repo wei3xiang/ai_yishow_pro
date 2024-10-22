@@ -11,11 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiOrders) =>
 
-       `${aiInventory.aiBeerId}`.includes(searchTerm) ||
-       `${aiInventory.aiBottleQuantity}`.includes(searchTerm) ||
-       `${aiInventory.aiCanQuantity}`.includes(searchTerm)
+       `${aiOrders.aiUserId}`.includes(searchTerm) ||
+       `${aiOrders.aiOrderDate}`.includes(searchTerm) ||
+       `${aiOrders.aiOrderTotal}`.includes(searchTerm) ||
+       `${aiOrders.aiOrderStatus}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,34 +55,36 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>啤酒ID</th>
-              <th>瓶装数量</th>
-              <th>罐装数量</th>
+              <th>用户ID</th>
+              <th>订单日期</th>
+              <th>订单总金额</th>
+              <th>订单状态</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.aiBeerId}</td>
-              <td>{aiInventory.aiBottleQuantity}</td>
-              <td>{aiInventory.aiCanQuantity}</td>
+          {filteredList.map((aiOrders) => (
+            <tr key={aiOrders.uuid}>
+              <td>{aiOrders.aiUserId}</td>
+              <td>{aiOrders.aiOrderDate}</td>
+              <td>{aiOrders.aiOrderTotal}</td>
+              <td>{aiOrders.aiOrderStatus}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiOrders)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiOrders)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiOrders)}
                 >
                   删除
                 </button>

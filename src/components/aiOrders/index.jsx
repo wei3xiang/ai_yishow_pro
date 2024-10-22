@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_inventory.json";
+import data from "../data/ai_orders.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiInventory) => {
-    const modalContent = `${UpdateForm({ aiInventory: aiInventory })}`;
+  const handleEdit = (aiOrders) => {
+    const modalContent = `${UpdateForm({ aiOrders: aiOrders })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,10 +21,11 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiInventory,
-              aiBeerId: layero.find('input[name="aiBeerId"]').val(), 
-              aiBottleQuantity: layero.find('input[name="aiBottleQuantity"]').val(), 
-              aiCanQuantity: layero.find('input[name="aiCanQuantity"]').val(), 
+            ...aiOrders,
+              aiUserId: layero.find('input[name="aiUserId"]').val(), 
+              aiOrderDate: layero.find('input[name="aiOrderDate"]').val(), 
+              aiOrderTotal: layero.find('input[name="aiOrderTotal"]').val(), 
+              aiOrderStatus: layero.find('input[name="aiOrderStatus"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -35,8 +36,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiInventory) => {
-    const modalContent = `${DisableForm({ aiInventory: aiInventory })}`;
+  const handleDetail = (aiOrders) => {
+    const modalContent = `${DisableForm({ aiOrders: aiOrders })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -48,8 +49,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiInventory) => {
-    const modalContent = `${RemoveForm({ aiInventory: aiInventory })}`;
+  const handleRemove = (aiOrders) => {
+    const modalContent = `${RemoveForm({ aiOrders: aiOrders })}`;
 
     layui.layer.open({
       type: 1,
@@ -59,7 +60,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiInventory.uuid));
+          setList(list.filter((u) => u.uuid !== aiOrders.uuid));
           layui.layer.close(index);
         });
       },
@@ -67,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiBeerId: "",  aiBottleQuantity: "",  aiCanQuantity: "", };
+    const newItem = { uuid: "",  aiUserId: "",  aiOrderDate: "",  aiOrderTotal: "",  aiOrderStatus: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -79,19 +80,23 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiBeerId = layero.find('input[name="aiBeerId"]').val();
-          const aiBottleQuantity = layero.find('input[name="aiBottleQuantity"]').val();
-          const aiCanQuantity = layero.find('input[name="aiCanQuantity"]').val();
+          const aiUserId = layero.find('input[name="aiUserId"]').val();
+          const aiOrderDate = layero.find('input[name="aiOrderDate"]').val();
+          const aiOrderTotal = layero.find('input[name="aiOrderTotal"]').val();
+          const aiOrderStatus = layero.find('input[name="aiOrderStatus"]').val();
            if (
-           aiBeerId &&
+           aiUserId &&
 
-           aiBottleQuantity &&
+           aiOrderDate &&
 
-           aiCanQuantity
+           aiOrderTotal &&
+
+           aiOrderStatus
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiBeerId,
-          aiBottleQuantity,
-          aiCanQuantity,
+            setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
+          aiOrderDate,
+          aiOrderTotal,
+          aiOrderStatus,
            }]);
             layui.layer.close(index);
           } else {

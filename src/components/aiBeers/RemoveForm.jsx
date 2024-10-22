@@ -1,22 +1,22 @@
-const RemoveForm = ({ aiInventory }) => {
+const RemoveForm = ({ aiBeers }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">啤酒ID</label>  
+          <label class="layui-form-label">啤酒名称</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.aiBeerId}" class="layui-input" readonly>  
+            <input type="text" value="${aiBeers.aiBeerName}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">瓶装数量</label>  
+          <label class="layui-form-label">描述</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.aiBottleQuantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiBeers.aiDescription}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">罐装数量</label>  
+          <label class="layui-form-label">价格</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.aiCanQuantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiBeers.aiPrice}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

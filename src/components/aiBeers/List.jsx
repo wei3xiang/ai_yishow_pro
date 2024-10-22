@@ -11,11 +11,11 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiBeers) =>
 
-       `${aiInventory.aiBeerId}`.includes(searchTerm) ||
-       `${aiInventory.aiBottleQuantity}`.includes(searchTerm) ||
-       `${aiInventory.aiCanQuantity}`.includes(searchTerm)
+       `${aiBeers.aiBeerName}`.includes(searchTerm) ||
+       `${aiBeers.aiDescription}`.includes(searchTerm) ||
+       `${aiBeers.aiPrice}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,34 +54,34 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>啤酒ID</th>
-              <th>瓶装数量</th>
-              <th>罐装数量</th>
+              <th>啤酒名称</th>
+              <th>描述</th>
+              <th>价格</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.aiBeerId}</td>
-              <td>{aiInventory.aiBottleQuantity}</td>
-              <td>{aiInventory.aiCanQuantity}</td>
+          {filteredList.map((aiBeers) => (
+            <tr key={aiBeers.uuid}>
+              <td>{aiBeers.aiBeerName}</td>
+              <td>{aiBeers.aiDescription}</td>
+              <td>{aiBeers.aiPrice}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiBeers)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiBeers)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiBeers)}
                 >
                   删除
                 </button>
