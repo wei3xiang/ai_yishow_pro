@@ -22,9 +22,9 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiOrder,
-              aiUserUuid: layero.find('input[name="aiUserUuid"]').val(), 
+              aiUserId: layero.find('input[name="aiUserId"]').val(), 
               aiOrderDate: layero.find('input[name="aiOrderDate"]').val(), 
-              aiTotalAmount: layero.find('input[name="aiTotalAmount"]').val(), 
+              aiTotalPrice: layero.find('input[name="aiTotalPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -67,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUserUuid: "",  aiOrderDate: "",  aiTotalAmount: "", };
+    const newItem = { uuid: "",  aiUserId: "",  aiOrderDate: "",  aiTotalPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -79,19 +79,19 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiUserUuid = layero.find('input[name="aiUserUuid"]').val();
+          const aiUserId = layero.find('input[name="aiUserId"]').val();
           const aiOrderDate = layero.find('input[name="aiOrderDate"]').val();
-          const aiTotalAmount = layero.find('input[name="aiTotalAmount"]').val();
+          const aiTotalPrice = layero.find('input[name="aiTotalPrice"]').val();
            if (
-           aiUserUuid &&
+           aiUserId &&
 
            aiOrderDate &&
 
-           aiTotalAmount
+           aiTotalPrice
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiUserUuid,
+            setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
           aiOrderDate,
-          aiTotalAmount,
+          aiTotalPrice,
            }]);
             layui.layer.close(index);
           } else {

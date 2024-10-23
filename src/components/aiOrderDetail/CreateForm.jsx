@@ -4,7 +4,13 @@ const CreateForm = () => {
             <div class="layui-form-item">  
             <label class="layui-form-label">订单ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_order_uuid" placeholder="请输入订单ID"  class="layui-input">  
+                <input type="text" name="ai_order_id" placeholder="请输入订单ID"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">产品ID</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_product_id" placeholder="请输入产品ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -17,12 +23,6 @@ const CreateForm = () => {
             <label class="layui-form-label">数量</label>  
             <div class="layui-input-block">  
                 <input type="text" name="ai_quantity" placeholder="请输入数量"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">计量单位</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_unit_of_measure" placeholder="请输入计量单位"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  

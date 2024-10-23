@@ -13,9 +13,9 @@ const Index = ({
     return data.filter(
       (aiOrder) =>
 
-       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
+       `${aiOrder.ai_user_id}`.includes(searchTerm) ||
        `${aiOrder.ai_order_date}`.includes(searchTerm) ||
-       `${aiOrder.ai_total_amount}`.includes(searchTerm)
+       `${aiOrder.ai_total_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,16 +56,16 @@ const Index = ({
           <tr>
               <th>用户ID</th>
               <th>订单日期</th>
-              <th>订单总金额</th>
+              <th>总价</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiOrder) => (
             <tr key={aiOrder.uuid}>
-              <td>{aiOrder.ai_user_uuid}</td>
+              <td>{aiOrder.ai_user_id}</td>
               <td>{aiOrder.ai_order_date}</td>
-              <td>{aiOrder.ai_total_amount}</td>
+              <td>{aiOrder.ai_total_price}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

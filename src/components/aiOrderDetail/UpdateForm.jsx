@@ -3,7 +3,13 @@ const UpdateForm = ({ aiOrderDetail }) => {
       <div class="layui-form-item">  
       <label class="layui-form-label">订单ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderUuid" value="${aiOrderDetail.ai_order_uuid}" class="layui-input">  
+        <input type="text" name="aiOrderId" value="${aiOrderDetail.ai_order_id}" class="layui-input">  
+      </div>  
+    </div>  
+      <div class="layui-form-item">  
+      <label class="layui-form-label">产品ID</label>  
+      <div class="layui-input-block">  
+        <input type="text" name="aiProductId" value="${aiOrderDetail.ai_product_id}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
@@ -16,12 +22,6 @@ const UpdateForm = ({ aiOrderDetail }) => {
       <label class="layui-form-label">数量</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiQuantity" value="${aiOrderDetail.ai_quantity}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">计量单位</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiUnitOfMeasure" value="${aiOrderDetail.ai_unit_of_measure}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  

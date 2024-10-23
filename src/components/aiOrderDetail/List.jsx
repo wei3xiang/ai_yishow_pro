@@ -13,10 +13,10 @@ const Index = ({
     return data.filter(
       (aiOrderDetail) =>
 
-       `${aiOrderDetail.ai_order_uuid}`.includes(searchTerm) ||
+       `${aiOrderDetail.ai_order_id}`.includes(searchTerm) ||
+       `${aiOrderDetail.ai_product_id}`.includes(searchTerm) ||
        `${aiOrderDetail.ai_product_name}`.includes(searchTerm) ||
        `${aiOrderDetail.ai_quantity}`.includes(searchTerm) ||
-       `${aiOrderDetail.ai_unit_of_measure}`.includes(searchTerm) ||
        `${aiOrderDetail.ai_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
@@ -57,9 +57,9 @@ const Index = ({
         <thead>
           <tr>
               <th>订单ID</th>
+              <th>产品ID</th>
               <th>产品名称</th>
               <th>数量</th>
-              <th>计量单位</th>
               <th>单价</th>
             <th>操作</th>
           </tr>
@@ -67,10 +67,10 @@ const Index = ({
         <tbody>
           {filteredList.map((aiOrderDetail) => (
             <tr key={aiOrderDetail.uuid}>
-              <td>{aiOrderDetail.ai_order_uuid}</td>
+              <td>{aiOrderDetail.ai_order_id}</td>
+              <td>{aiOrderDetail.ai_product_id}</td>
               <td>{aiOrderDetail.ai_product_name}</td>
               <td>{aiOrderDetail.ai_quantity}</td>
-              <td>{aiOrderDetail.ai_unit_of_measure}</td>
               <td>{aiOrderDetail.ai_price}</td>
               <td>
                 <button

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import AiInventory from './aiInventory';
-import AiOperationLog from './aiOperationLog';
 import AiOrder from './aiOrder';
 import AiOrderDetail from './aiOrderDetail';
 import AiUser from './aiUser';
@@ -13,8 +12,6 @@ const Navbar = () => {
     switch (activePage) {
         case "aiInventory":
             return <AiInventory />;
-        case "aiOperationLog":
-            return <AiOperationLog />;
         case "aiOrder":
             return <AiOrder />;
         case "aiOrderDetail":
@@ -38,15 +35,6 @@ const Navbar = () => {
                 >
                 <a href="#" onClick={() => setActivePage("aiInventory")}>
                     库存表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOperationLog" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOperationLog")}>
-                    操作日志表
                 </a>
                 </li>
                 <li
