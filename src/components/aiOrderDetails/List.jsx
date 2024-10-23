@@ -11,13 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiProduct评论) =>
+      (aiOrderDetails) =>
 
-       `${aiProduct评论.ai_product_id}`.includes(searchTerm) ||
-       `${aiProduct评论.ai_user_id}`.includes(searchTerm) ||
-       `${aiProduct评论.ai_content}`.includes(searchTerm) ||
-       `${aiProduct评论.ai_rating}`.includes(searchTerm) ||
-       `${aiProduct评论.ai_created_at}`.includes(searchTerm)
+       `${aiOrderDetails.ai_order_uuid}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_product_name}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_quantity}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,38 +55,36 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品ID</th>
-              <th>用户ID</th>
-              <th>评论内容</th>
-              <th>评分</th>
-              <th>创建时间</th>
+              <th>订单ID</th>
+              <th>产品名称</th>
+              <th>数量</th>
+              <th>单价</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiProduct评论) => (
-            <tr key={aiProduct评论.uuid}>
-              <td>{aiProduct评论.ai_product_id}</td>
-              <td>{aiProduct评论.ai_user_id}</td>
-              <td>{aiProduct评论.ai_content}</td>
-              <td>{aiProduct评论.ai_rating}</td>
-              <td>{aiProduct评论.ai_created_at}</td>
+          {filteredList.map((aiOrderDetails) => (
+            <tr key={aiOrderDetails.uuid}>
+              <td>{aiOrderDetails.ai_order_uuid}</td>
+              <td>{aiOrderDetails.ai_product_name}</td>
+              <td>{aiOrderDetails.ai_quantity}</td>
+              <td>{aiOrderDetails.ai_price}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiProduct评论)}
+                  onClick={() => onClickDetail(aiOrderDetails)}
                 >
                   查看
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiProduct评论)}
+                  onClick={() => onClickUpdate(aiOrderDetails)}
                 >
                   编辑
                 </button>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiProduct评论)}
+                  onClick={() => onClickRemove(aiOrderDetails)}
                 >
                   删除
                 </button>

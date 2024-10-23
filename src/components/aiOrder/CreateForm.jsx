@@ -4,25 +4,31 @@ const CreateForm = () => {
             <div class="layui-form-item">  
             <label class="layui-form-label">用户ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_user_id" placeholder="请输入用户ID"  class="layui-input">  
+                <input type="text" name="ai_user_uuid" placeholder="请输入用户ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单日期</label>  
+            <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_order_date" placeholder="请输入订单日期"  class="layui-input">  
+                <input type="text" name="ai_product_name" placeholder="请输入产品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单总金额</label>  
+            <label class="layui-form-label">数量</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_total_amount" placeholder="请输入订单总金额"  class="layui-input">  
+                <input type="text" name="ai_quantity" placeholder="请输入数量"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单状态</label>  
+            <label class="layui-form-label">金额</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_status" placeholder="请输入订单状态"  class="layui-input">  
+                <input type="text" name="ai_amount" placeholder="请输入金额"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">订单时间</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_order_time" placeholder="请输入订单时间"  class="layui-input">  
             </div>  
             </div>  
       </div>  

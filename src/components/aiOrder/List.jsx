@@ -13,10 +13,11 @@ const Index = ({
     return data.filter(
       (aiOrder) =>
 
-       `${aiOrder.ai_user_id}`.includes(searchTerm) ||
-       `${aiOrder.ai_order_date}`.includes(searchTerm) ||
-       `${aiOrder.ai_total_amount}`.includes(searchTerm) ||
-       `${aiOrder.ai_status}`.includes(searchTerm)
+       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
+       `${aiOrder.ai_product_name}`.includes(searchTerm) ||
+       `${aiOrder.ai_quantity}`.includes(searchTerm) ||
+       `${aiOrder.ai_amount}`.includes(searchTerm) ||
+       `${aiOrder.ai_order_time}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,19 +57,21 @@ const Index = ({
         <thead>
           <tr>
               <th>用户ID</th>
-              <th>订单日期</th>
-              <th>订单总金额</th>
-              <th>订单状态</th>
+              <th>产品名称</th>
+              <th>数量</th>
+              <th>金额</th>
+              <th>订单时间</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiOrder) => (
             <tr key={aiOrder.uuid}>
-              <td>{aiOrder.ai_user_id}</td>
-              <td>{aiOrder.ai_order_date}</td>
-              <td>{aiOrder.ai_total_amount}</td>
-              <td>{aiOrder.ai_status}</td>
+              <td>{aiOrder.ai_user_uuid}</td>
+              <td>{aiOrder.ai_product_name}</td>
+              <td>{aiOrder.ai_quantity}</td>
+              <td>{aiOrder.ai_amount}</td>
+              <td>{aiOrder.ai_order_time}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

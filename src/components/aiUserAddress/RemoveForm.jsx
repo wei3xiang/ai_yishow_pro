@@ -4,7 +4,7 @@ const RemoveForm = ({ aiUserAddress }) => {
         <div class="layui-form-item">  
           <label class="layui-form-label">用户ID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUserAddress.ai_user_id}" class="layui-input" readonly>  
+            <input type="text" value="${aiUserAddress.ai_user_uuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
@@ -14,9 +14,15 @@ const RemoveForm = ({ aiUserAddress }) => {
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">是否默认地址</label>  
+          <label class="layui-form-label">收货人姓名</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUserAddress.ai_is_default}" class="layui-input" readonly>  
+            <input type="text" value="${aiUserAddress.ai_name}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">电话</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiUserAddress.ai_phone}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

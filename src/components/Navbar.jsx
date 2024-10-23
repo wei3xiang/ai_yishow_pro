@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 import AiInventory from './aiInventory';
 import AiOrder from './aiOrder';
-import AiOrderDetail from './aiOrderDetail';
-import AiProduct评论 from './aiProduct评论';
+import AiOrderDetails from './aiOrderDetails';
 import AiUser from './aiUser';
 import AiUserAddress from './aiUserAddress';
 
@@ -16,10 +15,8 @@ const Navbar = () => {
             return <AiInventory />;
         case "aiOrder":
             return <AiOrder />;
-        case "aiOrderDetail":
-            return <AiOrderDetail />;
-        case "aiProduct评论":
-            return <AiProduct评论 />;
+        case "aiOrderDetails":
+            return <AiOrderDetails />;
         case "aiUser":
             return <AiUser />;
         case "aiUserAddress":
@@ -54,20 +51,11 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiOrderDetail" ? "layui-this" : ""
+                    activePage === "aiOrderDetails" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiOrderDetail")}>
+                <a href="#" onClick={() => setActivePage("aiOrderDetails")}>
                     订单详情表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiProduct评论" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProduct评论")}>
-                    商品评价表
                 </a>
                 </li>
                 <li

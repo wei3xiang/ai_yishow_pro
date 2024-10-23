@@ -13,9 +13,10 @@ const Index = ({
     return data.filter(
       (aiUserAddress) =>
 
-       `${aiUserAddress.ai_user_id}`.includes(searchTerm) ||
+       `${aiUserAddress.ai_user_uuid}`.includes(searchTerm) ||
        `${aiUserAddress.ai_address}`.includes(searchTerm) ||
-       `${aiUserAddress.ai_is_default}`.includes(searchTerm)
+       `${aiUserAddress.ai_name}`.includes(searchTerm) ||
+       `${aiUserAddress.ai_phone}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,16 +57,18 @@ const Index = ({
           <tr>
               <th>用户ID</th>
               <th>地址</th>
-              <th>是否默认地址</th>
+              <th>收货人姓名</th>
+              <th>电话</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiUserAddress) => (
             <tr key={aiUserAddress.uuid}>
-              <td>{aiUserAddress.ai_user_id}</td>
+              <td>{aiUserAddress.ai_user_uuid}</td>
               <td>{aiUserAddress.ai_address}</td>
-              <td>{aiUserAddress.ai_is_default}</td>
+              <td>{aiUserAddress.ai_name}</td>
+              <td>{aiUserAddress.ai_phone}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"

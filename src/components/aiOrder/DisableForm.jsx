@@ -4,25 +4,31 @@ const DisableForm = ({ aiOrder }) => {
           <div class="layui-form-item">  
             <label class="layui-form-label">用户ID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiUserId" value="${aiOrder.ai_user_id}" class="layui-input" readonly>  
+              <input type="text" name="aiUserUuid" value="${aiOrder.ai_user_uuid}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单日期</label>  
+            <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiOrderDate" value="${aiOrder.ai_order_date}" class="layui-input" readonly>  
+              <input type="text" name="aiProductName" value="${aiOrder.ai_product_name}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单总金额</label>  
+            <label class="layui-form-label">数量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiTotalAmount" value="${aiOrder.ai_total_amount}" class="layui-input" readonly>  
+              <input type="text" name="aiQuantity" value="${aiOrder.ai_quantity}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">订单状态</label>  
+            <label class="layui-form-label">金额</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStatus" value="${aiOrder.ai_status}" class="layui-input" readonly>  
+              <input type="text" name="aiAmount" value="${aiOrder.ai_amount}" class="layui-input" readonly>  
+            </div>  
+          </div>  
+          <div class="layui-form-item">  
+            <label class="layui-form-label">订单时间</label>  
+            <div class="layui-input-block">  
+              <input type="text" name="aiOrderTime" value="${aiOrder.ai_order_time}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  

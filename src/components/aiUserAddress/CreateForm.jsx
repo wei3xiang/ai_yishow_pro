@@ -4,7 +4,7 @@ const CreateForm = () => {
             <div class="layui-form-item">  
             <label class="layui-form-label">用户ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_user_id" placeholder="请输入用户ID"  class="layui-input">  
+                <input type="text" name="ai_user_uuid" placeholder="请输入用户ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -14,9 +14,15 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">是否默认地址</label>  
+            <label class="layui-form-label">收货人姓名</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_is_default" placeholder="请输入是否默认地址"  class="layui-input">  
+                <input type="text" name="ai_name" placeholder="请输入收货人姓名"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">电话</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_phone" placeholder="请输入电话"  class="layui-input">  
             </div>  
             </div>  
       </div>  

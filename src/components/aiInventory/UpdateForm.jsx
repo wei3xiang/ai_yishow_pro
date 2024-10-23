@@ -1,45 +1,21 @@
 const UpdateForm = ({ aiInventory }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品ID</label>  
+      <label class="layui-form-label">产品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductId" value="${aiInventory.ai_product_id}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">产品类别</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">产品描述</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiDescription" value="${aiInventory.ai_description}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStockQuantity" value="${aiInventory.ai_stock_quantity}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">计量单位</label>  
+      <label class="layui-form-label">类别</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUnit" value="${aiInventory.ai_unit}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">进货价</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiPurchasePrice" value="${aiInventory.ai_purchase_price}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">售价</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiSalePrice" value="${aiInventory.ai_sale_price}" class="layui-input">  
+        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
       </div>  
     </div>  
   </div>  

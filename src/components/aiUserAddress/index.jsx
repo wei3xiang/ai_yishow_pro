@@ -22,9 +22,10 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiUserAddress,
-              aiUserId: layero.find('input[name="aiUserId"]').val(), 
+              aiUserUuid: layero.find('input[name="aiUserUuid"]').val(), 
               aiAddress: layero.find('input[name="aiAddress"]').val(), 
-              aiIsDefault: layero.find('input[name="aiIsDefault"]').val(), 
+              aiName: layero.find('input[name="aiName"]').val(), 
+              aiPhone: layero.find('input[name="aiPhone"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -67,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUserId: "",  aiAddress: "",  aiIsDefault: "", };
+    const newItem = { uuid: "",  aiUserUuid: "",  aiAddress: "",  aiName: "",  aiPhone: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -79,19 +80,23 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiUserId = layero.find('input[name="aiUserId"]').val();
+          const aiUserUuid = layero.find('input[name="aiUserUuid"]').val();
           const aiAddress = layero.find('input[name="aiAddress"]').val();
-          const aiIsDefault = layero.find('input[name="aiIsDefault"]').val();
+          const aiName = layero.find('input[name="aiName"]').val();
+          const aiPhone = layero.find('input[name="aiPhone"]').val();
            if (
-           aiUserId &&
+           aiUserUuid &&
 
            aiAddress &&
 
-           aiIsDefault
+           aiName &&
+
+           aiPhone
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
+            setList([...list, { ...newItem, uuid: Date.now(), aiUserUuid,
           aiAddress,
-          aiIsDefault,
+          aiName,
+          aiPhone,
            }]);
             layui.layer.close(index);
           } else {

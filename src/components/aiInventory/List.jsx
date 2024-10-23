@@ -13,13 +13,9 @@ const Index = ({
     return data.filter(
       (aiInventory) =>
 
-       `${aiInventory.ai_product_id}`.includes(searchTerm) ||
-       `${aiInventory.ai_category}`.includes(searchTerm) ||
-       `${aiInventory.ai_description}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_unit}`.includes(searchTerm) ||
-       `${aiInventory.ai_purchase_price}`.includes(searchTerm) ||
-       `${aiInventory.ai_sale_price}`.includes(searchTerm)
+       `${aiInventory.ai_product_name}`.includes(searchTerm) ||
+       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
+       `${aiInventory.ai_category}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -58,26 +54,18 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品ID</th>
-              <th>产品类别</th>
-              <th>产品描述</th>
+              <th>产品名称</th>
               <th>库存数量</th>
-              <th>计量单位</th>
-              <th>进货价</th>
-              <th>售价</th>
+              <th>类别</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiInventory) => (
             <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_product_id}</td>
+              <td>{aiInventory.ai_product_name}</td>
+              <td>{aiInventory.ai_quantity}</td>
               <td>{aiInventory.ai_category}</td>
-              <td>{aiInventory.ai_description}</td>
-              <td>{aiInventory.ai_stock_quantity}</td>
-              <td>{aiInventory.ai_unit}</td>
-              <td>{aiInventory.ai_purchase_price}</td>
-              <td>{aiInventory.ai_sale_price}</td>
               <td>
                 <button
                   className="layui-btn layui-btn-xs layui-btn-normal"
