@@ -1,28 +1,28 @@
-const RemoveForm = ({ aiInventory }) => {
+const RemoveForm = ({ aiAddress }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品名称</label>  
+          <label class="layui-form-label">用户UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_product_name}" class="layui-input" readonly>  
+            <input type="text" value="${aiAddress.ai_user_uuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品类别</label>  
+          <label class="layui-form-label">收货人</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_category}" class="layui-input" readonly>  
+            <input type="text" value="${aiAddress.ai_name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">库存数量</label>  
+          <label class="layui-form-label">详细地址</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_quantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiAddress.ai_address}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">库存预警级别</label>  
+          <label class="layui-form-label">联系电话</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_stock_alert_level}" class="layui-input" readonly>  
+            <input type="text" value="${aiAddress.ai_phone}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

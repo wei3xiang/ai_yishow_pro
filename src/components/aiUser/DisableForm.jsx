@@ -31,12 +31,6 @@ const DisableForm = ({ aiUser }) => {
               <input type="text" name="aiAddress" value="${aiUser.ai_address}" class="layui-input" readonly>  
             </div>  
           </div>  
-          <div class="layui-form-item">  
-            <label class="layui-form-label">角色，如顾客、管理员</label>  
-            <div class="layui-input-block">  
-              <input type="text" name="aiRoles" value="${aiUser.ai_roles}" class="layui-input" readonly>  
-            </div>  
-          </div>  
       </div>  
       <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">确定</button>   

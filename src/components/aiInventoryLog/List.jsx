@@ -11,12 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiInventoryLog) =>
 
-       `${aiInventory.ai_product_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_category}`.includes(searchTerm) ||
-       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_alert_level}`.includes(searchTerm)
+       `${aiInventoryLog.ai_inventory_uuid}`.includes(searchTerm) ||
+       `${aiInventoryLog.ai_reason}`.includes(searchTerm) ||
+       `${aiInventoryLog.ai_change}`.includes(searchTerm) ||
+       `${aiInventoryLog.ai_date}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,39 +55,39 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品名称</th>
-              <th>产品类别</th>
-              <th>库存数量</th>
-              <th>库存预警级别</th>
+              <th>库存UUID</th>
+              <th>操作原因</th>
+              <th>变动数量</th>
+              <th>变动日期</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_product_name}</td>
-              <td>{aiInventory.ai_category}</td>
-              <td>{aiInventory.ai_quantity}</td>
-              <td>{aiInventory.ai_stock_alert_level}</td>
+          {filteredList.map((aiInventoryLog) => (
+            <tr key={aiInventoryLog.uuid}>
+              <td>{aiInventoryLog.ai_inventory_uuid}</td>
+              <td>{aiInventoryLog.ai_reason}</td>
+              <td>{aiInventoryLog.ai_change}</td>
+              <td>{aiInventoryLog.ai_date}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiInventoryLog)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiInventoryLog)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiInventoryLog)}
                 >
                   删除
                 </button>

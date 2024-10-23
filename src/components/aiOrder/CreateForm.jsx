@@ -2,27 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">客户UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_product_name" placeholder="请输入产品名称"  class="layui-input">  
+                <input type="text" name="ai_customer_uuid" placeholder="请输入客户UUID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品类别</label>  
+            <label class="layui-form-label">下单日期</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_category" placeholder="请输入产品类别"  class="layui-input">  
+                <input type="text" name="ai_order_date" placeholder="请输入下单日期"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">订单总金额</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_quantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="ai_total_amount" placeholder="请输入订单总金额"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存预警级别</label>  
+            <label class="layui-form-label">订单状态 (如已支付, 待支付)</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_stock_alert_level" placeholder="请输入库存预警级别"  class="layui-input">  
+                <input type="text" name="ai_status" placeholder="请输入订单状态 (如已支付, 待支付)"  class="layui-input">  
             </div>  
             </div>  
       </div>  

@@ -2,27 +2,33 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
+            <label class="layui-form-label">订单UUID</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_order_uuid" placeholder="请输入订单UUID"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
             <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
                 <input type="text" name="ai_product_name" placeholder="请输入产品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品类别</label>  
+            <label class="layui-form-label">产品数量</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_category" placeholder="请输入产品类别"  class="layui-input">  
+                <input type="text" name="ai_quantity" placeholder="请输入产品数量"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">单价</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_quantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="ai_unit_price" placeholder="请输入单价"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存预警级别</label>  
+            <label class="layui-form-label">总价</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_stock_alert_level" placeholder="请输入库存预警级别"  class="layui-input">  
+                <input type="text" name="ai_total_price" placeholder="请输入总价"  class="layui-input">  
             </div>  
             </div>  
       </div>  

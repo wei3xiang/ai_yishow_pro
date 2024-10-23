@@ -11,12 +11,13 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiComment) =>
 
-       `${aiInventory.ai_product_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_category}`.includes(searchTerm) ||
-       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_alert_level}`.includes(searchTerm)
+       `${aiComment.ai_product_uuid}`.includes(searchTerm) ||
+       `${aiComment.ai_customer_uuid}`.includes(searchTerm) ||
+       `${aiComment.ai_content}`.includes(searchTerm) ||
+       `${aiComment.ai_rating}`.includes(searchTerm) ||
+       `${aiComment.ai_date}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,39 +56,41 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品名称</th>
-              <th>产品类别</th>
-              <th>库存数量</th>
-              <th>库存预警级别</th>
+              <th>产品UUID</th>
+              <th>客户UUID</th>
+              <th>评论内容</th>
+              <th>评分 (0-5)</th>
+              <th>评论日期</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_product_name}</td>
-              <td>{aiInventory.ai_category}</td>
-              <td>{aiInventory.ai_quantity}</td>
-              <td>{aiInventory.ai_stock_alert_level}</td>
+          {filteredList.map((aiComment) => (
+            <tr key={aiComment.uuid}>
+              <td>{aiComment.ai_product_uuid}</td>
+              <td>{aiComment.ai_customer_uuid}</td>
+              <td>{aiComment.ai_content}</td>
+              <td>{aiComment.ai_rating}</td>
+              <td>{aiComment.ai_date}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiComment)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiComment)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiComment)}
                 >
                   删除
                 </button>

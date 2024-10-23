@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiInventory }) => {
+const UpdateForm = ({ aiInventoryLog }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
+      <label class="layui-form-label">库存UUID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiInventoryUuid" value="${aiInventoryLog.ai_inventory_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品类别</label>  
+      <label class="layui-form-label">操作原因</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
+        <input type="text" name="aiReason" value="${aiInventoryLog.ai_reason}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量</label>  
+      <label class="layui-form-label">变动数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiChange" value="${aiInventoryLog.ai_change}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存预警级别</label>  
+      <label class="layui-form-label">变动日期</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStockAlertLevel" value="${aiInventory.ai_stock_alert_level}" class="layui-input">  
+        <input type="text" name="aiDate" value="${aiInventoryLog.ai_date}" class="layui-input">  
       </div>  
     </div>  
   </div>  

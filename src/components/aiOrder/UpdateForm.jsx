@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiInventory }) => {
+const UpdateForm = ({ aiOrder }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
+      <label class="layui-form-label">客户UUID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiCustomerUuid" value="${aiOrder.ai_customer_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品类别</label>  
+      <label class="layui-form-label">下单日期</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
+        <input type="text" name="aiOrderDate" value="${aiOrder.ai_order_date}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量</label>  
+      <label class="layui-form-label">订单总金额</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiTotalAmount" value="${aiOrder.ai_total_amount}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存预警级别</label>  
+      <label class="layui-form-label">订单状态 (如已支付, 待支付)</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStockAlertLevel" value="${aiInventory.ai_stock_alert_level}" class="layui-input">  
+        <input type="text" name="aiStatus" value="${aiOrder.ai_status}" class="layui-input">  
       </div>  
     </div>  
   </div>  

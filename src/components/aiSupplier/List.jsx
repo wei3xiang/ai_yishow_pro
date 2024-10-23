@@ -11,12 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiInventory) =>
+      (aiSupplier) =>
 
-       `${aiInventory.ai_product_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_category}`.includes(searchTerm) ||
-       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_alert_level}`.includes(searchTerm)
+       `${aiSupplier.ai_company_name}`.includes(searchTerm) ||
+       `${aiSupplier.ai_contact_name}`.includes(searchTerm) ||
+       `${aiSupplier.ai_contact_phone}`.includes(searchTerm) ||
+       `${aiSupplier.ai_contact_email}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,39 +55,39 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品名称</th>
-              <th>产品类别</th>
-              <th>库存数量</th>
-              <th>库存预警级别</th>
+              <th>公司名称</th>
+              <th>联系人姓名</th>
+              <th>联系电话</th>
+              <th>联系邮箱</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiInventory) => (
-            <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_product_name}</td>
-              <td>{aiInventory.ai_category}</td>
-              <td>{aiInventory.ai_quantity}</td>
-              <td>{aiInventory.ai_stock_alert_level}</td>
+          {filteredList.map((aiSupplier) => (
+            <tr key={aiSupplier.uuid}>
+              <td>{aiSupplier.ai_company_name}</td>
+              <td>{aiSupplier.ai_contact_name}</td>
+              <td>{aiSupplier.ai_contact_phone}</td>
+              <td>{aiSupplier.ai_contact_email}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiInventory)}
+                  onClick={() => onClickDetail(aiSupplier)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiInventory)}
+                  onClick={() => onClickUpdate(aiSupplier)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiInventory)}
+                  onClick={() => onClickRemove(aiSupplier)}
                 >
                   删除
                 </button>
