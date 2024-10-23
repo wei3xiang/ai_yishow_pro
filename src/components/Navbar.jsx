@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
+import AiFranchisee from './aiFranchisee';
+
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("aiFranchisee");
 
   const renderPage = () => {
     switch (activePage) {
-      default:
-        return <></>;
+        case "aiFranchisee":
+            return <AiFranchisee />;
+        default:
+            return <AiFranchisee />;
     }
   };
 
@@ -14,7 +18,19 @@ const Navbar = () => {
     <div>
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
-          <ul className="layui-nav layui-nav-tree" lay-filter="test"></ul>
+          <ul className="layui-nav layui-nav-tree" lay-filter="test">
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiFranchisee" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiFranchisee")}>
+                  {"物流公司加盟信息表".endsWith("表")
+                  ? "物流公司加盟信息表".slice(0, -1) + "管理"
+                  : "物流公司加盟信息表"}
+                </a>
+                </li>
+          </ul>
         </div>
       </div>
       <div className="layui-header">
