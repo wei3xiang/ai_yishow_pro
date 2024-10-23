@@ -95,7 +95,7 @@ const Index = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", backgroundColor: "white", borderRadius: "10px" }}>
       <List
         data = {list}
         onClickCreate={() => handleCreate()}
