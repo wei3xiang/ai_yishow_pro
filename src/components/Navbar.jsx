@@ -1,28 +1,12 @@
 import React, { useState } from "react";
 
-import AiDelivery from './aiDelivery';
-import AiInventory from './aiInventory';
-import AiOrder from './aiOrder';
-import AiOrderDetail from './aiOrderDetail';
-import AiUser from './aiUser';
-
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiDelivery");
+  const [activePage, setActivePage] = useState("");
 
   const renderPage = () => {
     switch (activePage) {
-        case "aiDelivery":
-            return <AiDelivery />;
-        case "aiInventory":
-            return <AiInventory />;
-        case "aiOrder":
-            return <AiOrder />;
-        case "aiOrderDetail":
-            return <AiOrderDetail />;
-        case "aiUser":
-            return <AiUser />;
-        default:
-            return <AiDelivery />;
+      default:
+        return <></>;
     }
   };
 
@@ -30,63 +14,7 @@ const Navbar = () => {
     <div>
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
-          <ul className="layui-nav layui-nav-tree" lay-filter="test">
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiDelivery" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiDelivery")}>
-                  {"发货表".endsWith("表")
-                  ? "发货表".slice(0, -1) + "管理"
-                  : "发货表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiInventory" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiInventory")}>
-                  {"库存表".endsWith("表")
-                  ? "库存表".slice(0, -1) + "管理"
-                  : "库存表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrder" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrder")}>
-                  {"订单表".endsWith("表")
-                  ? "订单表".slice(0, -1) + "管理"
-                  : "订单表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrderDetail" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrderDetail")}>
-                  {"订单明细表".endsWith("表")
-                  ? "订单明细表".slice(0, -1) + "管理"
-                  : "订单明细表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiUser" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiUser")}>
-                  {"用户表".endsWith("表")
-                  ? "用户表".slice(0, -1) + "管理"
-                  : "用户表"}
-                </a>
-                </li>
-          </ul>
+          <ul className="layui-nav layui-nav-tree" lay-filter="test"></ul>
         </div>
       </div>
       <div className="layui-header">
