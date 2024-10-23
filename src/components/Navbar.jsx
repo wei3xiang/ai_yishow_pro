@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 
-import AiFlowerInfo from './aiFlowerInfo';
-import AiSaleRecord from './aiSaleRecord';
-
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiFlowerInfo");
+  const [activePage, setActivePage] = useState("");
 
   const renderPage = () => {
     switch (activePage) {
-        case "aiFlowerInfo":
-            return <AiFlowerInfo />;
-        case "aiSaleRecord":
-            return <AiSaleRecord />;
-        default:
-            return <AiFlowerInfo />;
+      default:
+        return <></>;
     }
   };
 
@@ -21,30 +14,7 @@ const Navbar = () => {
     <div>
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
-          <ul className="layui-nav layui-nav-tree" lay-filter="test">
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiFlowerInfo" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiFlowerInfo")}>
-                  {"花卉基本信息表".endsWith("表")
-                  ? "花卉基本信息表".slice(0, -1) + "管理"
-                  : "花卉基本信息表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiSaleRecord" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiSaleRecord")}>
-                  {"销售记录表".endsWith("表")
-                  ? "销售记录表".slice(0, -1) + "管理"
-                  : "销售记录表"}
-                </a>
-                </li>
-          </ul>
+          <ul className="layui-nav layui-nav-tree" lay-filter="test"></ul>
         </div>
       </div>
       <div className="layui-header">
