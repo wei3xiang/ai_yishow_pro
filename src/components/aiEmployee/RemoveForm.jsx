@@ -1,34 +1,34 @@
-const RemoveForm = ({ aiUser }) => {
+const RemoveForm = ({ aiEmployee }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">用户名</label>  
+          <label class="layui-form-label">员工姓名</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.ai_username}" class="layui-input" readonly>  
+            <input type="text" value="${aiEmployee.ai_employee_name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">密码</label>  
+          <label class="layui-form-label">职位</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.ai_password}" class="layui-input" readonly>  
+            <input type="text" value="${aiEmployee.ai_position}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">邮箱</label>  
+          <label class="layui-form-label">部门</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.ai_email}" class="layui-input" readonly>  
+            <input type="text" value="${aiEmployee.ai_department}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">电话</label>  
+          <label class="layui-form-label">入职日期</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.ai_phone}" class="layui-input" readonly>  
+            <input type="text" value="${aiEmployee.ai_hire_date}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">地址</label>  
+          <label class="layui-form-label">薪资</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiUser.ai_address}" class="layui-input" readonly>  
+            <input type="text" value="${aiEmployee.ai_salary}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

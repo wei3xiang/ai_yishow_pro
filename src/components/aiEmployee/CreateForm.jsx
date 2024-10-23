@@ -2,33 +2,33 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户名</label>  
+            <label class="layui-form-label">员工姓名</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_username" placeholder="请输入用户名"  class="layui-input">  
+                <input type="text" name="ai_employee_name" placeholder="请输入员工姓名"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">密码</label>  
+            <label class="layui-form-label">职位</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_password" placeholder="请输入密码"  class="layui-input">  
+                <input type="text" name="ai_position" placeholder="请输入职位"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">邮箱</label>  
+            <label class="layui-form-label">部门</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_email" placeholder="请输入邮箱"  class="layui-input">  
+                <input type="text" name="ai_department" placeholder="请输入部门"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">电话</label>  
+            <label class="layui-form-label">入职日期</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_phone" placeholder="请输入电话"  class="layui-input">  
+                <input type="text" name="ai_hire_date" placeholder="请输入入职日期"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">地址</label>  
+            <label class="layui-form-label">薪资</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_address" placeholder="请输入地址"  class="layui-input">  
+                <input type="text" name="ai_salary" placeholder="请输入薪资"  class="layui-input">  
             </div>  
             </div>  
       </div>  

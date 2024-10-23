@@ -22,9 +22,10 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiOrder,
-              aiUserId: layero.find('input[name="aiUserId"]').val(), 
+              aiCustomerUuid: layero.find('input[name="aiCustomerUuid"]').val(), 
+              aiEmployeeUuid: layero.find('input[name="aiEmployeeUuid"]').val(), 
               aiOrderDate: layero.find('input[name="aiOrderDate"]').val(), 
-              aiTotalAmount: layero.find('input[name="aiTotalAmount"]').val(), 
+              aiTotalPrice: layero.find('input[name="aiTotalPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -67,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUserId: "",  aiOrderDate: "",  aiTotalAmount: "", };
+    const newItem = { uuid: "",  aiCustomerUuid: "",  aiEmployeeUuid: "",  aiOrderDate: "",  aiTotalPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -79,14 +80,16 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiUserId = layero.find('input[name="aiUserId"]').val();
+          const aiCustomerUuid = layero.find('input[name="aiCustomerUuid"]').val();
+          const aiEmployeeUuid = layero.find('input[name="aiEmployeeUuid"]').val();
           const aiOrderDate = layero.find('input[name="aiOrderDate"]').val();
-          const aiTotalAmount = layero.find('input[name="aiTotalAmount"]').val();
-           if (aiUserId && aiOrderDate && aiTotalAmount
+          const aiTotalPrice = layero.find('input[name="aiTotalPrice"]').val();
+           if (aiCustomerUuid && aiEmployeeUuid && aiOrderDate && aiTotalPrice
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
+            setList([...list, { ...newItem, uuid: Date.now(), aiCustomerUuid,
+            aiEmployeeUuid,
             aiOrderDate,
-            aiTotalAmount,
+            aiTotalPrice,
              }]);
             layui.layer.close(index);
           } else {

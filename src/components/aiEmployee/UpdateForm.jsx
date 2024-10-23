@@ -1,33 +1,33 @@
-const UpdateForm = ({ aiProduct }) => {
+const UpdateForm = ({ aiEmployee }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品名称</label>  
+      <label class="layui-form-label">员工姓名</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiProduct.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiEmployeeName" value="${aiEmployee.ai_employee_name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品描述</label>  
+      <label class="layui-form-label">职位</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiDescription" value="${aiProduct.ai_description}" class="layui-input">  
+        <input type="text" name="aiPosition" value="${aiEmployee.ai_position}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">价格</label>  
+      <label class="layui-form-label">部门</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPrice" value="${aiProduct.ai_price}" class="layui-input">  
+        <input type="text" name="aiDepartment" value="${aiEmployee.ai_department}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量</label>  
+      <label class="layui-form-label">入职日期</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStock" value="${aiProduct.ai_stock}" class="layui-input">  
+        <input type="text" name="aiHireDate" value="${aiEmployee.ai_hire_date}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">供应商uuid</label>  
+      <label class="layui-form-label">薪资</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiSupplierUuid" value="${aiProduct.ai_supplier_uuid}" class="layui-input">  
+        <input type="text" name="aiSalary" value="${aiEmployee.ai_salary}" class="layui-input">  
       </div>  
     </div>  
   </div>  

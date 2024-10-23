@@ -1,18 +1,18 @@
 import { Form, Button, Input } from 'antd';
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
-import { aiUserStateAtom } from './atom';
+import { aiEmployeeStateAtom } from './atom';
 
 const SearchForm = (props) => {
   const [form] = Form.useForm();
-  const [aiUserState, setAiUserState] = useRecoilState(aiUserStateAtom);
+  const [aiEmployeeState, setAiEmployeeState] = useRecoilState(aiEmployeeStateAtom);
 
   const onClickSearch = useCallback(() => {}, []);
 
   const onClickReset = useCallback(() => {}, []);
 
   const onClickToCreate = useCallback(() => {
-    setAiUserState((prevState) => ({
+    setAiEmployeeState((prevState) => ({
       ...prevState,
       createModel: {},
     }));
