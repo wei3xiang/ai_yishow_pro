@@ -23,9 +23,8 @@ const Index = () => {
           const updatedItem = {
             ...aiInventory,
               aiProductName: layero.find('input[name="aiProductName"]').val(), 
-              aiCategory: layero.find('input[name="aiCategory"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
-              aiStockAlertLevel: layero.find('input[name="aiStockAlertLevel"]').val(), 
+              aiCategory: layero.find('input[name="aiCategory"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiProductName: "",  aiCategory: "",  aiQuantity: "",  aiStockAlertLevel: "", };
+    const newItem = { uuid: "",  aiProductName: "",  aiQuantity: "",  aiCategory: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,22 +80,18 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiProductName = layero.find('input[name="aiProductName"]').val();
-          const aiCategory = layero.find('input[name="aiCategory"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
-          const aiStockAlertLevel = layero.find('input[name="aiStockAlertLevel"]').val();
+          const aiCategory = layero.find('input[name="aiCategory"]').val();
            if (
            aiProductName &&
 
-           aiCategory &&
-
            aiQuantity &&
 
-           aiStockAlertLevel
+           aiCategory
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiProductName,
-          aiCategory,
           aiQuantity,
-          aiStockAlertLevel,
+          aiCategory,
            }]);
             layui.layer.close(index);
           } else {

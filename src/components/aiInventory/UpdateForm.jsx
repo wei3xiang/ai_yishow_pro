@@ -7,21 +7,15 @@ const UpdateForm = ({ aiInventory }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品类别</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
       <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存预警级别</label>  
+      <label class="layui-form-label">类别</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiStockAlertLevel" value="${aiInventory.ai_stock_alert_level}" class="layui-input">  
+        <input type="text" name="aiCategory" value="${aiInventory.ai_category}" class="layui-input">  
       </div>  
     </div>  
   </div>  

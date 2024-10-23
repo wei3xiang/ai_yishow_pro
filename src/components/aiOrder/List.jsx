@@ -15,8 +15,7 @@ const Index = ({
 
        `${aiOrder.ai_customer_uuid}`.includes(searchTerm) ||
        `${aiOrder.ai_order_date}`.includes(searchTerm) ||
-       `${aiOrder.ai_total_amount}`.includes(searchTerm) ||
-       `${aiOrder.ai_status}`.includes(searchTerm)
+       `${aiOrder.ai_total_amount}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,10 +54,9 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户UUID</th>
+              <th>客户ID</th>
               <th>下单日期</th>
-              <th>订单总金额</th>
-              <th>订单状态 (如已支付, 待支付)</th>
+              <th>订单金额</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -68,7 +66,6 @@ const Index = ({
               <td>{aiOrder.ai_customer_uuid}</td>
               <td>{aiOrder.ai_order_date}</td>
               <td>{aiOrder.ai_total_amount}</td>
-              <td>{aiOrder.ai_status}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

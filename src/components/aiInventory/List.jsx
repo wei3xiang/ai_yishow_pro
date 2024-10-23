@@ -14,9 +14,8 @@ const Index = ({
       (aiInventory) =>
 
        `${aiInventory.ai_product_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_category}`.includes(searchTerm) ||
        `${aiInventory.ai_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_alert_level}`.includes(searchTerm)
+       `${aiInventory.ai_category}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,9 +55,8 @@ const Index = ({
         <thead>
           <tr>
               <th>产品名称</th>
-              <th>产品类别</th>
               <th>库存数量</th>
-              <th>库存预警级别</th>
+              <th>类别</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -66,9 +64,8 @@ const Index = ({
           {filteredList.map((aiInventory) => (
             <tr key={aiInventory.uuid}>
               <td>{aiInventory.ai_product_name}</td>
-              <td>{aiInventory.ai_category}</td>
               <td>{aiInventory.ai_quantity}</td>
-              <td>{aiInventory.ai_stock_alert_level}</td>
+              <td>{aiInventory.ai_category}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

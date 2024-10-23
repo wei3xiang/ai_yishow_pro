@@ -1,7 +1,7 @@
 const UpdateForm = ({ aiOrder }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">客户UUID</label>  
+      <label class="layui-form-label">客户ID</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiCustomerUuid" value="${aiOrder.ai_customer_uuid}" class="layui-input">  
       </div>  
@@ -13,15 +13,9 @@ const UpdateForm = ({ aiOrder }) => {
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单总金额</label>  
+      <label class="layui-form-label">订单金额</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiTotalAmount" value="${aiOrder.ai_total_amount}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">订单状态 (如已支付, 待支付)</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiStatus" value="${aiOrder.ai_status}" class="layui-input">  
       </div>  
     </div>  
   </div>  

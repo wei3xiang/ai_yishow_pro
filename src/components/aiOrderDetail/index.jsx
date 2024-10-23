@@ -23,10 +23,9 @@ const Index = () => {
           const updatedItem = {
             ...aiOrderDetail,
               aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
-              aiProductName: layero.find('input[name="aiProductName"]').val(), 
+              aiProductUuid: layero.find('input[name="aiProductUuid"]').val(), 
               aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
               aiUnitPrice: layero.find('input[name="aiUnitPrice"]').val(), 
-              aiTotalPrice: layero.find('input[name="aiTotalPrice"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -69,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductName: "",  aiQuantity: "",  aiUnitPrice: "",  aiTotalPrice: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductUuid: "",  aiQuantity: "",  aiUnitPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,26 +81,22 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
 
           const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
-          const aiProductName = layero.find('input[name="aiProductName"]').val();
+          const aiProductUuid = layero.find('input[name="aiProductUuid"]').val();
           const aiQuantity = layero.find('input[name="aiQuantity"]').val();
           const aiUnitPrice = layero.find('input[name="aiUnitPrice"]').val();
-          const aiTotalPrice = layero.find('input[name="aiTotalPrice"]').val();
            if (
            aiOrderUuid &&
 
-           aiProductName &&
+           aiProductUuid &&
 
            aiQuantity &&
 
-           aiUnitPrice &&
-
-           aiTotalPrice
+           aiUnitPrice
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
-          aiProductName,
+          aiProductUuid,
           aiQuantity,
           aiUnitPrice,
-          aiTotalPrice,
            }]);
             layui.layer.close(index);
           } else {
