@@ -11,11 +11,18 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiPayments) =>
 
+<<<<<<< HEAD:src/components/aiOrder/List.jsx
        `${aiOrder.customer}`.includes(searchTerm) ||
        `${aiOrder.flower}`.includes(searchTerm) ||
        `${aiOrder.quantity}`.includes(searchTerm)
+=======
+       `${aiPayments.ai_order_uuid}`.includes(searchTerm) ||
+       `${aiPayments.ai_amount}`.includes(searchTerm) ||
+       `${aiPayments.ai_payment_date}`.includes(searchTerm) ||
+       `${aiPayments.ai_payment_method}`.includes(searchTerm)
+>>>>>>> 78f79555fe4e4ad3ba07d3f1482a4fd28f5404de:src/components/aiPayments/List.jsx
     );
   }, [data, searchTerm]);
 
@@ -57,37 +64,53 @@ const Index = ({
       >
         <thead>
           <tr>
+<<<<<<< HEAD:src/components/aiOrder/List.jsx
               <th>客户</th>
               <th>花名</th>
               <th>数量</th>
+=======
+              <th>订单UUID</th>
+              <th>支付金额</th>
+              <th>支付日期</th>
+              <th>支付方式</th>
+>>>>>>> 78f79555fe4e4ad3ba07d3f1482a4fd28f5404de:src/components/aiPayments/List.jsx
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
+<<<<<<< HEAD:src/components/aiOrder/List.jsx
           {filteredList.map((aiOrder) => (
             <tr key={aiOrder.uuid}>
               <td>{aiOrder.customer}</td>
               <td>{aiOrder.flower}</td>
               <td>{aiOrder.quantity}</td>
+=======
+          {filteredList.map((aiPayments) => (
+            <tr key={aiPayments.uuid}>
+              <td>{aiPayments.ai_order_uuid}</td>
+              <td>{aiPayments.ai_amount}</td>
+              <td>{aiPayments.ai_payment_date}</td>
+              <td>{aiPayments.ai_payment_method}</td>
+>>>>>>> 78f79555fe4e4ad3ba07d3f1482a4fd28f5404de:src/components/aiPayments/List.jsx
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiPayments)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiPayments)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiPayments)}
                 >
                   删除
                 </button>
