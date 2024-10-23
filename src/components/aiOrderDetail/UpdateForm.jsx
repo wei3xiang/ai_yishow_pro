@@ -1,27 +1,33 @@
-const UpdateForm = ({ aiInventory }) => {
+const UpdateForm = ({ aiOrderDetail }) => {
   return `<div class="layui-form" style="padding: 20px;">
+      <div class="layui-form-item">  
+      <label class="layui-form-label">订单ID</label>  
+      <div class="layui-input-block">  
+        <input type="text" name="aiOrderUuid" value="${aiOrderDetail.ai_order_uuid}" class="layui-input">  
+      </div>  
+    </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">产品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiOrderDetail.ai_product_name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiOrderDetail.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">计量单位</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUnitOfMeasure" value="${aiInventory.ai_unit_of_measure}" class="layui-input">  
+        <input type="text" name="aiUnitOfMeasure" value="${aiOrderDetail.ai_unit_of_measure}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPrice" value="${aiInventory.ai_price}" class="layui-input">  
+        <input type="text" name="aiPrice" value="${aiOrderDetail.ai_price}" class="layui-input">  
       </div>  
     </div>  
   </div>  

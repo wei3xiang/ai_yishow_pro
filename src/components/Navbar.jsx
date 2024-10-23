@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 import AiInventory from './aiInventory';
+import AiOperationLog from './aiOperationLog';
 import AiOrder from './aiOrder';
+import AiOrderDetail from './aiOrderDetail';
 import AiUser from './aiUser';
 
 const Navbar = () => {
@@ -11,8 +13,12 @@ const Navbar = () => {
     switch (activePage) {
         case "aiInventory":
             return <AiInventory />;
+        case "aiOperationLog":
+            return <AiOperationLog />;
         case "aiOrder":
             return <AiOrder />;
+        case "aiOrderDetail":
+            return <AiOrderDetail />;
         case "aiUser":
             return <AiUser />;
         default:
@@ -36,11 +42,29 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
+                    activePage === "aiOperationLog" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiOperationLog")}>
+                    操作日志表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
                     activePage === "aiOrder" ? "layui-this" : ""
                 }`}
                 >
                 <a href="#" onClick={() => setActivePage("aiOrder")}>
                     订单表
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiOrderDetail" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiOrderDetail")}>
+                    订单详情表
                 </a>
                 </li>
                 <li

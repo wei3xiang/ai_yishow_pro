@@ -1,21 +1,21 @@
-const UpdateForm = ({ aiOrder }) => {
+const UpdateForm = ({ aiOperationLog }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">用户ID</label>  
+      <label class="layui-form-label">日志类型</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUserUuid" value="${aiOrder.ai_user_uuid}" class="layui-input">  
+        <input type="text" name="aiLogType" value="${aiOperationLog.ai_log_type}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单日期</label>  
+      <label class="layui-form-label">日志描述</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderDate" value="${aiOrder.ai_order_date}" class="layui-input">  
+        <input type="text" name="aiLogDescription" value="${aiOperationLog.ai_log_description}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单总金额</label>  
+      <label class="layui-form-label">日志时间</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiTotalAmount" value="${aiOrder.ai_total_amount}" class="layui-input">  
+        <input type="text" name="aiLogTime" value="${aiOperationLog.ai_log_time}" class="layui-input">  
       </div>  
     </div>  
   </div>  
