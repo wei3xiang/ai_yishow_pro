@@ -1,34 +1,28 @@
-const RemoveForm = ({ aiOrder }) => {
+const RemoveForm = ({ aiOrderDetail }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">用户UUID</label>  
+          <label class="layui-form-label">订单UUID</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.ai_customer_uuid}" class="layui-input" readonly>  
-          </div>  
-        </div>
-        <div class="layui-form-item">  
-          <label class="layui-form-label">订单编号</label>  
-          <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.ai_order_number}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.ai_order_uuid}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
           <label class="layui-form-label">产品名称</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.ai_product_name}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.ai_product_name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单数量</label>  
+          <label class="layui-form-label">产品数量</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.ai_quantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.ai_quantity}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">订单日期</label>  
+          <label class="layui-form-label">单价</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiOrder.ai_order_date}" class="layui-input" readonly>  
+            <input type="text" value="${aiOrderDetail.ai_price}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

@@ -1,28 +1,28 @@
-const RemoveForm = ({ aiInventory }) => {
+const RemoveForm = ({ aiStock }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
           <label class="layui-form-label">产品名称</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_product_name}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.ai_product_name}" class="layui-input" readonly>  
+          </div>  
+        </div>
+        <div class="layui-form-item">  
+          <label class="layui-form-label">供应商名称</label>  
+          <div class="layui-input-block">  
+            <input type="text" value="${aiStock.ai_supplier_name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
           <label class="layui-form-label">库存数量</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_quantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.ai_quantity}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">价格</label>  
+          <label class="layui-form-label"> reorder 级别</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_price}" class="layui-input" readonly>  
-          </div>  
-        </div>
-        <div class="layui-form-item">  
-          <label class="layui-form-label">保质期</label>  
-          <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_expiration_date}" class="layui-input" readonly>  
+            <input type="text" value="${aiStock.ai_reorder_level}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>

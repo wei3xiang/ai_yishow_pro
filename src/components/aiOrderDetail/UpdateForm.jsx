@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiInventory }) => {
+const UpdateForm = ({ aiOrderDetail }) => {
   return `<div class="layui-form" style="padding: 20px;">
+      <div class="layui-form-item">  
+      <label class="layui-form-label">订单UUID</label>  
+      <div class="layui-input-block">  
+        <input type="text" name="aiOrderUuid" value="${aiOrderDetail.ai_order_uuid}" class="layui-input">  
+      </div>  
+    </div>  
       <div class="layui-form-item">  
       <label class="layui-form-label">产品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiProductName" value="${aiOrderDetail.ai_product_name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量</label>  
+      <label class="layui-form-label">产品数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiOrderDetail.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">价格</label>  
+      <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPrice" value="${aiInventory.ai_price}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">保质期</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiExpirationDate" value="${aiInventory.ai_expiration_date}" class="layui-input">  
+        <input type="text" name="aiPrice" value="${aiOrderDetail.ai_price}" class="layui-input">  
       </div>  
     </div>  
   </div>  

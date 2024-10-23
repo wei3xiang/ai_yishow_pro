@@ -8,21 +8,21 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
+            <label class="layui-form-label">供应商名称</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_supplier_name" placeholder="请输入供应商名称"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
             <label class="layui-form-label">库存数量</label>  
             <div class="layui-input-block">  
                 <input type="text" name="ai_quantity" placeholder="请输入库存数量"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">价格</label>  
+            <label class="layui-form-label"> reorder 级别</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_price" placeholder="请输入价格"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">保质期</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_expiration_date" placeholder="请输入保质期"  class="layui-input">  
+                <input type="text" name="ai_reorder_level" placeholder="请输入 reorder 级别"  class="layui-input">  
             </div>  
             </div>  
       </div>  
