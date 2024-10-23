@@ -13,9 +13,9 @@ const Index = ({
     return data.filter(
       (aiInventory) =>
 
-       `${aiInventory.ai_brewery_uuid}`.includes(searchTerm) ||
-       `${aiInventory.ai_beer_uuid}`.includes(searchTerm) ||
-       `${aiInventory.ai_amount}`.includes(searchTerm)
+       `${aiInventory.ai_item_name}`.includes(searchTerm) ||
+       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
+       `${aiInventory.ai_unit_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,18 +54,18 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>酿造商的 UUID</th>
-              <th>啤酒的 UUID</th>
-              <th>库存数量（升）</th>
+              <th>物品名称</th>
+              <th>库存数量</th>
+              <th>单价</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiInventory) => (
             <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_brewery_uuid}</td>
-              <td>{aiInventory.ai_beer_uuid}</td>
-              <td>{aiInventory.ai_amount}</td>
+              <td>{aiInventory.ai_item_name}</td>
+              <td>{aiInventory.ai_quantity}</td>
+              <td>{aiInventory.ai_unit_price}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

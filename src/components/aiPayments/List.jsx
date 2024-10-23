@@ -11,11 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiBrewery) =>
+      (aiPayments) =>
 
-       `${aiBrewery.ai_name}`.includes(searchTerm) ||
-       `${aiBrewery.ai_description}`.includes(searchTerm) ||
-       `${aiBrewery.ai_website_url}`.includes(searchTerm)
+       `${aiPayments.ai_order_uuid}`.includes(searchTerm) ||
+       `${aiPayments.ai_amount}`.includes(searchTerm) ||
+       `${aiPayments.ai_payment_date}`.includes(searchTerm) ||
+       `${aiPayments.ai_payment_method}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -54,37 +55,39 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th> Brewery 名称</th>
-              <th> Brewery 描述</th>
-              <th> Brewery 网站地址</th>
+              <th>订单UUID</th>
+              <th>支付金额</th>
+              <th>支付日期</th>
+              <th>支付方式</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiBrewery) => (
-            <tr key={aiBrewery.uuid}>
-              <td>{aiBrewery.ai_name}</td>
-              <td>{aiBrewery.ai_description}</td>
-              <td>{aiBrewery.ai_website_url}</td>
+          {filteredList.map((aiPayments) => (
+            <tr key={aiPayments.uuid}>
+              <td>{aiPayments.ai_order_uuid}</td>
+              <td>{aiPayments.ai_amount}</td>
+              <td>{aiPayments.ai_payment_date}</td>
+              <td>{aiPayments.ai_payment_method}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiBrewery)}
+                  onClick={() => onClickDetail(aiPayments)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiBrewery)}
+                  onClick={() => onClickUpdate(aiPayments)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiBrewery)}
+                  onClick={() => onClickRemove(aiPayments)}
                 >
                   删除
                 </button>

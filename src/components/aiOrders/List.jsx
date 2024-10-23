@@ -11,12 +11,14 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiOrders) =>
 
-       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
-       `${aiOrder.ai_beer_uuid}`.includes(searchTerm) ||
-       `${aiOrder.ai_amount}`.includes(searchTerm) ||
-       `${aiOrder.ai_order_date}`.includes(searchTerm)
+       `${aiOrders.ai_order_no}`.includes(searchTerm) ||
+       `${aiOrders.ai_user_uuid}`.includes(searchTerm) ||
+       `${aiOrders.ai_item_uuid}`.includes(searchTerm) ||
+       `${aiOrders.ai_quantity}`.includes(searchTerm) ||
+       `${aiOrders.ai_order_date}`.includes(searchTerm) ||
+       `${aiOrders.ai_order_status}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,39 +57,43 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>用户的 UUID</th>
-              <th>购买的啤酒的 UUID</th>
-              <th>购买数量（升）</th>
+              <th>订单号</th>
+              <th>用户UUID</th>
+              <th>物品UUID</th>
+              <th>订购数量</th>
               <th>订单日期</th>
+              <th>订单状态</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.ai_user_uuid}</td>
-              <td>{aiOrder.ai_beer_uuid}</td>
-              <td>{aiOrder.ai_amount}</td>
-              <td>{aiOrder.ai_order_date}</td>
+          {filteredList.map((aiOrders) => (
+            <tr key={aiOrders.uuid}>
+              <td>{aiOrders.ai_order_no}</td>
+              <td>{aiOrders.ai_user_uuid}</td>
+              <td>{aiOrders.ai_item_uuid}</td>
+              <td>{aiOrders.ai_quantity}</td>
+              <td>{aiOrders.ai_order_date}</td>
+              <td>{aiOrders.ai_order_status}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiOrders)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiOrders)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiOrders)}
                 >
                   删除
                 </button>

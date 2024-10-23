@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_brewery.json";
+import data from "../data/ai_payments.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiBrewery) => {
-    const modalContent = `${UpdateForm({ aiBrewery: aiBrewery })}`;
+  const handleEdit = (aiPayments) => {
+    const modalContent = `${UpdateForm({ aiPayments: aiPayments })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,10 +21,11 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiBrewery,
-              aiName: layero.find('input[name="aiName"]').val(), 
-              aiDescription: layero.find('input[name="aiDescription"]').val(), 
-              aiWebsiteUrl: layero.find('input[name="aiWebsiteUrl"]').val(), 
+            ...aiPayments,
+              aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
+              aiAmount: layero.find('input[name="aiAmount"]').val(), 
+              aiPaymentDate: layero.find('input[name="aiPaymentDate"]').val(), 
+              aiPaymentMethod: layero.find('input[name="aiPaymentMethod"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -35,8 +36,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiBrewery) => {
-    const modalContent = `${DisableForm({ aiBrewery: aiBrewery })}`;
+  const handleDetail = (aiPayments) => {
+    const modalContent = `${DisableForm({ aiPayments: aiPayments })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -48,8 +49,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiBrewery) => {
-    const modalContent = `${RemoveForm({ aiBrewery: aiBrewery })}`;
+  const handleRemove = (aiPayments) => {
+    const modalContent = `${RemoveForm({ aiPayments: aiPayments })}`;
 
     layui.layer.open({
       type: 1,
@@ -59,7 +60,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiBrewery.uuid));
+          setList(list.filter((u) => u.uuid !== aiPayments.uuid));
           layui.layer.close(index);
         });
       },
@@ -67,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiName: "",  aiDescription: "",  aiWebsiteUrl: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiAmount: "",  aiPaymentDate: "",  aiPaymentMethod: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -79,19 +80,23 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiName = layero.find('input[name="aiName"]').val();
-          const aiDescription = layero.find('input[name="aiDescription"]').val();
-          const aiWebsiteUrl = layero.find('input[name="aiWebsiteUrl"]').val();
+          const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
+          const aiAmount = layero.find('input[name="aiAmount"]').val();
+          const aiPaymentDate = layero.find('input[name="aiPaymentDate"]').val();
+          const aiPaymentMethod = layero.find('input[name="aiPaymentMethod"]').val();
            if (
-           aiName &&
+           aiOrderUuid &&
 
-           
+           aiAmount &&
 
-           
+           aiPaymentDate &&
+
+           aiPaymentMethod
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiName,
-          aiDescription,
-          aiWebsiteUrl,
+            setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
+          aiAmount,
+          aiPaymentDate,
+          aiPaymentMethod,
            }]);
             layui.layer.close(index);
           } else {

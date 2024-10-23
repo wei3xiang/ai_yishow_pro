@@ -1,21 +1,21 @@
 const UpdateForm = ({ aiInventory }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">酿造商的 UUID</label>  
+      <label class="layui-form-label">物品名称</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiBreweryUuid" value="${aiInventory.ai_brewery_uuid}" class="layui-input">  
+        <input type="text" name="aiItemName" value="${aiInventory.ai_item_name}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">啤酒的 UUID</label>  
+      <label class="layui-form-label">库存数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiBeerUuid" value="${aiInventory.ai_beer_uuid}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiInventory.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量（升）</label>  
+      <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiAmount" value="${aiInventory.ai_amount}" class="layui-input">  
+        <input type="text" name="aiUnitPrice" value="${aiInventory.ai_unit_price}" class="layui-input">  
       </div>  
     </div>  
   </div>  
