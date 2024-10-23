@@ -82,17 +82,12 @@ const Index = () => {
           const name = layero.find('input[name="name"]').val();
           const address = layero.find('input[name="address"]').val();
           const phone = layero.find('input[name="phone"]').val();
-           if (
-           name &&
-
-           address &&
-
-           phone
+           if (name && address && phone
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), name,
-          address,
-          phone,
-           }]);
+            address,
+            phone,
+             }]);
             layui.layer.close(index);
           } else {
             layui.layer.msg("请填写完整信息", { icon: 5 });

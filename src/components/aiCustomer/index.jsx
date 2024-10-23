@@ -22,9 +22,9 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiCustomer,
-              name: layero.find('input[name="name"]').val(), 
-              phone: layero.find('input[name="phone"]').val(), 
-              address: layero.find('input[name="address"]').val(), 
+            name: layero.find('input[name="name"]').val(),
+            phone: layero.find('input[name="phone"]').val(),
+            address: layero.find('input[name="address"]').val(),
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -67,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  name: "",  phone: "",  address: "", };
+    const newItem = { uuid: "", name: "", phone: "", address: "" };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -78,21 +78,14 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-
           const name = layero.find('input[name="name"]').val();
           const phone = layero.find('input[name="phone"]').val();
           const address = layero.find('input[name="address"]').val();
-           if (
-           name &&
-
-           phone &&
-
-           address
-           ) {
-            setList([...list, { ...newItem, uuid: Date.now(), name,
-          phone,
-          address,
-           }]);
+          if (name && phone && address) {
+            setList([
+              ...list,
+              { ...newItem, uuid: Date.now(), name, phone, address },
+            ]);
             layui.layer.close(index);
           } else {
             layui.layer.msg("请填写完整信息", { icon: 5 });
@@ -103,9 +96,15 @@ const Index = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div
+      style={{
+        padding: "20px",
+        backgroundColor: "white",
+        borderRadius: "10px",
+      }}
+    >
       <List
-        data = {list}
+        data={list}
         onClickCreate={() => handleCreate()}
         onClickRemove={(user) => handleRemove(user)}
         onClickDetail={(user) => handleDetail(user)}

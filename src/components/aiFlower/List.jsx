@@ -35,10 +35,13 @@ const Index = ({
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="layui-btn" onClick={() => setSearchTerm("")}>
+          <button 
+            style={{ marginBottom: '2px', marginLeft: '10px' }}
+            className="layui-btn" onClick={() => setSearchTerm("")}>
             重置
           </button>
           <button
+            style={{ marginBottom: '2px' }}
             className="layui-btn layui-btn-normal"
             onClick={() => onClickCreate()}
           >
@@ -65,18 +68,21 @@ const Index = ({
               <td>{aiFlower.price}</td>
               <td>
                 <button
+                  style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
                   onClick={() => onClickDetail(aiFlower)}
                 >
                   查看
                 </button>
                 <button
+                  style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
                   onClick={() => onClickUpdate(aiFlower)}
                 >
                   编辑
                 </button>
                 <button
+                  style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
                   onClick={() => onClickRemove(aiFlower)}
                 >

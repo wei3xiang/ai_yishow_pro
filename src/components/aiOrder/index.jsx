@@ -82,17 +82,12 @@ const Index = () => {
           const customer = layero.find('input[name="customer"]').val();
           const flower = layero.find('input[name="flower"]').val();
           const quantity = layero.find('input[name="quantity"]').val();
-           if (
-           customer &&
-
-           flower &&
-
-           quantity
+           if (customer && flower && quantity
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), customer,
-          flower,
-          quantity,
-           }]);
+            flower,
+            quantity,
+             }]);
             layui.layer.close(index);
           } else {
             layui.layer.msg("请填写完整信息", { icon: 5 });

@@ -12,10 +12,9 @@ const Index = ({
   const filteredList = useMemo(() => {
     return data.filter(
       (aiCustomer) =>
-
-       `${aiCustomer.name}`.includes(searchTerm) ||
-       `${aiCustomer.phone}`.includes(searchTerm) ||
-       `${aiCustomer.address}`.includes(searchTerm)
+        `${aiCustomer.name}`.includes(searchTerm) ||
+        `${aiCustomer.phone}`.includes(searchTerm) ||
+        `${aiCustomer.address}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -24,7 +23,11 @@ const Index = ({
       <div className="layui-panel">
         <div
           className="layui-form"
-          style={{ display: "flex", alignItems: "center", gap: "10px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}
         >
           <div className="layui-form-item" style={{ flex: "1" }}>
             <input
@@ -36,10 +39,15 @@ const Index = ({
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="layui-btn" onClick={() => setSearchTerm("")}>
+          <button
+            style={{ marginBottom: "2px", marginLeft: "10px" }}
+            className="layui-btn"
+            onClick={() => setSearchTerm("")}
+          >
             重置
           </button>
           <button
+            style={{ marginBottom: "2px" }}
             className="layui-btn layui-btn-normal"
             onClick={() => onClickCreate()}
           >
@@ -54,9 +62,9 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>客户名</th>
-              <th>电话</th>
-              <th>地址</th>
+            <th>客户名</th>
+            <th>电话</th>
+            <th>地址</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -68,18 +76,21 @@ const Index = ({
               <td>{aiCustomer.address}</td>
               <td>
                 <button
+                  style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
                   onClick={() => onClickDetail(aiCustomer)}
                 >
                   查看
                 </button>
                 <button
+                  style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
                   onClick={() => onClickUpdate(aiCustomer)}
                 >
                   编辑
                 </button>
                 <button
+                  style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
                   onClick={() => onClickRemove(aiCustomer)}
                 >

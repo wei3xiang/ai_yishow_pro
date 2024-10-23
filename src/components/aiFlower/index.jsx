@@ -80,14 +80,11 @@ const Index = () => {
 
           const name = layero.find('input[name="name"]').val();
           const price = layero.find('input[name="price"]').val();
-           if (
-           name &&
-
-           price
+           if (name && price
            ) {
             setList([...list, { ...newItem, uuid: Date.now(), name,
-          price,
-           }]);
+            price,
+             }]);
             layui.layer.close(index);
           } else {
             layui.layer.msg("请填写完整信息", { icon: 5 });
