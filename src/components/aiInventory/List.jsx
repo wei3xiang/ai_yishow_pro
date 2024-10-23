@@ -13,10 +13,10 @@ const Index = ({
     return data.filter(
       (aiInventory) =>
 
-       `${aiInventory.ai_product_id}`.includes(searchTerm) ||
-       `${aiInventory.ai_quantity}`.includes(searchTerm) ||
        `${aiInventory.ai_product_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_unit_price}`.includes(searchTerm)
+       `${aiInventory.ai_product_type}`.includes(searchTerm) ||
+       `${aiInventory.ai_unit}`.includes(searchTerm) ||
+       `${aiInventory.ai_number}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -58,20 +58,20 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>产品ID</th>
-              <th>库存数量</th>
               <th>产品名称</th>
-              <th>单价</th>
+              <th>产品类型</th>
+              <th>单位</th>
+              <th>数量</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiInventory) => (
             <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_product_id}</td>
-              <td>{aiInventory.ai_quantity}</td>
               <td>{aiInventory.ai_product_name}</td>
-              <td>{aiInventory.ai_unit_price}</td>
+              <td>{aiInventory.ai_product_type}</td>
+              <td>{aiInventory.ai_unit}</td>
+              <td>{aiInventory.ai_number}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

@@ -22,10 +22,10 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiInventory,
-              aiProductId: layero.find('input[name="aiProductId"]').val(), 
-              aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
               aiProductName: layero.find('input[name="aiProductName"]').val(), 
-              aiUnitPrice: layero.find('input[name="aiUnitPrice"]').val(), 
+              aiProductType: layero.find('input[name="aiProductType"]').val(), 
+              aiUnit: layero.find('input[name="aiUnit"]').val(), 
+              aiNumber: layero.find('input[name="aiNumber"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiProductId: "",  aiQuantity: "",  aiProductName: "",  aiUnitPrice: "", };
+    const newItem = { uuid: "",  aiProductName: "",  aiProductType: "",  aiUnit: "",  aiNumber: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -80,11 +80,11 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiProductId = layero.find('input[name="aiProductId"]').val();
-          const aiQuantity = layero.find('input[name="aiQuantity"]').val();
           const aiProductName = layero.find('input[name="aiProductName"]').val();
-          const aiUnitPrice = layero.find('input[name="aiUnitPrice"]').val();
-          setList([...list, { ...newItem, uuid: Date.now(), aiProductId,aiQuantity,aiProductName,aiUnitPrice, }]);
+          const aiProductType = layero.find('input[name="aiProductType"]').val();
+          const aiUnit = layero.find('input[name="aiUnit"]').val();
+          const aiNumber = layero.find('input[name="aiNumber"]').val();
+          setList([...list, { ...newItem, uuid: Date.now(), aiProductName,aiProductType,aiUnit,aiNumber, }]);
           layui.layer.close(index);
         });
       },

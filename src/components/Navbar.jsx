@@ -2,9 +2,6 @@ import React, { useState } from "react";
 
 import AiInventory from './aiInventory';
 import AiOrder from './aiOrder';
-import AiOrderDetail from './aiOrderDetail';
-import AiProduct from './aiProduct';
-import AiStockPicking from './aiStockPicking';
 import AiUser from './aiUser';
 
 const Navbar = () => {
@@ -16,12 +13,6 @@ const Navbar = () => {
             return <AiInventory />;
         case "aiOrder":
             return <AiOrder />;
-        case "aiOrderDetail":
-            return <AiOrderDetail />;
-        case "aiProduct":
-            return <AiProduct />;
-        case "aiStockPicking":
-            return <AiStockPicking />;
         case "aiUser":
             return <AiUser />;
         default:
@@ -54,39 +45,6 @@ const Navbar = () => {
                   {"订单表".endsWith("表")
                   ? "订单表".slice(0, -1) + "管理"
                   : "订单表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrderDetail" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrderDetail")}>
-                  {"订单详情表".endsWith("表")
-                  ? "订单详情表".slice(0, -1) + "管理"
-                  : "订单详情表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiProduct" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiProduct")}>
-                  {"产品表".endsWith("表")
-                  ? "产品表".slice(0, -1) + "管理"
-                  : "产品表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiStockPicking" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiStockPicking")}>
-                  {"积压库存表".endsWith("表")
-                  ? "积压库存表".slice(0, -1) + "管理"
-                  : "积压库存表"}
                 </a>
                 </li>
                 <li

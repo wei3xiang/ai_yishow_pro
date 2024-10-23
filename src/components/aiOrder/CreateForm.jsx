@@ -2,21 +2,39 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户ID</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_user_id" placeholder="请输入用户ID"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
             <label class="layui-form-label">订单ID</label>  
             <div class="layui-input-block">  
                 <input type="text" name="ai_order_id" placeholder="请输入订单ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单总金额</label>  
+            <label class="layui-form-label">用户UUID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_total_amount" placeholder="请输入订单总金额"  class="layui-input">  
+                <input type="text" name="ai_user_uuid" placeholder="请输入用户UUID"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">产品名称</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_product_name" placeholder="请输入产品名称"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">产品类型</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_product_type" placeholder="请输入产品类型"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">单位</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_unit" placeholder="请输入单位"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">数量</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_number" placeholder="请输入数量"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
