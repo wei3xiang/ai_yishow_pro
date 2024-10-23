@@ -13,18 +13,6 @@ const CreateForm = () => {
                 <input type="text" name="ai_beer_name" placeholder="请输入啤酒名称"  class="layui-input">  
             </div>  
             </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">订单数量</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_quantity" placeholder="请输入订单数量"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">下单日期</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_order_date" placeholder="请输入下单日期"  class="layui-input">  
-            </div>  
-            </div>  
       </div>  
       <div style="text-align: right; margin: 30px 0 10px; spadding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  

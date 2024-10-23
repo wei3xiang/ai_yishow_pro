@@ -11,12 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiBeerCategory) =>
 
-       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
-       `${aiOrder.ai_beer_name}`.includes(searchTerm) ||
-       `${aiOrder.ai_quantity}`.includes(searchTerm) ||
-       `${aiOrder.ai_order_date}`.includes(searchTerm)
+       `${aiBeerCategory.ai_category_uuid}`.includes(searchTerm) ||
+       `${aiBeerCategory.ai_beer_name}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -55,39 +53,35 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>用户ID</th>
+              <th>分类ID</th>
               <th>啤酒名称</th>
-              <th>订单数量</th>
-              <th>下单日期</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.ai_user_uuid}</td>
-              <td>{aiOrder.ai_beer_name}</td>
-              <td>{aiOrder.ai_quantity}</td>
-              <td>{aiOrder.ai_order_date}</td>
+          {filteredList.map((aiBeerCategory) => (
+            <tr key={aiBeerCategory.uuid}>
+              <td>{aiBeerCategory.ai_category_uuid}</td>
+              <td>{aiBeerCategory.ai_beer_name}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiBeerCategory)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiBeerCategory)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiBeerCategory)}
                 >
                   删除
                 </button>

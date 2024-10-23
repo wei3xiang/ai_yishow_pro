@@ -11,12 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrder) =>
+      (aiCollection) =>
 
-       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
-       `${aiOrder.ai_beer_name}`.includes(searchTerm) ||
-       `${aiOrder.ai_quantity}`.includes(searchTerm) ||
-       `${aiOrder.ai_order_date}`.includes(searchTerm)
+       `${aiCollection.ai_user_uuid}`.includes(searchTerm) ||
+       `${aiCollection.ai_beer_name}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -57,37 +55,33 @@ const Index = ({
           <tr>
               <th>用户ID</th>
               <th>啤酒名称</th>
-              <th>订单数量</th>
-              <th>下单日期</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrder) => (
-            <tr key={aiOrder.uuid}>
-              <td>{aiOrder.ai_user_uuid}</td>
-              <td>{aiOrder.ai_beer_name}</td>
-              <td>{aiOrder.ai_quantity}</td>
-              <td>{aiOrder.ai_order_date}</td>
+          {filteredList.map((aiCollection) => (
+            <tr key={aiCollection.uuid}>
+              <td>{aiCollection.ai_user_uuid}</td>
+              <td>{aiCollection.ai_beer_name}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrder)}
+                  onClick={() => onClickDetail(aiCollection)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrder)}
+                  onClick={() => onClickUpdate(aiCollection)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrder)}
+                  onClick={() => onClickRemove(aiCollection)}
                 >
                   删除
                 </button>
