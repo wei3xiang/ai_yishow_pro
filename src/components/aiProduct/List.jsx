@@ -11,12 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiOrderDetail) =>
+      (aiProduct) =>
 
-       `${aiOrderDetail.ai_order_uuid}`.includes(searchTerm) ||
-       `${aiOrderDetail.ai_product_name}`.includes(searchTerm) ||
-       `${aiOrderDetail.ai_quantity}`.includes(searchTerm) ||
-       `${aiOrderDetail.ai_price}`.includes(searchTerm)
+       `${aiProduct.ai_name}`.includes(searchTerm) ||
+       `${aiProduct.ai_description}`.includes(searchTerm) ||
+       `${aiProduct.ai_category}`.includes(searchTerm) ||
+       `${aiProduct.ai_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -58,39 +58,39 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>订单UUID</th>
               <th>产品名称</th>
-              <th>产品数量</th>
-              <th>单价</th>
+              <th>产品描述</th>
+              <th>产品类别</th>
+              <th>产品价格</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiOrderDetail) => (
-            <tr key={aiOrderDetail.uuid}>
-              <td>{aiOrderDetail.ai_order_uuid}</td>
-              <td>{aiOrderDetail.ai_product_name}</td>
-              <td>{aiOrderDetail.ai_quantity}</td>
-              <td>{aiOrderDetail.ai_price}</td>
+          {filteredList.map((aiProduct) => (
+            <tr key={aiProduct.uuid}>
+              <td>{aiProduct.ai_name}</td>
+              <td>{aiProduct.ai_description}</td>
+              <td>{aiProduct.ai_category}</td>
+              <td>{aiProduct.ai_price}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiOrderDetail)}
+                  onClick={() => onClickDetail(aiProduct)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiOrderDetail)}
+                  onClick={() => onClickUpdate(aiProduct)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiOrderDetail)}
+                  onClick={() => onClickRemove(aiProduct)}
                 >
                   删除
                 </button>

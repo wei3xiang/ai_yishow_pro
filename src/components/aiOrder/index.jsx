@@ -22,11 +22,9 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiOrder,
-              aiCustomerUuid: layero.find('input[name="aiCustomerUuid"]').val(), 
-              aiOrderNumber: layero.find('input[name="aiOrderNumber"]').val(), 
-              aiProductName: layero.find('input[name="aiProductName"]').val(), 
-              aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
+              aiUserId: layero.find('input[name="aiUserId"]').val(), 
               aiOrderDate: layero.find('input[name="aiOrderDate"]').val(), 
+              aiTotalAmount: layero.find('input[name="aiTotalAmount"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -69,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiCustomerUuid: "",  aiOrderNumber: "",  aiProductName: "",  aiQuantity: "",  aiOrderDate: "", };
+    const newItem = { uuid: "",  aiUserId: "",  aiOrderDate: "",  aiTotalAmount: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,18 +79,14 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiCustomerUuid = layero.find('input[name="aiCustomerUuid"]').val();
-          const aiOrderNumber = layero.find('input[name="aiOrderNumber"]').val();
-          const aiProductName = layero.find('input[name="aiProductName"]').val();
-          const aiQuantity = layero.find('input[name="aiQuantity"]').val();
+          const aiUserId = layero.find('input[name="aiUserId"]').val();
           const aiOrderDate = layero.find('input[name="aiOrderDate"]').val();
-           if (aiCustomerUuid && aiOrderNumber && aiProductName && aiQuantity && aiOrderDate
+          const aiTotalAmount = layero.find('input[name="aiTotalAmount"]').val();
+           if (aiUserId && aiOrderDate && aiTotalAmount
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiCustomerUuid,
-            aiOrderNumber,
-            aiProductName,
-            aiQuantity,
+            setList([...list, { ...newItem, uuid: Date.now(), aiUserId,
             aiOrderDate,
+            aiTotalAmount,
              }]);
             layui.layer.close(index);
           } else {

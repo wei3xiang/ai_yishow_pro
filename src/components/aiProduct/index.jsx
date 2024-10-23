@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_order_detail.json";
+import data from "../data/ai_product.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiOrderDetail) => {
-    const modalContent = `${UpdateForm({ aiOrderDetail: aiOrderDetail })}`;
+  const handleEdit = (aiProduct) => {
+    const modalContent = `${UpdateForm({ aiProduct: aiProduct })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,10 +21,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiOrderDetail,
-              aiOrderUuid: layero.find('input[name="aiOrderUuid"]').val(), 
-              aiProductName: layero.find('input[name="aiProductName"]').val(), 
-              aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
+            ...aiProduct,
+              aiName: layero.find('input[name="aiName"]').val(), 
+              aiDescription: layero.find('input[name="aiDescription"]').val(), 
+              aiCategory: layero.find('input[name="aiCategory"]').val(), 
               aiPrice: layero.find('input[name="aiPrice"]').val(), 
           };
           setList(
@@ -36,8 +36,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiOrderDetail) => {
-    const modalContent = `${DisableForm({ aiOrderDetail: aiOrderDetail })}`;
+  const handleDetail = (aiProduct) => {
+    const modalContent = `${DisableForm({ aiProduct: aiProduct })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -49,8 +49,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiOrderDetail) => {
-    const modalContent = `${RemoveForm({ aiOrderDetail: aiOrderDetail })}`;
+  const handleRemove = (aiProduct) => {
+    const modalContent = `${RemoveForm({ aiProduct: aiProduct })}`;
 
     layui.layer.open({
       type: 1,
@@ -60,7 +60,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiOrderDetail.uuid));
+          setList(list.filter((u) => u.uuid !== aiProduct.uuid));
           layui.layer.close(index);
         });
       },
@@ -68,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductName: "",  aiQuantity: "",  aiPrice: "", };
+    const newItem = { uuid: "",  aiName: "",  aiDescription: "",  aiCategory: "",  aiPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -80,15 +80,15 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiOrderUuid = layero.find('input[name="aiOrderUuid"]').val();
-          const aiProductName = layero.find('input[name="aiProductName"]').val();
-          const aiQuantity = layero.find('input[name="aiQuantity"]').val();
+          const aiName = layero.find('input[name="aiName"]').val();
+          const aiDescription = layero.find('input[name="aiDescription"]').val();
+          const aiCategory = layero.find('input[name="aiCategory"]').val();
           const aiPrice = layero.find('input[name="aiPrice"]').val();
-           if (aiOrderUuid && aiProductName && aiQuantity && aiPrice
+           if (aiName && aiCategory && aiPrice
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,
-            aiProductName,
-            aiQuantity,
+            setList([...list, { ...newItem, uuid: Date.now(), aiName,
+            aiDescription,
+            aiCategory,
             aiPrice,
              }]);
             layui.layer.close(index);

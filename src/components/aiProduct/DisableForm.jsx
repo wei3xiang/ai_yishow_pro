@@ -1,28 +1,28 @@
-const DisableForm = ({ aiStock }) => {
+const DisableForm = ({ aiProduct }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
             <label class="layui-form-label">产品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiProductName" value="${aiStock.ai_product_name}" class="layui-input" readonly>  
+              <input type="text" name="aiName" value="${aiProduct.ai_name}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">供应商名称</label>  
+            <label class="layui-form-label">产品描述</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiSupplierName" value="${aiStock.ai_supplier_name}" class="layui-input" readonly>  
+              <input type="text" name="aiDescription" value="${aiProduct.ai_description}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">产品类别</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiQuantity" value="${aiStock.ai_quantity}" class="layui-input" readonly>  
+              <input type="text" name="aiCategory" value="${aiProduct.ai_category}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label"> reorder 级别</label>  
+            <label class="layui-form-label">产品价格</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiReorderLevel" value="${aiStock.ai_reorder_level}" class="layui-input" readonly>  
+              <input type="text" name="aiPrice" value="${aiProduct.ai_price}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  
