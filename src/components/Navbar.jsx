@@ -1,34 +1,16 @@
 import React, { useState } from "react";
 
-import AiBeerCategory from './aiBeerCategory';
-import AiCategory from './aiCategory';
-import AiCollection from './aiCollection';
-import AiOrder from './aiOrder';
-import AiReview from './aiReview';
-import AiStock from './aiStock';
 import AiUser from './aiUser';
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiBeerCategory");
+  const [activePage, setActivePage] = useState("aiUser");
 
   const renderPage = () => {
     switch (activePage) {
-        case "aiBeerCategory":
-            return <AiBeerCategory />;
-        case "aiCategory":
-            return <AiCategory />;
-        case "aiCollection":
-            return <AiCollection />;
-        case "aiOrder":
-            return <AiOrder />;
-        case "aiReview":
-            return <AiReview />;
-        case "aiStock":
-            return <AiStock />;
         case "aiUser":
             return <AiUser />;
         default:
-            return <AiBeerCategory />;
+            return <AiUser />;
     }
   };
 
@@ -37,60 +19,6 @@ const Navbar = () => {
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
           <ul className="layui-nav layui-nav-tree" lay-filter="test">
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiBeerCategory" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiBeerCategory")}>
-                    啤酒分类表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiCategory" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiCategory")}>
-                    分类表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiCollection" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiCollection")}>
-                    收藏表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrder" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrder")}>
-                    订单表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiReview" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiReview")}>
-                    评论表
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiStock" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiStock")}>
-                    库存表
-                </a>
-                </li>
                 <li
                 className={`layui-nav-item ${
                     activePage === "aiUser" ? "layui-this" : ""
