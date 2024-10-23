@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_user.json";
+import data from "../data/ai_inventory.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiUser) => {
-    const modalContent = `${UpdateForm({ aiUser: aiUser })}`;
+  const handleEdit = (aiInventory) => {
+    const modalContent = `${UpdateForm({ aiInventory: aiInventory })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,13 +21,13 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiUser,
-              aiUsername: layero.find('input[name="aiUsername"]').val(), 
-              aiPassword: layero.find('input[name="aiPassword"]').val(), 
-              aiEmail: layero.find('input[name="aiEmail"]').val(), 
-              aiPhone: layero.find('input[name="aiPhone"]').val(), 
-              aiAddress: layero.find('input[name="aiAddress"]').val(), 
-              aiRoles: layero.find('input[name="aiRoles"]').val(), 
+            ...aiInventory,
+              aiItemId: layero.find('input[name="aiItemId"]').val(), 
+              aiItemName: layero.find('input[name="aiItemName"]').val(), 
+              aiQuantity: layero.find('input[name="aiQuantity"]').val(), 
+              aiPurchasePrice: layero.find('input[name="aiPurchasePrice"]').val(), 
+              aiSalePrice: layero.find('input[name="aiSalePrice"]').val(), 
+              aiSupplier: layero.find('input[name="aiSupplier"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -38,8 +38,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiUser) => {
-    const modalContent = `${DisableForm({ aiUser: aiUser })}`;
+  const handleDetail = (aiInventory) => {
+    const modalContent = `${DisableForm({ aiInventory: aiInventory })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -51,8 +51,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiUser) => {
-    const modalContent = `${RemoveForm({ aiUser: aiUser })}`;
+  const handleRemove = (aiInventory) => {
+    const modalContent = `${RemoveForm({ aiInventory: aiInventory })}`;
 
     layui.layer.open({
       type: 1,
@@ -62,7 +62,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiUser.uuid));
+          setList(list.filter((u) => u.uuid !== aiInventory.uuid));
           layui.layer.close(index);
         });
       },
@@ -70,7 +70,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "",  aiRoles: "", };
+    const newItem = { uuid: "",  aiItemId: "",  aiItemName: "",  aiQuantity: "",  aiPurchasePrice: "",  aiSalePrice: "",  aiSupplier: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,31 +82,31 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiUsername = layero.find('input[name="aiUsername"]').val();
-          const aiPassword = layero.find('input[name="aiPassword"]').val();
-          const aiEmail = layero.find('input[name="aiEmail"]').val();
-          const aiPhone = layero.find('input[name="aiPhone"]').val();
-          const aiAddress = layero.find('input[name="aiAddress"]').val();
-          const aiRoles = layero.find('input[name="aiRoles"]').val();
+          const aiItemId = layero.find('input[name="aiItemId"]').val();
+          const aiItemName = layero.find('input[name="aiItemName"]').val();
+          const aiQuantity = layero.find('input[name="aiQuantity"]').val();
+          const aiPurchasePrice = layero.find('input[name="aiPurchasePrice"]').val();
+          const aiSalePrice = layero.find('input[name="aiSalePrice"]').val();
+          const aiSupplier = layero.find('input[name="aiSupplier"]').val();
            if (
-           aiUsername &&
+           aiItemId &&
 
-           aiPassword &&
+           aiItemName &&
 
-           aiEmail &&
+           aiQuantity &&
 
-           aiPhone &&
+           aiPurchasePrice &&
 
-           aiAddress &&
+           aiSalePrice &&
 
            
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiUsername,
-          aiPassword,
-          aiEmail,
-          aiPhone,
-          aiAddress,
-          aiRoles,
+            setList([...list, { ...newItem, uuid: Date.now(), aiItemId,
+          aiItemName,
+          aiQuantity,
+          aiPurchasePrice,
+          aiSalePrice,
+          aiSupplier,
            }]);
             layui.layer.close(index);
           } else {

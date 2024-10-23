@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_user.json";
+import data from "../data/ai_brewing_log.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiUser) => {
-    const modalContent = `${UpdateForm({ aiUser: aiUser })}`;
+  const handleEdit = (aiBrewingLog) => {
+    const modalContent = `${UpdateForm({ aiBrewingLog: aiBrewingLog })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,13 +21,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiUser,
-              aiUsername: layero.find('input[name="aiUsername"]').val(), 
-              aiPassword: layero.find('input[name="aiPassword"]').val(), 
-              aiEmail: layero.find('input[name="aiEmail"]').val(), 
-              aiPhone: layero.find('input[name="aiPhone"]').val(), 
-              aiAddress: layero.find('input[name="aiAddress"]').val(), 
-              aiRoles: layero.find('input[name="aiRoles"]').val(), 
+            ...aiBrewingLog,
+              aiBrewingDate: layero.find('input[name="aiBrewingDate"]').val(), 
+              aiBrewedItemId: layero.find('input[name="aiBrewedItemId"]').val(), 
+              aiNotes: layero.find('input[name="aiNotes"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -38,8 +35,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiUser) => {
-    const modalContent = `${DisableForm({ aiUser: aiUser })}`;
+  const handleDetail = (aiBrewingLog) => {
+    const modalContent = `${DisableForm({ aiBrewingLog: aiBrewingLog })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -51,8 +48,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiUser) => {
-    const modalContent = `${RemoveForm({ aiUser: aiUser })}`;
+  const handleRemove = (aiBrewingLog) => {
+    const modalContent = `${RemoveForm({ aiBrewingLog: aiBrewingLog })}`;
 
     layui.layer.open({
       type: 1,
@@ -62,7 +59,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiUser.uuid));
+          setList(list.filter((u) => u.uuid !== aiBrewingLog.uuid));
           layui.layer.close(index);
         });
       },
@@ -70,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "",  aiRoles: "", };
+    const newItem = { uuid: "",  aiBrewingDate: "",  aiBrewedItemId: "",  aiNotes: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,31 +79,19 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiUsername = layero.find('input[name="aiUsername"]').val();
-          const aiPassword = layero.find('input[name="aiPassword"]').val();
-          const aiEmail = layero.find('input[name="aiEmail"]').val();
-          const aiPhone = layero.find('input[name="aiPhone"]').val();
-          const aiAddress = layero.find('input[name="aiAddress"]').val();
-          const aiRoles = layero.find('input[name="aiRoles"]').val();
+          const aiBrewingDate = layero.find('input[name="aiBrewingDate"]').val();
+          const aiBrewedItemId = layero.find('input[name="aiBrewedItemId"]').val();
+          const aiNotes = layero.find('input[name="aiNotes"]').val();
            if (
-           aiUsername &&
+           aiBrewingDate &&
 
-           aiPassword &&
-
-           aiEmail &&
-
-           aiPhone &&
-
-           aiAddress &&
+           aiBrewedItemId &&
 
            
            ) {
-            setList([...list, { ...newItem, uuid: Date.now(), aiUsername,
-          aiPassword,
-          aiEmail,
-          aiPhone,
-          aiAddress,
-          aiRoles,
+            setList([...list, { ...newItem, uuid: Date.now(), aiBrewingDate,
+          aiBrewedItemId,
+          aiNotes,
            }]);
             layui.layer.close(index);
           } else {

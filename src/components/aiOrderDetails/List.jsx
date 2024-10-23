@@ -11,14 +11,12 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiUser) =>
+      (aiOrderDetails) =>
 
-       `${aiUser.ai_username}`.includes(searchTerm) ||
-       `${aiUser.ai_password}`.includes(searchTerm) ||
-       `${aiUser.ai_email}`.includes(searchTerm) ||
-       `${aiUser.ai_phone}`.includes(searchTerm) ||
-       `${aiUser.ai_address}`.includes(searchTerm) ||
-       `${aiUser.ai_roles}`.includes(searchTerm)
+       `${aiOrderDetails.ai_order_id}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_item_id}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_quantity}`.includes(searchTerm) ||
+       `${aiOrderDetails.ai_item_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -57,43 +55,39 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>用户名</th>
-              <th>密码</th>
-              <th>邮箱</th>
-              <th>电话</th>
-              <th>地址</th>
-              <th>角色，如顾客、管理员</th>
+              <th>订单ID</th>
+              <th>商品ID</th>
+              <th>商品数量</th>
+              <th>商品价格</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiUser) => (
-            <tr key={aiUser.uuid}>
-              <td>{aiUser.ai_username}</td>
-              <td>{aiUser.ai_password}</td>
-              <td>{aiUser.ai_email}</td>
-              <td>{aiUser.ai_phone}</td>
-              <td>{aiUser.ai_address}</td>
-              <td>{aiUser.ai_roles}</td>
+          {filteredList.map((aiOrderDetails) => (
+            <tr key={aiOrderDetails.uuid}>
+              <td>{aiOrderDetails.ai_order_id}</td>
+              <td>{aiOrderDetails.ai_item_id}</td>
+              <td>{aiOrderDetails.ai_quantity}</td>
+              <td>{aiOrderDetails.ai_item_price}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiUser)}
+                  onClick={() => onClickDetail(aiOrderDetails)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiUser)}
+                  onClick={() => onClickUpdate(aiOrderDetails)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiUser)}
+                  onClick={() => onClickRemove(aiOrderDetails)}
                 >
                   删除
                 </button>
