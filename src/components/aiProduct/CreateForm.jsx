@@ -2,27 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品ID</label>  
+            <label class="layui-form-label">商品名称</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_product_id" placeholder="请输入产品ID"  class="layui-input">  
+                <input type="text" name="ai_name" placeholder="请输入商品名称"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">产品名称</label>  
+            <label class="layui-form-label">商品描述</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_product_name" placeholder="请输入产品名称"  class="layui-input">  
+                <input type="text" name="ai_description" placeholder="请输入商品描述"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">价格</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_quantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="ai_price" placeholder="请输入价格"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">单价</label>  
+            <label class="layui-form-label">商品类别</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_unit_price" placeholder="请输入单价"  class="layui-input">  
+                <input type="text" name="ai_category" placeholder="请输入商品类别"  class="layui-input">  
             </div>  
             </div>  
       </div>  

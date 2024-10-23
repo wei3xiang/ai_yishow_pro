@@ -3,19 +3,13 @@ const UpdateForm = ({ aiOrderDetail }) => {
       <div class="layui-form-item">  
       <label class="layui-form-label">订单ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderId" value="${aiOrderDetail.ai_order_id}" class="layui-input">  
+        <input type="text" name="aiOrderUuid" value="${aiOrderDetail.ai_order_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">产品ID</label>  
+      <label class="layui-form-label">商品ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductId" value="${aiOrderDetail.ai_product_id}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">产品名称</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiProductName" value="${aiOrderDetail.ai_product_name}" class="layui-input">  
+        <input type="text" name="aiProductUuid" value="${aiOrderDetail.ai_product_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
@@ -27,7 +21,7 @@ const UpdateForm = ({ aiOrderDetail }) => {
       <div class="layui-form-item">  
       <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPrice" value="${aiOrderDetail.ai_price}" class="layui-input">  
+        <input type="text" name="aiUnitPrice" value="${aiOrderDetail.ai_unit_price}" class="layui-input">  
       </div>  
     </div>  
   </div>  

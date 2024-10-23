@@ -4,19 +4,25 @@ const CreateForm = () => {
             <div class="layui-form-item">  
             <label class="layui-form-label">用户ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_user_id" placeholder="请输入用户ID"  class="layui-input">  
+                <input type="text" name="ai_user_uuid" placeholder="请输入用户ID"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">订单号</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_order_number" placeholder="请输入订单号"  class="layui-input">  
+            </div>  
+            </div>  
+            <div class="layui-form-item">  
+            <label class="layui-form-label">订单总价</label>  
+            <div class="layui-input-block">  
+                <input type="text" name="ai_total_amount" placeholder="请输入订单总价"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
             <label class="layui-form-label">订单日期</label>  
             <div class="layui-input-block">  
                 <input type="text" name="ai_order_date" placeholder="请输入订单日期"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">总价</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_total_price" placeholder="请输入总价"  class="layui-input">  
             </div>  
             </div>  
       </div>  

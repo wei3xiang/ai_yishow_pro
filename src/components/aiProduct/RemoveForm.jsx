@@ -1,28 +1,28 @@
-const RemoveForm = ({ aiInventory }) => {
+const RemoveForm = ({ aiProduct }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品ID</label>  
+          <label class="layui-form-label">商品名称</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_product_id}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.ai_name}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">产品名称</label>  
+          <label class="layui-form-label">商品描述</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_product_name}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.ai_description}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">库存数量</label>  
+          <label class="layui-form-label">价格</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_quantity}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.ai_price}" class="layui-input" readonly>  
           </div>  
         </div>
         <div class="layui-form-item">  
-          <label class="layui-form-label">单价</label>  
+          <label class="layui-form-label">商品类别</label>  
           <div class="layui-input-block">  
-            <input type="text" value="${aiInventory.ai_unit_price}" class="layui-input" readonly>  
+            <input type="text" value="${aiProduct.ai_category}" class="layui-input" readonly>  
           </div>  
         </div>
         </div>
