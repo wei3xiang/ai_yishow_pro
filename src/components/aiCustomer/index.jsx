@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+import data from "../data/ai_customer.json";
+
+import List from "./List";
+import UpdateForm from "./UpdateForm";
+import DisableForm from "./DisableForm";
+import RemoveForm from "./RemoveForm";
+import CreateForm from "./CreateForm";
+
+const Index = () => {
+  const [list, setList] = useState(data);
+
+  const handleEdit = (aiCustomer) => {
+    const modalContent = `${UpdateForm({ aiCustomer: aiCustomer })}`;
+    layui.layer.open({
+      type: 1,
+      title: "编辑",
+      area: ["500px", "350px"],
+      content: modalContent,
+      success: function (layero, index) {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
+          const updatedItem = {
+            ...aiCustomer,
+              userUuid: layero.find('input[name="userUuid"]').val(), 
+              name: layero.find('input[name="name"]').val(), 
+              companyName: layero.find('input[name="companyName"]').val(), 
+          };
+          setList(
+            list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
+          );
+          layui.layer.close(index);
+        });
+      },
+    });
+  };
+
+  const handleDetail = (aiCustomer) => {
+    const modalContent = `${DisableForm({ aiCustomer: aiCustomer })}`;
+    layui.layer.open({
+      type: 1,
+      title: "查看",
+      area: ["500px", "350px"],
+      content: modalContent,
+      success: function (layero, index) {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+      },
+    });
+  };
+
+  const handleRemove = (aiCustomer) => {
+    const modalContent = `${RemoveForm({ aiCustomer: aiCustomer })}`;
+
+    layui.layer.open({
+      type: 1,
+      title: "确认删除",
+      area: ["500px", "350px"],
+      content: modalContent,
+      success: function (layero, index) {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
+          setList(list.filter((u) => u.uuid !== aiCustomer.uuid));
+          layui.layer.close(index);
+        });
+      },
+    });
+  };
+
+  const handleCreate = () => {
+    const newItem = { uuid: "",  userUuid: "",  name: "",  companyName: "", };
+    const modalContent = `${CreateForm()}`;
+
+    layui.layer.open({
+      type: 1,
+      title: "新增",
+      area: ["500px", "350px"],
+      content: modalContent,
+      success: function (layero, index) {
+        layero.find("#modalCancel").on("click", () => layui.layer.close(index));
+        layero.find("#modalOk").on("click", () => {
+
+          const userUuid = layero.find('input[name="userUuid"]').val();
+          const name = layero.find('input[name="name"]').val();
+          const companyName = layero.find('input[name="companyName"]').val();
+          setList([...list, { ...newItem, uuid: Date.now(), userUuid,name,companyName, }]);
+          layui.layer.close(index);
+        });
+      },
+    });
+  };
+
+  return (
+    <div style={{ padding: "20px", backgroundColor: "white", borderRadius: "10px" }}>
+      <List
+        data = {list}
+        onClickCreate={() => handleCreate()}
+        onClickRemove={(user) => handleRemove(user)}
+        onClickDetail={(user) => handleDetail(user)}
+        onClickUpdate={(user) => handleEdit(user)}
+      />
+    </div>
+  );
+};
+
+export default Index;
