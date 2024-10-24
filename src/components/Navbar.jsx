@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 
+import AiOrder from './aiOrder';
+import AiProduct from './aiProduct';
+import AiStore from './aiStore';
+
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("aiOrder");
 
   const renderPage = () => {
     switch (activePage) {
-      default:
-        return <></>;
+        case "aiOrder":
+            return <AiOrder />;
+        case "aiProduct":
+            return <AiProduct />;
+        case "aiStore":
+            return <AiStore />;
+        default:
+            return <AiOrder />;
     }
   };
 
@@ -14,7 +24,41 @@ const Navbar = () => {
     <div>
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
-          <ul className="layui-nav layui-nav-tree" lay-filter="test"></ul>
+          <ul className="layui-nav layui-nav-tree" lay-filter="test">
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiOrder" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiOrder")}>
+                  {"订单表".endsWith("表")
+                  ? "订单表".slice(0, -1) + "管理"
+                  : "订单表"}
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiProduct" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiProduct")}>
+                  {"产品表".endsWith("表")
+                  ? "产品表".slice(0, -1) + "管理"
+                  : "产品表"}
+                </a>
+                </li>
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiStore" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiStore")}>
+                  {"店铺表".endsWith("表")
+                  ? "店铺表".slice(0, -1) + "管理"
+                  : "店铺表"}
+                </a>
+                </li>
+          </ul>
         </div>
       </div>
       <div className="layui-header">
