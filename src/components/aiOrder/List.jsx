@@ -11,10 +11,10 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiStock) =>
+      (aiOrder) =>
 
-       `${aiStock.ai_product_uuid}`.includes(searchTerm) ||
-       `${aiStock.ai_quantity}`.includes(searchTerm)
+       `${aiOrder.ai_user_uuid}`.includes(searchTerm) ||
+       `${aiOrder.ai_ordered_at}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,35 +56,35 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>商品UUID</th>
-              <th>库存数量</th>
+              <th>用户UUID</th>
+              <th>下单时间</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiStock) => (
-            <tr key={aiStock.uuid}>
-              <td>{aiStock.ai_product_uuid}</td>
-              <td>{aiStock.ai_quantity}</td>
+          {filteredList.map((aiOrder) => (
+            <tr key={aiOrder.uuid}>
+              <td>{aiOrder.ai_user_uuid}</td>
+              <td>{aiOrder.ai_ordered_at}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiStock)}
+                  onClick={() => onClickDetail(aiOrder)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiStock)}
+                  onClick={() => onClickUpdate(aiOrder)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiStock)}
+                  onClick={() => onClickRemove(aiOrder)}
                 >
                   删除
                 </button>

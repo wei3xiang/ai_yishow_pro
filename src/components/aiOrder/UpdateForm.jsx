@@ -1,15 +1,15 @@
-const UpdateForm = ({ aiStock }) => {
+const UpdateForm = ({ aiOrder }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">商品UUID</label>  
+      <label class="layui-form-label">用户UUID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiProductUuid" value="${aiStock.ai_product_uuid}" class="layui-input">  
+        <input type="text" name="aiUserUuid" value="${aiOrder.ai_user_uuid}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">库存数量</label>  
+      <label class="layui-form-label">下单时间</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiQuantity" value="${aiStock.ai_quantity}" class="layui-input">  
+        <input type="text" name="aiOrderedAt" value="${aiOrder.ai_ordered_at}" class="layui-input">  
       </div>  
     </div>  
   </div>  

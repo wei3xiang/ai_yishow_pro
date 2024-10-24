@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_user.json";
+import data from "../data/ai_product.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiUser) => {
-    const modalContent = `${UpdateForm({ aiUser: aiUser })}`;
+  const handleEdit = (aiProduct) => {
+    const modalContent = `${UpdateForm({ aiProduct: aiProduct })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,12 +21,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiUser,
-              ai_username: layero.find('input[name="ai_username"]').val(),
-              ai_password: layero.find('input[name="ai_password"]').val(),
-              ai_email: layero.find('input[name="ai_email"]').val(),
-              ai_phone: layero.find('input[name="ai_phone"]').val(),
-              ai_address: layero.find('input[name="ai_address"]').val(),
+            ...aiProduct,
+              ai_category: layero.find('input[name="ai_category"]').val(),
+              ai_name: layero.find('input[name="ai_name"]').val(),
+              ai_price: layero.find('input[name="ai_price"]').val(),
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -37,8 +35,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiUser) => {
-    const modalContent = `${DisableForm({ aiUser: aiUser })}`;
+  const handleDetail = (aiProduct) => {
+    const modalContent = `${DisableForm({ aiProduct: aiProduct })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -50,8 +48,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiUser) => {
-    const modalContent = `${RemoveForm({ aiUser: aiUser })}`;
+  const handleRemove = (aiProduct) => {
+    const modalContent = `${RemoveForm({ aiProduct: aiProduct })}`;
 
     layui.layer.open({
       type: 1,
@@ -61,7 +59,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiUser.uuid));
+          setList(list.filter((u) => u.uuid !== aiProduct.uuid));
           layui.layer.close(index);
         });
       },
@@ -69,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
+    const newItem = { uuid: "",  aiCategory: "",  aiName: "",  aiPrice: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,12 +79,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const ai_username = layero.find('input[name="ai_username"]').val();
-          const ai_password = layero.find('input[name="ai_password"]').val();
-          const ai_email = layero.find('input[name="ai_email"]').val();
-          const ai_phone = layero.find('input[name="ai_phone"]').val();
-          const ai_address = layero.find('input[name="ai_address"]').val();
-          setList([...list, { ...newItem, uuid: Date.now(), aiUsername,aiPassword,aiEmail,aiPhone,aiAddress, }]);
+          const ai_category = layero.find('input[name="ai_category"]').val();
+          const ai_name = layero.find('input[name="ai_name"]').val();
+          const ai_price = layero.find('input[name="ai_price"]').val();
+          setList([...list, { ...newItem, uuid: Date.now(), aiCategory,aiName,aiPrice, }]);
           layui.layer.close(index);
         });
       },

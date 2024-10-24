@@ -1,34 +1,28 @@
 import React, { useState } from "react";
 
-import AiCustomers from './aiCustomers';
-import AiEmployees from './aiEmployees';
-import AiOrders from './aiOrders';
-import AiProducts from './aiProducts';
-import AiReviews from './aiReviews';
+import AiOrder from './aiOrder';
+import AiOrderDetail from './aiOrderDetail';
+import AiProduct from './aiProduct';
 import AiStock from './aiStock';
 import AiUser from './aiUser';
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("aiCustomers");
+  const [activePage, setActivePage] = useState("aiOrder");
 
   const renderPage = () => {
     switch (activePage) {
-        case "aiCustomers":
-            return <AiCustomers />;
-        case "aiEmployees":
-            return <AiEmployees />;
-        case "aiOrders":
-            return <AiOrders />;
-        case "aiProducts":
-            return <AiProducts />;
-        case "aiReviews":
-            return <AiReviews />;
+        case "aiOrder":
+            return <AiOrder />;
+        case "aiOrderDetail":
+            return <AiOrderDetail />;
+        case "aiProduct":
+            return <AiProduct />;
         case "aiStock":
             return <AiStock />;
         case "aiUser":
             return <AiUser />;
         default:
-            return <AiCustomers />;
+            return <AiOrder />;
     }
   };
 
@@ -39,32 +33,10 @@ const Navbar = () => {
           <ul className="layui-nav layui-nav-tree" lay-filter="test">
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiCustomers" ? "layui-this" : ""
+                    activePage === "aiOrder" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiCustomers")}>
-                  {"客户表".endsWith("表")
-                  ? "客户表".slice(0, -1) + "管理"
-                  : "客户表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiEmployees" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiEmployees")}>
-                  {"员工表".endsWith("表")
-                  ? "员工表".slice(0, -1) + "管理"
-                  : "员工表"}
-                </a>
-                </li>
-                <li
-                className={`layui-nav-item ${
-                    activePage === "aiOrders" ? "layui-this" : ""
-                }`}
-                >
-                <a href="#" onClick={() => setActivePage("aiOrders")}>
+                <a href="#" onClick={() => setActivePage("aiOrder")}>
                   {"订单表".endsWith("表")
                   ? "订单表".slice(0, -1) + "管理"
                   : "订单表"}
@@ -72,24 +44,24 @@ const Navbar = () => {
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiProducts" ? "layui-this" : ""
+                    activePage === "aiOrderDetail" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiProducts")}>
-                  {"商品表".endsWith("表")
-                  ? "商品表".slice(0, -1) + "管理"
-                  : "商品表"}
+                <a href="#" onClick={() => setActivePage("aiOrderDetail")}>
+                  {"订单详情表".endsWith("表")
+                  ? "订单详情表".slice(0, -1) + "管理"
+                  : "订单详情表"}
                 </a>
                 </li>
                 <li
                 className={`layui-nav-item ${
-                    activePage === "aiReviews" ? "layui-this" : ""
+                    activePage === "aiProduct" ? "layui-this" : ""
                 }`}
                 >
-                <a href="#" onClick={() => setActivePage("aiReviews")}>
-                  {"评价表".endsWith("表")
-                  ? "评价表".slice(0, -1) + "管理"
-                  : "评价表"}
+                <a href="#" onClick={() => setActivePage("aiProduct")}>
+                  {"商品表".endsWith("表")
+                  ? "商品表".slice(0, -1) + "管理"
+                  : "商品表"}
                 </a>
                 </li>
                 <li

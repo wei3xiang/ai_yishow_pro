@@ -11,10 +11,11 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiStock) =>
+      (aiProduct) =>
 
-       `${aiStock.ai_product_uuid}`.includes(searchTerm) ||
-       `${aiStock.ai_quantity}`.includes(searchTerm)
+       `${aiProduct.ai_category}`.includes(searchTerm) ||
+       `${aiProduct.ai_name}`.includes(searchTerm) ||
+       `${aiProduct.ai_price}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -56,35 +57,37 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>商品UUID</th>
-              <th>库存数量</th>
+              <th>分类</th>
+              <th>商品名称</th>
+              <th>价格</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiStock) => (
-            <tr key={aiStock.uuid}>
-              <td>{aiStock.ai_product_uuid}</td>
-              <td>{aiStock.ai_quantity}</td>
+          {filteredList.map((aiProduct) => (
+            <tr key={aiProduct.uuid}>
+              <td>{aiProduct.ai_category}</td>
+              <td>{aiProduct.ai_name}</td>
+              <td>{aiProduct.ai_price}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiStock)}
+                  onClick={() => onClickDetail(aiProduct)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiStock)}
+                  onClick={() => onClickUpdate(aiProduct)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiStock)}
+                  onClick={() => onClickRemove(aiProduct)}
                 >
                   删除
                 </button>

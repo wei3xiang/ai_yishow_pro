@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data/ai_user.json";
+import data from "../data/ai_order_detail.json";
 
 import List from "./List";
 import UpdateForm from "./UpdateForm";
@@ -10,8 +10,8 @@ import CreateForm from "./CreateForm";
 const Index = () => {
   const [list, setList] = useState(data);
 
-  const handleEdit = (aiUser) => {
-    const modalContent = `${UpdateForm({ aiUser: aiUser })}`;
+  const handleEdit = (aiOrderDetail) => {
+    const modalContent = `${UpdateForm({ aiOrderDetail: aiOrderDetail })}`;
     layui.layer.open({
       type: 1,
       title: "编辑",
@@ -21,12 +21,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
-            ...aiUser,
-              ai_username: layero.find('input[name="ai_username"]').val(),
-              ai_password: layero.find('input[name="ai_password"]').val(),
-              ai_email: layero.find('input[name="ai_email"]').val(),
-              ai_phone: layero.find('input[name="ai_phone"]').val(),
-              ai_address: layero.find('input[name="ai_address"]').val(),
+            ...aiOrderDetail,
+              ai_order_uuid: layero.find('input[name="ai_order_uuid"]').val(),
+              ai_product_uuid: layero.find('input[name="ai_product_uuid"]').val(),
+              ai_quantity: layero.find('input[name="ai_quantity"]').val(),
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -37,8 +35,8 @@ const Index = () => {
     });
   };
 
-  const handleDetail = (aiUser) => {
-    const modalContent = `${DisableForm({ aiUser: aiUser })}`;
+  const handleDetail = (aiOrderDetail) => {
+    const modalContent = `${DisableForm({ aiOrderDetail: aiOrderDetail })}`;
     layui.layer.open({
       type: 1,
       title: "查看",
@@ -50,8 +48,8 @@ const Index = () => {
     });
   };
 
-  const handleRemove = (aiUser) => {
-    const modalContent = `${RemoveForm({ aiUser: aiUser })}`;
+  const handleRemove = (aiOrderDetail) => {
+    const modalContent = `${RemoveForm({ aiOrderDetail: aiOrderDetail })}`;
 
     layui.layer.open({
       type: 1,
@@ -61,7 +59,7 @@ const Index = () => {
       success: function (layero, index) {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
-          setList(list.filter((u) => u.uuid !== aiUser.uuid));
+          setList(list.filter((u) => u.uuid !== aiOrderDetail.uuid));
           layui.layer.close(index);
         });
       },
@@ -69,7 +67,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiUsername: "",  aiPassword: "",  aiEmail: "",  aiPhone: "",  aiAddress: "", };
+    const newItem = { uuid: "",  aiOrderUuid: "",  aiProductUuid: "",  aiQuantity: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -81,12 +79,10 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const ai_username = layero.find('input[name="ai_username"]').val();
-          const ai_password = layero.find('input[name="ai_password"]').val();
-          const ai_email = layero.find('input[name="ai_email"]').val();
-          const ai_phone = layero.find('input[name="ai_phone"]').val();
-          const ai_address = layero.find('input[name="ai_address"]').val();
-          setList([...list, { ...newItem, uuid: Date.now(), aiUsername,aiPassword,aiEmail,aiPhone,aiAddress, }]);
+          const ai_order_uuid = layero.find('input[name="ai_order_uuid"]').val();
+          const ai_product_uuid = layero.find('input[name="ai_product_uuid"]').val();
+          const ai_quantity = layero.find('input[name="ai_quantity"]').val();
+          setList([...list, { ...newItem, uuid: Date.now(), aiOrderUuid,aiProductUuid,aiQuantity, }]);
           layui.layer.close(index);
         });
       },
