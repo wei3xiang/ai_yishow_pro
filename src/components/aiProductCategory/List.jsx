@@ -11,12 +11,9 @@ const Index = ({
 
   const filteredList = useMemo(() => {
     return data.filter(
-      (aiSupplier) =>
+      (aiProductCategory) =>
 
-       `${aiSupplier.ai_company_name}`.includes(searchTerm) ||
-       `${aiSupplier.ai_contact_name}`.includes(searchTerm) ||
-       `${aiSupplier.ai_phone}`.includes(searchTerm) ||
-       `${aiSupplier.ai_email}`.includes(searchTerm)
+       `${aiProductCategory.ai_category_name}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -58,39 +55,33 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>公司名称</th>
-              <th>联系人姓名</th>
-              <th>联系电话</th>
-              <th>电子邮件</th>
+              <th>类别名称</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          {filteredList.map((aiSupplier) => (
-            <tr key={aiSupplier.uuid}>
-              <td>{aiSupplier.ai_company_name}</td>
-              <td>{aiSupplier.ai_contact_name}</td>
-              <td>{aiSupplier.ai_phone}</td>
-              <td>{aiSupplier.ai_email}</td>
+          {filteredList.map((aiProductCategory) => (
+            <tr key={aiProductCategory.uuid}>
+              <td>{aiProductCategory.ai_category_name}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-normal"
-                  onClick={() => onClickDetail(aiSupplier)}
+                  onClick={() => onClickDetail(aiProductCategory)}
                 >
                   查看
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-warm"
-                  onClick={() => onClickUpdate(aiSupplier)}
+                  onClick={() => onClickUpdate(aiProductCategory)}
                 >
                   编辑
                 </button>
                 <button
                   style={{ marginTop: "2px" }}
                   className="layui-btn layui-btn-xs layui-btn-danger"
-                  onClick={() => onClickRemove(aiSupplier)}
+                  onClick={() => onClickRemove(aiProductCategory)}
                 >
                   删除
                 </button>

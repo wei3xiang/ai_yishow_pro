@@ -17,8 +17,7 @@ const Index = ({
        `${aiUser.ai_password}`.includes(searchTerm) ||
        `${aiUser.ai_email}`.includes(searchTerm) ||
        `${aiUser.ai_phone}`.includes(searchTerm) ||
-       `${aiUser.ai_address}`.includes(searchTerm) ||
-       `${aiUser.ai_creation_time}`.includes(searchTerm)
+       `${aiUser.ai_address}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -65,7 +64,6 @@ const Index = ({
               <th>邮箱</th>
               <th>电话</th>
               <th>地址</th>
-              <th>创建时间</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -77,7 +75,6 @@ const Index = ({
               <td>{aiUser.ai_email}</td>
               <td>{aiUser.ai_phone}</td>
               <td>{aiUser.ai_address}</td>
-              <td>{aiUser.ai_creation_time}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

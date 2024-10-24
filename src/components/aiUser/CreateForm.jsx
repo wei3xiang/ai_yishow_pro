@@ -31,12 +31,6 @@ const CreateForm = () => {
                 <input type="text" name="ai_address" placeholder="请输入地址"  class="layui-input">  
             </div>  
             </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">创建时间</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_creation_time" placeholder="请输入创建时间"  class="layui-input">  
-            </div>  
-            </div>  
       </div>  
       <div style="text-align: right; margin: 30px 0 10px; padding: 10px">  
         <button class="layui-btn layui-btn-primary" id="modalCancel">取消</button>  

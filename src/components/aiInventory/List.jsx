@@ -13,12 +13,11 @@ const Index = ({
     return data.filter(
       (aiInventory) =>
 
-       `${aiInventory.ai_item_name}`.includes(searchTerm) ||
-       `${aiInventory.ai_item_id}`.includes(searchTerm) ||
+       `${aiInventory.ai_product_id}`.includes(searchTerm) ||
+       `${aiInventory.ai_product_name}`.includes(searchTerm) ||
        `${aiInventory.ai_quantity}`.includes(searchTerm) ||
-       `${aiInventory.ai_restock_value}`.includes(searchTerm) ||
-       `${aiInventory.ai_stock_status}`.includes(searchTerm) ||
-       `${aiInventory.ai_creation_time}`.includes(searchTerm)
+       `${aiInventory.ai_restock_level}`.includes(searchTerm) ||
+       `${aiInventory.ai_unit_of_measure}`.includes(searchTerm)
     );
   }, [data, searchTerm]);
 
@@ -60,24 +59,22 @@ const Index = ({
       >
         <thead>
           <tr>
-              <th>商品名称</th>
               <th>商品ID</th>
+              <th>商品名称</th>
               <th>库存数量</th>
-              <th>库存重置值</th>
-              <th>库存状态</th>
-              <th>创建时间</th>
+              <th>补货触发量</th>
+              <th>单位</th>
             <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {filteredList.map((aiInventory) => (
             <tr key={aiInventory.uuid}>
-              <td>{aiInventory.ai_item_name}</td>
-              <td>{aiInventory.ai_item_id}</td>
+              <td>{aiInventory.ai_product_id}</td>
+              <td>{aiInventory.ai_product_name}</td>
               <td>{aiInventory.ai_quantity}</td>
-              <td>{aiInventory.ai_restock_value}</td>
-              <td>{aiInventory.ai_stock_status}</td>
-              <td>{aiInventory.ai_creation_time}</td>
+              <td>{aiInventory.ai_restock_level}</td>
+              <td>{aiInventory.ai_unit_of_measure}</td>
               <td>
                 <button
                   style={{ marginLeft: "10px", marginTop: "2px" }}

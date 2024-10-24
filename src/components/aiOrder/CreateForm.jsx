@@ -2,45 +2,27 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">用户UUID</label>  
+            <label class="layui-form-label">订单编号</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_user_uuid" placeholder="请输入用户UUID"  class="layui-input">  
+                <input type="text" name="ai_order_id" placeholder="请输入订单编号"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单号</label>  
+            <label class="layui-form-label">客户ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_order_number" placeholder="请输入订单号"  class="layui-input">  
+                <input type="text" name="ai_customer_id" placeholder="请输入客户ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单日期</label>  
+            <label class="layui-form-label">下单时间</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_order_date" placeholder="请输入订单日期"  class="layui-input">  
+                <input type="text" name="ai_order_time" placeholder="请输入下单时间"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">订单总金额</label>  
+            <label class="layui-form-label">订单总价</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_total_amount" placeholder="请输入订单总金额"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">订单状态</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_order_status" placeholder="请输入订单状态"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">支付方式</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_payment_method" placeholder="请输入支付方式"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">创建时间</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_creation_time" placeholder="请输入创建时间"  class="layui-input">  
+                <input type="text" name="ai_total_amount" placeholder="请输入订单总价"  class="layui-input">  
             </div>  
             </div>  
       </div>  

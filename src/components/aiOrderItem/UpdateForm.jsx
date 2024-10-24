@@ -1,27 +1,27 @@
-const UpdateForm = ({ aiSupplier }) => {
+const UpdateForm = ({ aiOrderItem }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">公司名称</label>  
+      <label class="layui-form-label">订单ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiCompanyName" value="${aiSupplier.ai_company_name}" class="layui-input">  
+        <input type="text" name="aiOrderId" value="${aiOrderItem.ai_order_id}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">联系人姓名</label>  
+      <label class="layui-form-label">商品ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiContactName" value="${aiSupplier.ai_contact_name}" class="layui-input">  
+        <input type="text" name="aiProductId" value="${aiOrderItem.ai_product_id}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">联系电话</label>  
+      <label class="layui-form-label">商品数量</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiPhone" value="${aiSupplier.ai_phone}" class="layui-input">  
+        <input type="text" name="aiQuantity" value="${aiOrderItem.ai_quantity}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">电子邮件</label>  
+      <label class="layui-form-label">单价</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiEmail" value="${aiSupplier.ai_email}" class="layui-input">  
+        <input type="text" name="aiUnitPrice" value="${aiOrderItem.ai_unit_price}" class="layui-input">  
       </div>  
     </div>  
   </div>  

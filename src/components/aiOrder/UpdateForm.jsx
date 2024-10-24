@@ -1,45 +1,27 @@
 const UpdateForm = ({ aiOrder }) => {
   return `<div class="layui-form" style="padding: 20px;">
       <div class="layui-form-item">  
-      <label class="layui-form-label">用户UUID</label>  
+      <label class="layui-form-label">订单编号</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiUserUuid" value="${aiOrder.ai_user_uuid}" class="layui-input">  
+        <input type="text" name="aiOrderId" value="${aiOrder.ai_order_id}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单号</label>  
+      <label class="layui-form-label">客户ID</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderNumber" value="${aiOrder.ai_order_number}" class="layui-input">  
+        <input type="text" name="aiCustomerId" value="${aiOrder.ai_customer_id}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单日期</label>  
+      <label class="layui-form-label">下单时间</label>  
       <div class="layui-input-block">  
-        <input type="text" name="aiOrderDate" value="${aiOrder.ai_order_date}" class="layui-input">  
+        <input type="text" name="aiOrderTime" value="${aiOrder.ai_order_time}" class="layui-input">  
       </div>  
     </div>  
       <div class="layui-form-item">  
-      <label class="layui-form-label">订单总金额</label>  
+      <label class="layui-form-label">订单总价</label>  
       <div class="layui-input-block">  
         <input type="text" name="aiTotalAmount" value="${aiOrder.ai_total_amount}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">订单状态</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiOrderStatus" value="${aiOrder.ai_order_status}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">支付方式</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiPaymentMethod" value="${aiOrder.ai_payment_method}" class="layui-input">  
-      </div>  
-    </div>  
-      <div class="layui-form-item">  
-      <label class="layui-form-label">创建时间</label>  
-      <div class="layui-input-block">  
-        <input type="text" name="aiCreationTime" value="${aiOrder.ai_creation_time}" class="layui-input">  
       </div>  
     </div>  
   </div>  

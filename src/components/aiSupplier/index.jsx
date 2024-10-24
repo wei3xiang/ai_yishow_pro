@@ -22,12 +22,10 @@ const Index = () => {
         layero.find("#modalOk").on("click", () => {
           const updatedItem = {
             ...aiSupplier,
-              aiSupplierName: layero.find('input[name="aiSupplierName"]').val(), 
+              aiCompanyName: layero.find('input[name="aiCompanyName"]').val(), 
               aiContactName: layero.find('input[name="aiContactName"]').val(), 
-              aiContactPhone: layero.find('input[name="aiContactPhone"]').val(), 
-              aiContactEmail: layero.find('input[name="aiContactEmail"]').val(), 
-              aiSupplierAddress: layero.find('input[name="aiSupplierAddress"]').val(), 
-              aiCreationTime: layero.find('input[name="aiCreationTime"]').val(), 
+              aiPhone: layero.find('input[name="aiPhone"]').val(), 
+              aiEmail: layero.find('input[name="aiEmail"]').val(), 
           };
           setList(
             list.map((u) => (u.uuid === updatedItem.uuid ? updatedItem : u))
@@ -70,7 +68,7 @@ const Index = () => {
   };
 
   const handleCreate = () => {
-    const newItem = { uuid: "",  aiSupplierName: "",  aiContactName: "",  aiContactPhone: "",  aiContactEmail: "",  aiSupplierAddress: "",  aiCreationTime: "", };
+    const newItem = { uuid: "",  aiCompanyName: "",  aiContactName: "",  aiPhone: "",  aiEmail: "", };
     const modalContent = `${CreateForm()}`;
 
     layui.layer.open({
@@ -82,13 +80,11 @@ const Index = () => {
         layero.find("#modalCancel").on("click", () => layui.layer.close(index));
         layero.find("#modalOk").on("click", () => {
 
-          const aiSupplierName = layero.find('input[name="aiSupplierName"]').val();
+          const aiCompanyName = layero.find('input[name="aiCompanyName"]').val();
           const aiContactName = layero.find('input[name="aiContactName"]').val();
-          const aiContactPhone = layero.find('input[name="aiContactPhone"]').val();
-          const aiContactEmail = layero.find('input[name="aiContactEmail"]').val();
-          const aiSupplierAddress = layero.find('input[name="aiSupplierAddress"]').val();
-          const aiCreationTime = layero.find('input[name="aiCreationTime"]').val();
-          setList([...list, { ...newItem, uuid: Date.now(), aiSupplierName,aiContactName,aiContactPhone,aiContactEmail,aiSupplierAddress,aiCreationTime, }]);
+          const aiPhone = layero.find('input[name="aiPhone"]').val();
+          const aiEmail = layero.find('input[name="aiEmail"]').val();
+          setList([...list, { ...newItem, uuid: Date.now(), aiCompanyName,aiContactName,aiPhone,aiEmail, }]);
           layui.layer.close(index);
         });
       },

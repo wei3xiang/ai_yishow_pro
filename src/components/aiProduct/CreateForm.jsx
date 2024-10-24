@@ -2,9 +2,9 @@ const CreateForm = () => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
             <div class="layui-form-item">  
-            <label class="layui-form-label">商品ID</label>  
+            <label class="layui-form-label">类别ID</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_product_id" placeholder="请输入商品ID"  class="layui-input">  
+                <input type="text" name="ai_category_id" placeholder="请输入类别ID"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
@@ -14,21 +14,15 @@ const CreateForm = () => {
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">库存数量</label>  
+            <label class="layui-form-label">商品描述</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_quantity" placeholder="请输入库存数量"  class="layui-input">  
+                <input type="text" name="ai_description" placeholder="请输入商品描述"  class="layui-input">  
             </div>  
             </div>  
             <div class="layui-form-item">  
-            <label class="layui-form-label">补货触发量</label>  
+            <label class="layui-form-label">商品状态</label>  
             <div class="layui-input-block">  
-                <input type="text" name="ai_restock_level" placeholder="请输入补货触发量"  class="layui-input">  
-            </div>  
-            </div>  
-            <div class="layui-form-item">  
-            <label class="layui-form-label">单位</label>  
-            <div class="layui-input-block">  
-                <input type="text" name="ai_unit_of_measure" placeholder="请输入单位"  class="layui-input">  
+                <input type="text" name="ai_status" placeholder="请输入商品状态"  class="layui-input">  
             </div>  
             </div>  
       </div>  

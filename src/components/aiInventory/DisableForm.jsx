@@ -2,15 +2,15 @@ const DisableForm = ({ aiInventory }) => {
   return `  
       <div class="layui-form" style="padding: 20px;">  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品名称</label>  
+            <label class="layui-form-label">商品ID</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiItemName" value="${aiInventory.ai_item_name}" class="layui-input" readonly>  
+              <input type="text" name="aiProductId" value="${aiInventory.ai_product_id}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">商品ID</label>  
+            <label class="layui-form-label">商品名称</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiItemId" value="${aiInventory.ai_item_id}" class="layui-input" readonly>  
+              <input type="text" name="aiProductName" value="${aiInventory.ai_product_name}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
@@ -20,21 +20,15 @@ const DisableForm = ({ aiInventory }) => {
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">库存重置值</label>  
+            <label class="layui-form-label">补货触发量</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiRestockValue" value="${aiInventory.ai_restock_value}" class="layui-input" readonly>  
+              <input type="text" name="aiRestockLevel" value="${aiInventory.ai_restock_level}" class="layui-input" readonly>  
             </div>  
           </div>  
           <div class="layui-form-item">  
-            <label class="layui-form-label">库存状态</label>  
+            <label class="layui-form-label">单位</label>  
             <div class="layui-input-block">  
-              <input type="text" name="aiStockStatus" value="${aiInventory.ai_stock_status}" class="layui-input" readonly>  
-            </div>  
-          </div>  
-          <div class="layui-form-item">  
-            <label class="layui-form-label">创建时间</label>  
-            <div class="layui-input-block">  
-              <input type="text" name="aiCreationTime" value="${aiInventory.ai_creation_time}" class="layui-input" readonly>  
+              <input type="text" name="aiUnitOfMeasure" value="${aiInventory.ai_unit_of_measure}" class="layui-input" readonly>  
             </div>  
           </div>  
       </div>  
