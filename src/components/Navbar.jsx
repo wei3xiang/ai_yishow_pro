@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
+import AiVendor from './aiVendor';
+
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("aiVendor");
 
   const renderPage = () => {
     switch (activePage) {
-      default:
-        return <></>;
+        case "aiVendor":
+            return <AiVendor />;
+        default:
+            return <AiVendor />;
     }
   };
 
@@ -14,7 +18,19 @@ const Navbar = () => {
     <div>
       <div className="layui-side layui-bg-black">
         <div className="layui-side-scroll">
-          <ul className="layui-nav layui-nav-tree" lay-filter="test"></ul>
+          <ul className="layui-nav layui-nav-tree" lay-filter="test">
+                <li
+                className={`layui-nav-item ${
+                    activePage === "aiVendor" ? "layui-this" : ""
+                }`}
+                >
+                <a href="#" onClick={() => setActivePage("aiVendor")}>
+                  {"供应商表".endsWith("表")
+                  ? "供应商表".slice(0, -1) + "管理"
+                  : "供应商表"}
+                </a>
+                </li>
+          </ul>
         </div>
       </div>
       <div className="layui-header">
